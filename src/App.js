@@ -1,10 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import "./Styles/Global.scss";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      Hello
-      <button className="button">Hello</button>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
