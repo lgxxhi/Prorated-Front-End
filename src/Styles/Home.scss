@@ -1,0 +1,24 @@
+
+
+.home-page{
+
+
+    padding: 10%;
+    h1{
+        font-size: 2.5em;
+    }
+    &__search{
+        &__suggestions{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 2%;
+            font-size: 1.3em;
+            button{
+                margin: 0% 1%;
+                height: 30px;
+                width: 10%;
+            }
+        }
+    }
+}
