@@ -1,0 +1,23 @@
+.searchBar{
+    display: grid;
+    grid-template-columns: 6% 72% 22%;
+    align-items: center;
+    height: 40px;
+    border: 2px solid rgb(131, 131, 131);
+    border-radius: 20px;
+    img {
+        width: 50%;
+        padding-left: 30%;
+    }
+    &__input{
+        height: 100%;
+        border: 0;
+        font-size: 1.5em;
+    }
+    &__submitBtn{
+        height: 100%;
+        border: 0;
+        border-radius: 0px 20px 20px 0px;
+        font-size: 1.3em;
+    }
+}
