@@ -1,0 +1,194 @@
+.profile-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 25px;
+  box-shadow: 0, 5px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.profile-card:last-child {
+  border: none;
+}
+
+.profile-card:first-child {
+  border: none;
+}
+
+.profile-split {
+  display: flex;
+  align-items: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 5px;
+}
+
+.image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #38b6ff;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.image:hover {
+  background-color: #00a0fc;
+}
+
+.image .profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.profile-card .text-data {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  color: #333;
+}
+
+.text-data .name {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.text-data .job {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.ratings {
+  margin-top: 5px;
+}
+
+.ratings i {
+  color: gold;
+}
+
+.hires {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  color: gray;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.card-side {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card-side .more-details {
+  border-radius: 24px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #38b6ff;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+.card-side .more-details:hover {
+  background-color: #00a0fc;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  color: gray;
+}
+
+.contact i {
+  font-weight: bold;
+  color: black;
+}
+
+/* .profile-card .media-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.media-buttons .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  margin: 0 8px;
+  text-decoration: none;
+  background-color: #5271ff;
+}
+
+.profile-card .buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.buttons .button {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  border-radius: 24px;
+  margin: 0 10px;
+  padding: 8px 24px;
+  background-color: #38b6ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons .button:hover {
+  background-color: #00a0fc;
+}
+
+.profile-card .analytics {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.analytics .data {
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0 20px;
+  border-right: 2px solid #e7e7e7;
+}
+
+.data i {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.data:last-child {
+  border-right: none;
+} */
