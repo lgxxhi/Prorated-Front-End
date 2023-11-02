@@ -5,10 +5,10 @@ export default function ServiceCard({data}) {
   const background = {backgroundImage: `url(${image})`}
   return (
     <div className='serviceCard' style={background}>
-        <p className='serviceCard__title'>{name}</p>
-        <div className='serviceCard__info'>
-          <p>{description}</p>
-        </div>
+      <div className='serviceCard__top'>
+        <h2 className='serviceCard__top__title'>{name}</h2>
+        <p className='serviceCard__top__info'>{description}</p>
+      </div>
     </div>
   )
 }
