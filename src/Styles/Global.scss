@@ -1,9 +1,16 @@
 @use 'Home';
 @use 'Components/Buttons';
 @use 'Components/SearchBar';
-@use 'Components/ServiceCard.scss'
+@use 'Components/ServiceCard.scss';
 
+@font-face {
+    font-family: "";
+    src: url("");
+}
 
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 /** Global settings for the project should be coded here. Like
 pre-defined app colors, main fonts, secondary fonts, or
 any other property for the whole project*/ 
