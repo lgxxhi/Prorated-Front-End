@@ -1,5 +1,5 @@
 import React from "react";
-import ContractorDetails from "../Pages/ContractorDetails";
+
 import { Link } from "react-router-dom";
 function Nav() {
   return (
