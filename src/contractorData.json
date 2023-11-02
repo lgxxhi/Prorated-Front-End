@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "business_name": "I plumber",
+    "description": "I will unclog your pipers",
+    "services_offerred": ["plumbing"],
+    "rating": 4.2,
+    "reviews": 15
+  },
+  {
+    "id": "2",
+    "business_name": "I handyman",
+    "description": "I will be handy",
+    "services_offerred": ["plumbing", "floors", "drywall"],
+    "rating": 3.1,
+    "reviews": 2
+  },
+  {
+    "id": "3",
+    "business_name": "I electrician",
+    "description": "I will electrify your home",
+    "services_offerred": ["electrician"],
+    "rating": 4.7,
+    "reviews": 21
+  }
+]
