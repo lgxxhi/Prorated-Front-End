@@ -1,4 +1,5 @@
 import React from "react";
+import "../Styles/Global.scss";
 
 import { Link } from "react-router-dom";
 function Nav() {
