@@ -1,21 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Global.scss";
+import SearchBar from "./SearchBar";
 
 function Nav() {
-  const logo = require("../Assets/Images/ProRatedLogo.png");
+  const navigate = useNavigate();
+
+  function logoClick(e) {
+    e.preventDefault();
+    navigate("/");
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar__menu">
-        <h1 href="/" className="navbar__menu__logo">
+        <h1 onClick={(e) => logoClick(e)} className="navbar__menu__logo">
           PRORATED
         </h1>
         <Link to="/" className="navbar__menu__button">
           Home
         </Link>
         <Link to="/profile" className="navbar__menu__button">
-          Contractor Profile
+          ConProf
         </Link>
+        <SearchBar location="navbar" />
       </div>
     </nav>
   );
