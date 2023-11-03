@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
-import ContractorListings from "./Components/ContractorListings/ContractorListings";
+import ContractorListings from "./components/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import "./Styles/Global.scss";
 import Nav from "./Components/Navbar";
