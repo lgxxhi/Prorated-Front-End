@@ -1,0 +1,10 @@
+ .btn{
+    border: 2.5px solid rgb(177, 177, 177);
+    cursor: pointer;
+    &__medium-round{
+        border-radius: 5px;
+    }
+    &__full-round{
+        border-radius: 5px;
+    }
+}
