@@ -8,10 +8,9 @@ export default function SearchBar(props) {
     switch(props.location){
         case "navbar":
             return (
-                <form className='searchBar'>
+                <form className='searchBar-nav'>
                     <img src={searchIcon} alt=''/>
-                    <input type="search" className='searchBar__input' placeholder='Search...' required/>
-                    <input type="submit" className='searchBar__submitBtn btn'/>
+                    <input type="search" className='searchBar-nav__input' placeholder='Search...' required/>
                 </form>
           )
           default:
