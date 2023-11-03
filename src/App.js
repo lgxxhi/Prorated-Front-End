@@ -13,7 +13,6 @@ function App() {
         <Route path="/profile" element={<ContractorDetails />} />
       </Routes>
     </Router>
-
   );
 }
 
