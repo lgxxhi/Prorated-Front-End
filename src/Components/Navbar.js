@@ -7,7 +7,9 @@ function Nav() {
   return (
     <nav className="navbar">
       <div className="navbar__menu">
-        <img src={logo} alt="logo" className="navbar__menu__logo" />
+        <h1 href="/" className="navbar__menu__logo">
+          PRORATED
+        </h1>
         <Link to="/" className="navbar__menu__button">
           Home
         </Link>
