@@ -6,24 +6,44 @@ import SearchBar from "./SearchBar";
 function Nav() {
   const navigate = useNavigate();
 
-  function logoClick(e) {
+  function handleClick(e, location) {
     e.preventDefault();
-    navigate("/");
+    navigate(location);
   }
 
   return (
     <nav className="navbar">
       <div className="navbar__menu">
-        <h1 onClick={(e) => logoClick(e)} className="navbar__menu__logo">
-          PRORATED
-        </h1>
-        <Link to="/" className="navbar__menu__button">
-          Home
-        </Link>
-        <Link to="/profile" className="navbar__menu__button">
-          ConProf
-        </Link>
+        <div className="navbar__menu__components">
+          <h1
+            onClick={(e) => handleClick(e, "/")}
+            className="navbar__menu__components__logo"
+          >
+            PRORATED
+          </h1>
+          <Link to="/" className="navbar__menu__components__button">
+            Home
+          </Link>
+          <Link to="/profile" className="navbar__menu__components__button">
+            ConProf
+          </Link>
+        </div>
         <SearchBar location="navbar" />
+
+        <div className="navbar__menu__buttons">
+          <button
+            className="navbar__menu__buttons__signup-btn btn"
+            onClick={(e) => handleClick(e, "/signup")}
+          >
+            Sign Up
+          </button>
+          <button
+            className="navbar__menu__buttons__login-btn btn"
+            onClick={(e) => handleClick(e, "/login")}
+          >
+            Log In
+          </button>
+        </div>
       </div>
     </nav>
   );

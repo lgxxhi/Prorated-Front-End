@@ -37,9 +37,9 @@
     display: grid;
     grid-template-columns: 6% 74% 20%;
     align-items: center;
-    margin-left: 10px;
+    align-self: center;
     height: 40px;
-    width: 50%;
+    width: 100%;
     border-radius: 20px;
     background-color: rgba($color: #000000, $alpha: .1);
     img {
