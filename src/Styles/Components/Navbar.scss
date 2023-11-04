@@ -67,6 +67,10 @@ $logo: 'Open Sans', sans-serif;
                 font-size: 1.2em;
                 color: white;
                 text-shadow: 0px 0px 10px black;
+                transition: .15s;
+                &:hover{
+                    opacity: 70%;
+                }
             }
             &__login-btn{
                 height: 80%;
@@ -74,10 +78,14 @@ $logo: 'Open Sans', sans-serif;
                 margin-right: 20px;
                 border: 0;
                 border-radius: 20px;
-                background: rgba($color: rgb(111, 213, 111), $alpha: .8);
+                background: rgba($color: rgb(50, 210, 50), $alpha: .8);
                 font-size: 1.2em;
                 color: white;
                 text-shadow: 0px 0px 10px black;
+                transition: .15s;
+                &:hover{
+                    opacity: 70%;
+                }
             }
         }
     }
