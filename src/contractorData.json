@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
     "business_name": "I plumber",
     "description": "I will unclog your pipers",
     "services_offerred": ["plumbing"],
@@ -9,6 +10,7 @@
   },
   {
     "id": "2",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/74.jpg",
     "business_name": "I handyman",
     "description": "I will be handy",
     "services_offerred": ["plumbing", "floors", "drywall"],
@@ -17,10 +19,11 @@
   },
   {
     "id": "3",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
     "business_name": "I electrician",
     "description": "I will electrify your home",
     "services_offerred": ["electrician"],
-    "rating": 4.7,
+    "rating": 4.4,
     "reviews": 21
   }
 ]

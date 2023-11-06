@@ -25,7 +25,7 @@ function ContractorListings(contractorData) {
         </div>
 
         <div className="main-content">
-          <ContractorCard />
+          <ContractorCard contractorData={contractorData} />
         </div>
       </div>
 
