@@ -1,6 +1,7 @@
 .profile-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   max-width: 100%;
@@ -125,6 +126,29 @@
 .contact i {
   font-weight: bold;
   color: black;
+}
+
+.services {
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  background-color: rgb(242, 242, 242);
+  height: min-content;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  margin-top: 20px;
+}
+
+.show:hover + .hide {
+  display: block;
+
+  margin-top: 10px;
 }
 
 /* .profile-card .media-buttons {
