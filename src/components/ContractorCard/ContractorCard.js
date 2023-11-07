@@ -72,12 +72,12 @@ function ContractorCard(contractorData) {
                   <button className="more-details">More Details</button>
                 </div>
                 <div className="services">
-                  <h2 className="show">
+                  <div className="show">
                     <i class="bx bx-chevron-down"></i>
-                  </h2>
+                  </div>
 
                   <div className="hide">
-                    <ServicesOffered />
+                    <ServicesOffered contractorData={item} />
                   </div>
                 </div>
               </div>

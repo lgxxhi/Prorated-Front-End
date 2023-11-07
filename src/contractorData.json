@@ -4,7 +4,13 @@
     "img": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
     "business_name": "I plumber",
     "description": "I will unclog your pipers",
-    "services_offerred": ["plumbing"],
+    "services_offerred": [
+      "plumbing drain repair",
+      "plumbing pipe repair",
+      "toilet repair",
+      "plumbing pipe installation or replacement",
+      "sink or faucet installation or replacement"
+    ],
     "rating": 4.2,
     "reviews": 15
   },
@@ -13,7 +19,18 @@
     "img": "https://xsgames.co/randomusers/assets/avatars/male/74.jpg",
     "business_name": "I handyman",
     "description": "I will be handy",
-    "services_offerred": ["plumbing", "floors", "drywall"],
+    "services_offerred": [
+      "appliance installation",
+      "handyman cleaning",
+      "handyman assembly",
+      "door installation",
+      "floor installation",
+      "floor repair",
+      "furniture assembly",
+      "handyman installation",
+      "handyman repair",
+      "tile installation or replacment"
+    ],
     "rating": 3.1,
     "reviews": 2
   },
@@ -22,7 +39,14 @@
     "img": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
     "business_name": "I electrician",
     "description": "I will electrify your home",
-    "services_offerred": ["electrician"],
+    "services_offerred": [
+      "lighting installation",
+      "outlet installation",
+      "lighting repair",
+      "outlet repair",
+      "outdoor lighting installation",
+      "wiring installation"
+    ],
     "rating": 4.4,
     "reviews": 21
   }
