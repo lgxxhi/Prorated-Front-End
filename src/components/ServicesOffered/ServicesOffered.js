@@ -20,9 +20,7 @@ function ServicesOffered(contractorData) {
           );
         })}
         {contractorData.contractorData.services_offerred.length > 8 ? (
-          <Link to={"/"} className="more">
-            And More...
-          </Link>
+          <div className="more">And More...</div>
         ) : null}
       </div>
     </div>

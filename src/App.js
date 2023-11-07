@@ -6,7 +6,14 @@ import contractorData from "./contractorData.json";
 function App() {
   return (
     <div className="App">
-      <ContractorListings contractorData={contractorData} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<ContractorListings contractorData={contractorData} />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }

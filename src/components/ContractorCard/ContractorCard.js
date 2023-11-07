@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.css";
+import { v4 as uuidv4 } from "uuid";
 
 import ServicesOffered from "../ServicesOffered/ServicesOffered";
 
@@ -13,17 +14,24 @@ function ContractorCard(contractorData) {
     let rounded = Math.round(rating / 0.5) * 0.5;
     let arr = [];
 
-    for (let i = rounded; i <= 5; i--) {
-      if (i > 0.5) {
-        arr.push(<i className="bx bxs-star"></i>);
-      } else if (i <= 0.5) {
-        arr.push(<i className="bx bxs-star-half"></i>);
-      } else {
-        arr.push(<i class="bx bx-star"></i>);
-      }
+    // for (let i = rounded; i >= 1; i--) {
+    //   arr.push(<i className="bx bxs-star"></i>);
+    // }
+    // for (let i = 5 - rounded; i >= 0.5; i--) {
+    //   if (i < 1) {
+    //     arr.push(<i className="bx bxs-star-half"></i>);
+    //   }
+    //   arr.push(<i class="bx bx-star"></i>);
+    // }
+    // console.log(rounded);
+    // console.log(arr);
+
+    for (let i = rounded; i >= 1; i--) {
+      arr.push(<i key={uuidv4()} className="bx bxs-star"></i>);
+      console.log(i);
     }
-    console.log(arr);
-    // return arr;
+
+    return arr;
   }
 
   return (
