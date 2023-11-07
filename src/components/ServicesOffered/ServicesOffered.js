@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./ServicesOffered.css";
+import { Link } from "react-router-dom";
 
 function ServicesOffered(contractorData) {
-  //   console.log(contractorData.contractorData.services_offerred);
-
   const [services, setServices] = useState(
-    contractorData.contractorData.services_offerred
+    contractorData.contractorData.services_offerred.filter(
+      (item, index) => index < 8
+    )
   );
   return (
-    <div className="grid-container">
-      {services.map((item) => {
-        return <div className="grid-item">{item}</div>;
-      })}
+    <div>
+      <div className="grid-container">
+        {services.map((item) => {
+          return (
+            <div key={uuidv4()} className="grid-item">
+              <div className="item">{item}</div>
+            </div>
+          );
+        })}
+        {contractorData.contractorData.services_offerred.length > 8 ? (
+          <Link to={"/"} className="more">
+            And More...
+          </Link>
+        ) : null}
+      </div>
     </div>
   );
 }

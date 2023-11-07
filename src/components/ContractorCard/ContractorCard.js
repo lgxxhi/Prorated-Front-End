@@ -1,20 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.css";
 
 import ServicesOffered from "../ServicesOffered/ServicesOffered";
 
 function ContractorCard(contractorData) {
-  console.log(contractorData.contractorData.contractorData);
-
   const [contractorListings, setContractorListings] = useState(
     contractorData.contractorData.contractorData
   );
 
   function handleStars(rating) {
     let rounded = Math.round(rating / 0.5) * 0.5;
+    let arr = [];
 
-    return rounded;
+    for (let i = rounded; i <= 5; i--) {
+      if (i > 0.5) {
+        arr.push(<i className="bx bxs-star"></i>);
+      } else if (i <= 0.5) {
+        arr.push(<i className="bx bxs-star-half"></i>);
+      } else {
+        arr.push(<i class="bx bx-star"></i>);
+      }
+    }
+    console.log(arr);
+    // return arr;
   }
 
   return (
@@ -22,10 +31,14 @@ function ContractorCard(contractorData) {
       {contractorListings.length > 0
         ? contractorListings.map((item) => {
             return (
-              <div key={item.id} className="profile-card">
+              <Link
+                key={item.id}
+                style={{ textDecoration: "none" }}
+                className="profile-card"
+              >
                 <div className="profile-split">
                   <div className="image">
-                    <img className="profile-img" src={item.img} />
+                    <img className="profile-img" alt="#" src={item.img} />
                   </div>
                   <div className="card-content">
                     <div className="text-data">
@@ -34,12 +47,12 @@ function ContractorCard(contractorData) {
 
                     <div className="ratings">
                       {handleStars(item.rating)}
+                      {/* <i className="bx bxs-star"></i>
                       <i className="bx bxs-star"></i>
                       <i className="bx bxs-star"></i>
                       <i className="bx bxs-star"></i>
                       <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star-half"></i>
+                      <i className="bx bxs-star-half"></i> */}
                       <span className="review-count">
                         <small>({item.reviews})</small>
                       </span>
@@ -73,14 +86,14 @@ function ContractorCard(contractorData) {
                 </div>
                 <div className="services">
                   <div className="show">
-                    <i class="bx bx-chevron-down"></i>
+                    <i className="bx bx-chevron-down"></i>
                   </div>
 
                   <div className="hide">
                     <ServicesOffered contractorData={item} />
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })
         : null}
