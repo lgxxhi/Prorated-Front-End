@@ -13,6 +13,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

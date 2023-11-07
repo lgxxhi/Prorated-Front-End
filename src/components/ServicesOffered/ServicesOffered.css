@@ -3,4 +3,28 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 150px;
   align-items: center;
+  gap: 3px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(180, 180, 180);
+  height: 100%;
+  color: black;
+}
+
+.more {
+  border-radius: 5px;
+
+  border: 1px solid #38b6ff;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  text-decoration: none;
 }

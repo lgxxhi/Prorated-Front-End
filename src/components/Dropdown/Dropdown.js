@@ -12,14 +12,14 @@ function Dropdown() {
     >
       <div className="select-btn">
         <span className="sBtn-text">{sortOption}</span>
-        <i class="bx bx-chevron-down"></i>
+        <i className="bx bx-chevron-down"></i>
       </div>
       <ul className="options">
         <li
           className="option"
           onClick={() => setSortOption("Sort by: Recommended")}
         >
-          <i class="bx bx-star" style={{ color: "#171515" }}></i>
+          <i className="bx bx-star" style={{ color: "#171515" }}></i>
           <span className="option-text">Recommended</span>
         </li>
         <li
@@ -27,7 +27,7 @@ function Dropdown() {
           onClick={() => setSortOption("Sort by: Most Projects")}
         >
           <i
-            class="bx bx-right-top-arrow-circle"
+            className="bx bx-right-top-arrow-circle"
             style={{ color: "#e1306c" }}
           ></i>
           <span className="option-text">Most Projects</span>
@@ -36,7 +36,7 @@ function Dropdown() {
           className="option"
           onClick={() => setSortOption("Sort by: Latest ")}
         >
-          <i class="bx bx-up-arrow" style={{ color: "#0e76a8" }}></i>
+          <i className="bx bx-up-arrow" style={{ color: "#0e76a8" }}></i>
           <span className="option-text">Latest</span>
         </li>
       </ul>
