@@ -5,15 +5,16 @@ import "./ContractorListings.css";
 import Dropdown from "../Dropdown/Dropdown";
 import ContractorCard from "../ContractorCard/ContractorCard";
 import FilterBar from "../FilterBar/FilterBar";
+import SecondDropdown from "../SecondDropdown/SecondDropdown";
 
 function ContractorListings(contractorData) {
   return (
     <div className="container">
       <nav>Nav</nav>{" "}
-      <div className="sidebar">
+      {/* <div className="sidebar">
         <h2>ProRated</h2>
         <FilterBar />
-      </div>
+      </div> */}
       <div className="main">
         <div className="main-header">
           <div className="left-main">
@@ -24,7 +25,8 @@ function ContractorListings(contractorData) {
             <p>{contractorData.contractorData.length} services available </p>
           </div>
 
-          <Dropdown />
+          {/* <Dropdown /> */}
+          <SecondDropdown />
         </div>
 
         <div className="main-content">
