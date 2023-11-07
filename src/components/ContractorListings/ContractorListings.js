@@ -9,8 +9,11 @@ import FilterBar from "../FilterBar/FilterBar";
 function ContractorListings(contractorData) {
   return (
     <div className="container">
-      <nav>Nav</nav>
-
+      <nav>Nav</nav>{" "}
+      <div className="sidebar">
+        <h2>ProRated</h2>
+        <FilterBar />
+      </div>
       <div className="main">
         <div className="main-header">
           <div className="left-main">
@@ -28,11 +31,6 @@ function ContractorListings(contractorData) {
           <ContractorCard contractorData={contractorData} />
         </div>
       </div>
-
-      {/* <div className="sidebar">
-        <header>ProRated</header>
-        <FilterBar />
-      </div> */}
     </div>
   );
 }
