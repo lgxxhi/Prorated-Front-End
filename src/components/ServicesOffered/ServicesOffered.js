@@ -1,15 +1,17 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import "./ServicesOffered.css";
 
-function ServicesOffered() {
+function ServicesOffered(contractorData) {
+  //   console.log(contractorData.contractorData.services_offerred);
+
+  const [services, setServices] = useState(
+    contractorData.contractorData.services_offerred
+  );
   return (
     <div className="grid-container">
-      <div className="grid-item grid-item-1">1</div>
-      <div className="grid-item grid-item-2">2</div>
-      <div className="grid-item grid-item-3">3</div>
-      <div className="grid-item grid-item-4">4</div>
-      <div className="grid-item grid-item-4">4</div>
+      {services.map((item) => {
+        return <div className="grid-item">{item}</div>;
+      })}
     </div>
   );
 }
