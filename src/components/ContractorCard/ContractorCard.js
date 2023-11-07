@@ -14,23 +14,15 @@ function ContractorCard(contractorData) {
     let rounded = Math.round(rating / 0.5) * 0.5;
     let arr = [];
 
-    // for (let i = rounded; i >= 1; i--) {
-    //   arr.push(<i className="bx bxs-star"></i>);
-    // }
-    // for (let i = 5 - rounded; i >= 0.5; i--) {
-    //   if (i < 1) {
-    //     arr.push(<i className="bx bxs-star-half"></i>);
-    //   }
-    //   arr.push(<i class="bx bx-star"></i>);
-    // }
-    // console.log(rounded);
-    // console.log(arr);
-
     for (let i = rounded; i >= 1; i--) {
       arr.push(<i key={uuidv4()} className="bx bxs-star"></i>);
-      console.log(i);
+      if (i == 1.5) {
+        arr.push(<i key={uuidv4()} className="bx bxs-star-half"></i>);
+      }
     }
-
+    for (let i = 5 - rounded; i >= 1; i--) {
+      arr.push(<i key={uuidv4()} className="bx bx-star"></i>);
+    }
     return arr;
   }
 
@@ -55,12 +47,6 @@ function ContractorCard(contractorData) {
 
                     <div className="ratings">
                       {handleStars(item.rating)}
-                      {/* <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star"></i>
-                      <i className="bx bxs-star-half"></i> */}
                       <span className="review-count">
                         <small>({item.reviews})</small>
                       </span>
