@@ -4,12 +4,9 @@ import "./ContractorCard.css";
 import { v4 as uuidv4 } from "uuid";
 
 import ServicesOffered from "../ServicesOffered/ServicesOffered";
+import { motion } from "framer-motion";
 
-function ContractorCard(contractorData) {
-  const [contractorListings, setContractorListings] = useState(
-    contractorData.contractorData.contractorData
-  );
-
+function ContractorCard({ service }) {
   function handleStars(rating) {
     let rounded = Math.round(rating / 0.5) * 0.5;
     let arr = [];
@@ -27,71 +24,71 @@ function ContractorCard(contractorData) {
   }
 
   return (
-    <div className="contractor-card">
-      {contractorListings.length > 0
-        ? contractorListings.map((item) => {
-            return (
-              <Link
-                key={item.id}
-                style={{ textDecoration: "none" }}
-                className="profile-card"
-              >
-                <div className="profile-split">
-                  <div className="image">
-                    <img className="profile-img" alt="#" src={item.img} />
-                  </div>
-                  <div className="card-content">
-                    <div className="text-data">
-                      <span className="name">{item.business_name}</span>
-                    </div>
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      // transition={{ duration: 1 }}
+      className="contractor-card"
+    >
+      <Link
+        key={service.id}
+        style={{ textDecoration: "none" }}
+        className="profile-card"
+      >
+        <div className="profile-split">
+          <div className="image">
+            <img className="profile-img" alt="#" src={service.img} />
+          </div>
+          <div className="card-content">
+            <div className="text-data">
+              <span className="name">{service.business_name}</span>
+            </div>
 
-                    <div className="ratings">
-                      {handleStars(item.rating)}
-                      <span className="review-count">
-                        <small>({item.reviews})</small>
-                      </span>
-                    </div>
-                    <div className="hires">
-                      <span>
-                        <i className="bx bx-trophy"></i>
-                        <small> 54 hires on ProRated</small>
-                      </span>
-                      <span>
-                        <i className="bx bx-been-here"></i>
-                        <small>
-                          <span className="bold">Area:</span> Manhattan,
-                          Brooklyn
-                        </small>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+            <div className="ratings">
+              {handleStars(service.rating)}
+              <span className="review-count">
+                <small>({service.reviews})</small>
+              </span>
+            </div>
+            <div className="hires">
+              <span>
+                <i className="bx bx-trophy"></i>
+                <small> 54 hires on ProRated</small>
+              </span>
+              <span>
+                <i className="bx bx-been-here"></i>
+                <small>
+                  <span className="bold">Area:</span> Manhattan, Brooklyn
+                </small>
+              </span>
+            </div>
+          </div>
+        </div>
 
-                <div className="card-side">
-                  <div className="contact">
-                    <span>
-                      <i className="bx bx-message-rounded"></i>
-                    </span>
-                    <span>
-                      <small> Contact For Price</small>
-                    </span>
-                  </div>
-                  <button className="more-details">More Details</button>
-                </div>
-                <div className="services">
-                  <div className="show">
-                    <i className="bx bx-chevron-down"></i>
-                  </div>
+        <div className="card-side">
+          <div className="contact">
+            <span>
+              <i className="bx bx-message-rounded"></i>
+            </span>
+            <span>
+              <small> Contact For Price</small>
+            </span>
+          </div>
+          <button className="more-details">More Details</button>
+        </div>
+        <div className="services">
+          <div className="show">
+            <i className="bx bx-chevron-down"></i>
+          </div>
 
-                  <div className="hide">
-                    <ServicesOffered contractorData={item} />
-                  </div>
-                </div>
-              </Link>
-            );
-          })
-        : null}
-    </div>
+          <div className="hide">
+            <ServicesOffered contractorData={service} />
+          </div>
+        </div>
+      </Link>
+    </motion.div>
   );
 }
 

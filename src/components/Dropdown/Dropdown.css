@@ -23,7 +23,7 @@
 }
 
 .select-menu .options {
-  position: relative;
+  position: absolute;
   padding: 20px;
   margin-top: 10px;
   border-radius: 8px;

@@ -147,7 +147,6 @@
 
 .show:hover + .hide {
   display: block;
-
   margin-top: 10px;
 }
 

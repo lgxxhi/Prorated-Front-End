@@ -1,37 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./ContractorListings.css";
-
-import Dropdown from "../Dropdown/Dropdown";
+import Filter from "../Filter/Filter";
 import ContractorCard from "../ContractorCard/ContractorCard";
-import FilterBar from "../FilterBar/FilterBar";
-import SecondDropdown from "../SecondDropdown/SecondDropdown";
+import { motion, AnimatePresence } from "framer-motion";
 
 function ContractorListings(contractorData) {
+  const [services, setServices] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [activeService, setActiveService] = useState("");
+
+  useEffect(() => {
+    setServices(contractorData.contractorData);
+    setFiltered(contractorData.contractorData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // console.log(services);
+  // console.log(filtered);
+
   return (
     <div className="container">
-      <nav>Nav</nav>{" "}
-      {/* <div className="sidebar">
-        <h2>ProRated</h2>
-        <FilterBar />
-      </div> */}
       <div className="main">
         <div className="main-header">
           <div className="left-main">
             <h2>
               <span className="results-for">Results For</span>
-              <span className="service-found"> Plumbing</span>
+              <span className="service-found"> Contractors</span>
             </h2>
-            <p>{contractorData.contractorData.length} services available </p>
+            <p>{filtered.length} services available </p>
           </div>
 
-          {/* <Dropdown /> */}
-          <SecondDropdown />
+          <Filter
+            services={services}
+            setFiltered={setFiltered}
+            activeService={activeService}
+            setActiveService={setActiveService}
+          />
         </div>
 
-        <div className="main-content">
-          <ContractorCard contractorData={contractorData} />
-        </div>
+        <motion.div layout className="main-content">
+          <AnimatePresence>
+            {filtered.map((service) => {
+              return <ContractorCard key={service.id} service={service} />;
+            })}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
   );
