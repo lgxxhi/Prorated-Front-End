@@ -5,14 +5,12 @@
 }
 
 .contractor-profile-container {
-  position: absolute;
   top: 0;
   left: 0;
   padding: 20px;
 }
 
 .contractor-details {
-  flex: 1;
   max-width: 300px;
 }
 
