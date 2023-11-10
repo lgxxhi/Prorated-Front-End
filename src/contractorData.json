@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "img": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
-    "business_name": "I plumber",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/73.jpg",
+    "business_name": "I Plumber",
     "description": "I will unclog your pipers",
     "services_offerred": [
       "plumbing drain repair",
@@ -36,7 +36,7 @@
   },
   {
     "id": "3",
-    "img": "https://xsgames.co/randomusers/assets/avatars/male/47.jpg",
+    "img": "https://media.licdn.com/dms/image/D4D03AQGGfA7DNG3jow/profile-displayphoto-shrink_800_800/0/1697073449305?e=1704931200&v=beta&t=ulfcR1qZFRxD63hk7p3SM9_ln6PuPkFNfP9FPyrnVTk",
     "business_name": "I electrician",
     "description": "I will electrify your home",
     "services_offerred": [
@@ -47,7 +47,39 @@
       "outdoor lighting installation",
       "wiring installation"
     ],
-    "rating": 3.3,
+    "rating": 5.0,
+    "reviews": 201
+  },
+  {
+    "id": "4",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/71.jpg",
+    "business_name": "I Landscaping",
+    "description": "I will electrify your home",
+    "services_offerred": [
+      "lighting installation",
+      "outlet installation",
+      "lighting repair",
+      "outlet repair",
+      "outdoor lighting installation",
+      "wiring installation"
+    ],
+    "rating": 2.3,
     "reviews": 21
+  },
+  {
+    "id": "5",
+    "img": "https://xsgames.co/randomusers/assets/avatars/male/77.jpg",
+    "business_name": "I something",
+    "description": "I will electrify your home",
+    "services_offerred": [
+      "lighting installation",
+      "outlet installation",
+      "lighting repair",
+      "outlet repair",
+      "outdoor lighting installation",
+      "wiring installation"
+    ],
+    "rating": 4.3,
+    "reviews": 39
   }
 ]
