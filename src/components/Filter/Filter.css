@@ -1,0 +1,25 @@
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container button {
+  height: 50%;
+  margin-right: 1rem;
+  min-width: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: white;
+  color: #38b6ff;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.filter-container button:active {
+  background-color: #00a0fc;
+  color: white;
+}
