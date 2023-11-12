@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import EditPicModal from "./EditPicModal";
 import "./ManageUserAccount.css";
 
 import { getSingleUser, updateUserById } from "../../common/usersAPI";
@@ -20,7 +21,7 @@ function ManageUserAccount() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-  const [active, setActive] = useState(false);
+  
 
   useEffect(() => {
     const fetchUserById = async () => {
@@ -59,36 +60,29 @@ function ManageUserAccount() {
         <h3 className="basicInfoH3">Basic Info</h3>
         <form onSubmit={handleSubmit}>
           <div className="profilePicDiv">
-          <div className="editImg">
-            <div className="userImg">
-              <img
-                className="img"
-                src={user.profile_picture}
-                alt="profilepic"
-              />
-              <div className="content">
+            <div className="editImg">
+              <div className="userImg">
                 <img
-                  className="hoverPic"
-                  src="https://t4.ftcdn.net/jpg/01/07/57/91/360_F_107579101_QVlTG43Fwg9Q6ggwF436MPIBTVpaKKtb.jpg"
+                  className="img"
+                  src={user.profile_picture}
                   alt="profilepic"
                 />
+                <div className="content">
+                  <img
+                    className="hoverPic"
+                    src="https://t4.ftcdn.net/jpg/01/07/57/91/360_F_107579101_QVlTG43Fwg9Q6ggwF436MPIBTVpaKKtb.jpg"
+                    alt="profilepic"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <i
-            className="fa-solid fa-pencil"
-            onClick={() => setActive(!active)}
-          ></i></div>
-          <br />
-          <div className={active ? "showPencil" : "hidePencil"}>
-            <input
-              type="text"
-              id="profilepic"
-              name="profilepic"
-              value={user.profile_picture}
-              onChange={handleTextChange}
+            <EditPicModal
+              profilePic={user.profile_picture}
+              handleTextChange={handleTextChange}
             />
           </div>
+          <br />
+          
           <div className="userDets">
             <h4 className="user_Name">
               {user.first_name} {user.last_name} - <span>{user.id}</span>
