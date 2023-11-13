@@ -5,7 +5,6 @@ import ServiceCard from './ServiceCard'
 
 export default function homePage() {
 
-  const contractorImage = require('../../Assets/Images/contractor-homepage-img.png')
   const defaultServices = require('../../Assets/services.json')
 
   const displayServices = () => {
