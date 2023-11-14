@@ -20,7 +20,7 @@ export default function Footer() {
           About
         </a>
         <a className="footer__routes__button" href="/">
-          Contact
+          Contact us
         </a>
       </div>
     </footer>
