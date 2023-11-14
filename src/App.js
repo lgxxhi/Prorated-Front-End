@@ -3,6 +3,7 @@ import ContractorDetails from "./Pages/ContractorDetails";
 import "./Styles/Global.scss";
 import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<ContractorDetails />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
