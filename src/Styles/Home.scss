@@ -1,37 +1,37 @@
-.home-page{
-    h1{
-        font-size: 2.5em;
+.home-page {
+  h1 {
+    font-size: 2.5em;
+  }
+  &__search {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    &__input {
+      padding: 10% 5%;
     }
-    &__search{
-        display: grid;
-        grid-template-columns: 70% 30%;
-        &__input{
-            padding: 10% 5%;
-        }
-        &__img{
-            align-self: center;
-            width: 90%;
-        }
-        &__suggestions{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-top: 5%;
-            margin-left: 2%;
-            font-size: 1.3em;
-            button{
-                font-size: 1vw;
-                margin: 0% 1%;
-                height: 2%;
-                width: 10%;
-            }
-        }
+    &__img {
+      align-self: center;
+      width: 90%;
     }
-    &__popular-services{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        justify-items: center;
-        gap: 2%;
-        padding: 0% 2%;
+    &__suggestions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 5%;
+      margin-left: 2%;
+      font-size: 1.3em;
+      button {
+        font-size: 1vw;
+        margin: 0% 1%;
+        height: 2%;
+        width: 10%;
+      }
     }
+  }
+  &__popular-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-items: center;
+    gap: 2%;
+    padding: 0% 2%;
+  }
 }
