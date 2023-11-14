@@ -1,0 +1,27 @@
+
+
+.footer{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    background-color: #333333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 10px 30px;
+    &__logo{
+        width: 100%;
+        filter: contrast(0%);
+    }
+    &__routes{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        &__button{
+            color: #808080;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+    }
+}
