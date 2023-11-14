@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function ServiceCard({data}) {
-  const { name, description, status, image } = data;
+  const { name, description, image } = data;
   const background = {backgroundImage: `url(${image})`}
   return (
     <div className='serviceCard' style={background}>

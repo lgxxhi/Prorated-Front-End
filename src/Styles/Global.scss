@@ -9,10 +9,15 @@
 // Font Variables
 $main: 'Poppins', sans-serif;
 
-
 body{
     font-family: $main;
 }
+
+nav{
+    position: fixed;
+    top: 0;
+}
+
 /** Global settings for the project should be coded here. Like
 pre-defined app colors, main fonts, secondary fonts, or
 any other property for the whole project*/ 
@@ -20,6 +25,3 @@ any other property for the whole project*/
 /* This should be the only file that will be imported on any
 file. This is because all the other SCSS files will
 be imported in this global file.*/
-
-/*TODO: Import all the other SCSS files to allow developers to only 
-import this style file on their components instead of multiple files*/
