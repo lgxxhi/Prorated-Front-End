@@ -1,0 +1,33 @@
+.profile {
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.user {
+  height: 200px;
+}
+
+span {
+  color: rgb(83, 82, 82);
+}
+
+.contractor {
+  height: 100px;
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.contractorH5 {
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.contractorPtag {
+  grid-area: 2 / 2 / 4 / 4;
+}
+
+.picNdesc ul li {
+  display: grid;
+  /* grid-template-columns: 100px 500px;
+  grid-template-rows: 1fr; */
+  grid-template-columns: 100px 500px;
+  grid-template-rows: repeat(2, 30px);
+}
