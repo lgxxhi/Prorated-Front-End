@@ -1,11 +1,11 @@
 import "./Styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
+import ContractorListings from "./Components/ContractorListings/ContractorListings";
+import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LogInSignup";
 import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
-import ContractorListings from "./Components/ContractorListings/ContractorListings";
-import contractorData from "./contractorData.json";
 import Footer from "./Components/Footer";
 
 function App() {
