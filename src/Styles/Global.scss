@@ -3,6 +3,7 @@
 @use 'Components/SearchBar';
 @use 'Components/ServiceCard.scss';
 @use 'Components/Navbar.scss';
+@use 'Components/Footer.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap');
 
@@ -18,6 +19,15 @@ nav{
     top: 0;
 }
 
+// .App{
+//     display: flex;
+//     flex-direction: column;
+//     min-height: 100vh;
+// }
+
+.content-wrap{
+    flex: 1;
+}
 /** Global settings for the project should be coded here. Like
 pre-defined app colors, main fonts, secondary fonts, or
 any other property for the whole project*/ 
