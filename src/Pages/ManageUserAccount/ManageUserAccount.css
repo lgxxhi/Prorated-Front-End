@@ -1,0 +1,152 @@
+.account-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 1.4fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "manageUserContainer manageUserContainer manageUserContainer"
+    "manageUserContainer manageUserContainer manageUserContainer"
+    "manageUserContainer manageUserContainer manageUserContainer"
+    "manageUserContainer manageUserContainer manageUserContainer";
+  height: 100%;
+}
+
+.manageUserContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: 0.4fr 2fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "accountH2 accountH2"
+    "basicInfo-container basicInfo-container"
+    "basicInfo-container basicInfo-container";
+  grid-area: manageUserContainer;
+}
+
+.accountH2 {
+  background-color: rgb(230, 229, 229);
+  color: rgb(132, 131, 131);
+  grid-area: accountH2;
+  padding: 10px;
+  text-align: center;
+}
+
+.basicInfo-container {
+  border: red 1px solid;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "profilePicDiv userDets"
+    "profilePicDiv userDets"
+    "profilePicDiv userDets";
+  grid-area: basicInfo-container;
+}
+
+.basicInfoH3 {
+  grid-area: basicInfoH3;
+}
+
+/* .user_Name {
+  grid-area: user_Name;
+} */
+
+input {
+  box-sizing: border-box;
+  padding: 12px 20px 12px 12px;
+  width: 400px;
+}
+
+/* .userImg img {
+  align-items: center;
+  border: 2px solid rgb(229, 228, 228);
+  border-radius: 100px;
+  height: 140px;
+  width: 250px;
+} */
+
+.profilePicDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.7fr 0.3fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "userImg"
+    "pencil";
+  grid-area: profilePicDiv;
+}
+/* .editImg {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+} */
+
+.userImg {
+  width: 250px;
+  grid-area: userImg;
+  padding: 20px;
+}
+
+.pencil {
+  grid-area: pencil;
+}
+
+.img {
+  padding: 10px;
+  width: 100%;
+  grid-area: 1 / 1 / 9 / 4;
+}
+
+#password {
+  width: 400px;
+  position: relative;
+}
+
+#password input[type="password"],
+#password input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px 12px 12px;
+}
+
+.fa-eye,
+.fa-eye-slash {
+  color: lightgray;
+  cursor: pointer;
+  position: absolute;
+  right: 4%;
+  top: 50%;
+}
+
+.userDets {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "basicInfoH3"
+    "info"
+    "info"
+    "info";
+  grid-area: userDets;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1.7fr 0.3fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . saveButton";
+  grid-area: info;
+}
+
+.saveButton {
+  background-color: aliceblue;
+  border: none;
+  grid-area: saveButton;
+  padding: 10px;
+}
