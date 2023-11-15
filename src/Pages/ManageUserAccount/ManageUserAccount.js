@@ -21,7 +21,6 @@ function ManageUserAccount() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-  
 
   useEffect(() => {
     const fetchUserById = async () => {
@@ -53,105 +52,101 @@ function ManageUserAccount() {
     }
   };
   return (
-    <div className="manageUserContainer">
-      <div className="account-container"></div>
-      <h2 className="accountH2">Manage Account</h2>
-      <div className="basicInfo-container">
-        <h3 className="basicInfoH3">Basic Info</h3>
+    <div className="account-container">
+      <div className="manageUserContainer">
+        <h2 className="accountH2">Manage Account</h2>
         <form onSubmit={handleSubmit}>
-          <div className="profilePicDiv">
-            <div className="editImg">
+          <div className="basicInfo-container">
+            <div className="profilePicDiv">
+              <h4 className="user_Name">
+                {user.first_name} {user.last_name}
+              </h4>
               <div className="userImg">
                 <img
                   className="img"
                   src={user.profile_picture}
                   alt="profilepic"
                 />
-                <div className="content">
-                  <img
-                    className="hoverPic"
-                    src="https://t4.ftcdn.net/jpg/01/07/57/91/360_F_107579101_QVlTG43Fwg9Q6ggwF436MPIBTVpaKKtb.jpg"
-                    alt="profilepic"
+                <div className="pencil">
+                  <EditPicModal
+                    profilePic={user.profile_picture}
+                    handleTextChange={handleTextChange}
                   />
                 </div>
               </div>
             </div>
-            <EditPicModal
-              profilePic={user.profile_picture}
-              handleTextChange={handleTextChange}
-            />
-          </div>
-          <br />
-          
-          <div className="userDets">
-            <h4 className="user_Name">
-              {user.first_name} {user.last_name} - <span>{user.id}</span>
-            </h4>
-            <label htmlFor="username">Username: </label>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              value={user.username}
-              onChange={handleTextChange}
-            />
-            <br />
-            <br />
-            <div id="password">
-              <label htmlFor="password">Password: </label>
-              <input
-                id="password"
-                type={showPassword ? "text" : "password"}
-                name="password"
-                value={user.password}
-                onChange={handleTextChange}
-              />
-              {!showPassword ? (
-                <i
-                  className="fa-solid fa-eye"
-                  id="showPassword"
-                  onClick={() => setShowPassword((prev) => !prev)}
+            <div className="userDets">
+              <h3 className="basicInfoH3">Basic Info</h3>
+              <div className="info">
+                <span>Id: {user.id}</span>
+                <br />
+                <label htmlFor="username">Username: </label>
+                <br />
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  value={user.username}
+                  onChange={handleTextChange}
                 />
-              ) : (
-                <i
-                  className="fa-regular fa-eye-slash"
-                  id="showPassword"
-                  onClick={() => setShowPassword((prev) => !prev)}
+                <br />
+                <div id="password">
+                  <label htmlFor="password">Password: </label>
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={user.password}
+                    onChange={handleTextChange}
+                  />
+                  {!showPassword ? (
+                    <i
+                      className="fa-solid fa-eye"
+                      id="showPassword"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    />
+                  ) : (
+                    <i
+                      className="fa-regular fa-eye-slash"
+                      id="showPassword"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    />
+                  )}
+                </div>
+                <br />
+                <label htmlFor="email">Email:</label>
+                <br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={user.email}
+                  onChange={handleTextChange}
                 />
-              )}
+                <br />
+                <label htmlFor="phone_number">Phone Number:</label>
+                <br />{" "}
+                <input
+                  type="text"
+                  id="phone_number"
+                  name="phone_number"
+                  value={user.phone_number}
+                  onChange={handleTextChange}
+                />
+                <br />
+                <label htmlFor="location">Location: </label>
+                <br />
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  value={user.location}
+                  onChange={handleTextChange}
+                />
+                <br />
+                <button className="saveButton">Save</button>
+              </div>
             </div>
-            <br />
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={user.email}
-              onChange={handleTextChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="phone_number">Phone Number:</label>
-            <input
-              type="text"
-              id="phone_number"
-              name="phone_number"
-              value={user.phone_number}
-              onChange={handleTextChange}
-            />
-            <br />
-            <br />
-            <label htmlFor="location">Location: </label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              value={user.location}
-              onChange={handleTextChange}
-            />
-            <br />
-            <br />
-            <button className="saveButton">Save</button>
           </div>
         </form>
       </div>

@@ -4,7 +4,8 @@ import "./EditPicModal.css";
 function EditPicModal({ profilePic, handleTextChange }) {
   const picModal = document.getElementById("myModal");
 
-  function modalOpen() {
+  function modalOpen(e) {
+    e.preventDefault();
     picModal.style.display = "block";
   }
 
@@ -33,6 +34,7 @@ function EditPicModal({ profilePic, handleTextChange }) {
           <input
             type="text"
             id="profile_picture"
+            name="profile_picture"
             value={profilePic}
             onChange={handleTextChange}
           />

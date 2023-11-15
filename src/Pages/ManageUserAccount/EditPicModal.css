@@ -15,8 +15,8 @@
   background-color: #fefefe;
   border: 1px solid #888;
   margin: 15% auto;
-  padding: 20px;
-  width: 80%;
+  padding: 25px;
+  width: 50%;
 }
 .close {
   color: #aaa;
@@ -30,4 +30,15 @@
   color: black;
   cursor: pointer;
   text-decoration: none;
+}
+
+#myBtn {
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 30px;
+  color: rgb(53, 53, 53);
+  padding: 10px;
+  position: absolute;
+  right: 150px;
+  top: 250px;
 }
