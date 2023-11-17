@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
 import "./UserProfile.css";
 
@@ -23,11 +23,13 @@ function UserProfile() {
     <div className="profile">
       <h2 className="dashboardH2">My Dashboard</h2>
       <div className="userProfile">
-        <img
-          className="user"
-          src={userProfile.profile_picture}
-          alt="profilepic"
-        />
+        <Link to={`/user-profile/${id}/edit`}>
+          <img
+            className="user"
+            src={userProfile.profile_picture}
+            alt="profilepic"
+          />
+        </Link>
         <div className="userInfo">
           <h3>
             {userProfile.first_name} {userProfile.last_name}
