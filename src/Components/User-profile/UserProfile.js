@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
 import "./UserProfile.css";
 
 function UserProfile() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState({});
 
   useEffect(() => {
@@ -47,7 +48,7 @@ function UserProfile() {
       </div>
 
       <div>
-        <button>Edit profile</button>
+        <button onClick={() => navigate(`/edit/${id}`)}>Edit profile</button>
       </div>
 
       <div className="saved">
