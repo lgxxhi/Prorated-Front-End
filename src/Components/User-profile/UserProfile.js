@@ -12,6 +12,7 @@ function UserProfile() {
       try {
         let result = await getSingleUser(id);
         setUserProfile(result.data);
+        console.log(result);
       } catch (e) {
         console.log(e);
       }
@@ -44,6 +45,11 @@ function UserProfile() {
           <span>10</span> Past Projects{" "}
         </p>
       </div>
+
+      <div>
+        <button>Edit profile</button>
+      </div>
+
       <div className="saved">
         <h3>Saved Contractors</h3>
         <div className="picNdesc">
