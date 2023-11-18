@@ -5,7 +5,7 @@
     &__search{
         display: flex;
         justify-content: center;
-        max-height: 300px;
+        max-height: 500px;
         padding: 20px 0% 200px 0%;
         margin-bottom: 50px;
         background-image: url('../Assets/Images/contractor-background.jpg');
@@ -29,6 +29,7 @@
             flex-direction: row;
             align-items: center;;
             margin-left: 2%;
+            margin-top: 20px;
             font-size: 1.3em;
             button{
                 margin: 0% 1%;
