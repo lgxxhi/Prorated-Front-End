@@ -1,0 +1,91 @@
+$secondaryColor: #191919;
+
+.footer{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    background-color: #d0d8df;
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+    padding: 20px 30px;
+    &__info{
+        display: flex;
+        flex-direction: column;
+        a{
+            color: $secondaryColor;
+            text-decoration: none;
+            margin-bottom: 8px;
+            
+        }
+        h1{
+            color: $secondaryColor;
+            margin: 0;
+        }
+        &__social-media{
+            display: flex;
+            flex-direction: row;
+            margin-top: 5px;
+            i{
+                font-size: 30px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__email{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            margin: 10px 0 0 0;
+        }
+        p{
+            margin: 0;
+            color: #00a0fc;
+        }
+        &__form{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__text{
+                width: 100%;
+                margin-top: 10px;
+                border: 0;
+                border-radius: 15px;
+                padding: 2%;
+                &:focus{
+                    outline: none;
+                }
+            }
+            &__submit{
+                margin-top: 20px;
+                width: 20%;
+                padding: 5px 0;
+                background-color: #38b6ff;
+                border: 0;
+                border-radius: 5px;
+                font-size: 1.1em;
+                color: white;
+                &:hover{
+                    background-color: #00a0fc;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+    }
+    &__support{
+        display: flex;
+        flex-direction: column;
+        h2{
+            margin: 0px 0px 10px 0px;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+    }
+}
