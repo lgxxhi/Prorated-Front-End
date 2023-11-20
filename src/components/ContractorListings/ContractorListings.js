@@ -4,15 +4,33 @@ import "./ContractorListings.css";
 import Filter from "../Filter/Filter";
 import ContractorCard from "../ContractorCard/ContractorCard";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  getAllContractorsByServiceId,
+  getServicesResults,
+} from "../../Api/Api";
 
 function ContractorListings(contractorData) {
   const [services, setServices] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeService, setActiveService] = useState("");
 
+  const [dataObj, setDataObj] = useState([]);
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const fetchResults = async () => {
+    try {
+      const result = await getServicesResults(urlParams.get("q"));
+      setDataObj(result[0]);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     setServices(contractorData.contractorData);
     setFiltered(contractorData.contractorData);
+    fetchResults();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // console.log(services);
