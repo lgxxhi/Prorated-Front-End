@@ -37,7 +37,7 @@ function ContractorListings(contractorData) {
   // console.log(filtered);
 
   return (
-    <div className="container">
+    <div className="container contractor-listings-route">
       <div className="main">
         <div className="main-header">
           <div className="left-main">
