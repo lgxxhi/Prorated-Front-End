@@ -11,6 +11,14 @@ function Nav() {
     navigate(location);
   }
 
+  function displaySearchbar() {
+    return window.location.pathname !== "/" ? (
+      <SearchBar location="navbar" />
+    ) : (
+      <></>
+    );
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar__menu">
@@ -21,22 +29,13 @@ function Nav() {
           >
             PRORATED
           </h1>
-          <Link to="/" className="navbar__menu__components__button">
-            Home
+          <Link to="/about-us" className="navbar__menu__components__button">
+            About us
           </Link>
-          <Link to="/profile" className="navbar__menu__components__button">
-            ConProf
-          </Link>
+          {displaySearchbar()}
         </div>
-        <SearchBar location="navbar" />
 
         <div className="navbar__menu__buttons">
-          <button
-            className="navbar__menu__buttons__signup-btn btn"
-            onClick={(e) => handleClick(e, "/signup")}
-          >
-            Sign Up
-          </button>
           <button
             className="navbar__menu__buttons__login-btn btn"
             onClick={(e) => handleClick(e, "/login")}

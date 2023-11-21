@@ -31,6 +31,7 @@ export default function SearchBar(props) {
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.currentTarget.value)}
+            required
           />
           <input type="submit" className="searchBar-nav__submitBtn btn" />
         </form>
@@ -45,6 +46,7 @@ export default function SearchBar(props) {
             placeholder="Search..."
             value={searchNav}
             onChange={(e) => setSearchNav(e.currentTarget.value)}
+            required
           />
           <input type="submit" className="searchBar__submitBtn btn" />
         </form>
