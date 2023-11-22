@@ -1,27 +1,51 @@
-import React from "react";
 import "../../Styles/Global.scss";
+import React, { useEffect, useState } from "react";
+import { getAllServices } from "../../Api/Api";
 import SearchBar from "../../Components/SearchBar";
 import ServiceCard from "./ServiceCard";
 
-export default function homePage() {
-  const defaultServices = require("../../Assets/services.json");
+export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [servicesObj, setServicesObj] = useState({});
 
   const displayServices = () => {
-    return defaultServices.map(({ name, description, status, image }) => {
-      return (
-        <>
-          <ServiceCard
-            data={{
-              name: name,
-              description: description,
-              status: status,
-              image: image,
-            }}
-          />
-        </>
-      );
+    return servicesObj.map(({ name, description, custom, image }) => {
+      if (!custom) {
+        return (
+          <>
+            <ServiceCard
+              data={{
+                name: name,
+                description: description,
+                custom: custom,
+                image: image,
+              }}
+            />
+          </>
+        );
+      } else {
+        return "";
+      }
     });
   };
+
+  const fetchServices = async () => {
+    try {
+      const services = await getAllServices();
+      setServicesObj(services);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
 
   return (
     <div className="home-page">
