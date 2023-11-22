@@ -18,6 +18,10 @@
   padding: 25px;
   width: 50%;
 }
+
+.editPic {
+  width: 100%;
+}
 .close {
   color: #aaa;
   float: right;
@@ -35,10 +39,8 @@
 #myBtn {
   background-color: whitesmoke;
   border: none;
-  border-radius: 30px;
+  border-radius: px;
   color: rgb(53, 53, 53);
-  padding: 10px;
+  padding: 20px 50px;
   position: absolute;
-  right: 150px;
-  top: 250px;
 }
