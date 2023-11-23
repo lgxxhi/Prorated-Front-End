@@ -14,6 +14,7 @@ export default function SearchBar(props) {
     setSearch("");
     setSearchNav("");
     navigate(`/listings?q=${searchQuerie}`);
+    window.location.reload(false);
   }
   switch (props.location) {
     case "navbar":
