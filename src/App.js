@@ -7,23 +7,29 @@ import LogInSignup from "./Pages/LogInSignup";
 import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer";
+import { ContractorsContextProvider } from "./context/ContractorsContext";
 
 function App() {
   return (
-    <div className="App">
-      <div className="content-wrap">
-        <Router>
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<ContractorDetails />} />
-            <Route path="/login-signup" element={<LogInSignup />} />
-            <Route path="/listings" element={<ContractorListings contractorData={contractorData} />}/>
-          </Routes>
-        </Router>
+    <ContractorsContextProvider>
+      <div className="App">
+        <div className="content-wrap">
+          <Router>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<ContractorDetails />} />
+              <Route path="/login-signup" element={<LogInSignup />} />
+              <Route
+                path="/listings"
+                element={<ContractorListings contractorData={contractorData} />}
+              />
+            </Routes>
+          </Router>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ContractorsContextProvider>
   );
 }
 
