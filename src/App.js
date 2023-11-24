@@ -8,6 +8,8 @@ import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer";
 import { ContractorsContextProvider } from "./context/ContractorsContext";
+import Reviews from "./Components/Reviews/Reviews";
+import ContractorReviewDetails from "./Components/ContractorReviewDetails/ContractorReviewDetails";
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
               <Route
                 path="/listings"
                 element={<ContractorListings contractorData={contractorData} />}
+              />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route
+                path="/contractors/:id"
+                element={<ContractorReviewDetails />}
               />
             </Routes>
           </Router>

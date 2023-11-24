@@ -4,7 +4,7 @@ export const ContractorsContext = createContext();
 
 export const ContractorsContextProvider = (props) => {
   const [contractors, setContractors] = useState([]);
-  const [setselectedContractor, setSetselectedContractor] = useState(null);
+  const [selectedContractor, setSelectedContractor] = useState(null);
 
   const addContractor = (contractor) => {
     setContractors([...contractors, contractor]);
@@ -16,8 +16,8 @@ export const ContractorsContextProvider = (props) => {
         contractors,
         setContractors,
         addContractor,
-        setselectedContractor,
-        setselectedContractor,
+        selectedContractor,
+        setSelectedContractor,
       }}
     >
       {props.children}
