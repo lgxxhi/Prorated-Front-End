@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./AddContractorReview.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
 import axios from "../../Api/axios";
 import Reviews from "../Reviews/Reviews";
@@ -9,6 +9,12 @@ function AddContractorReview() {
   const { id } = useParams();
   const { selectedContractor, setSelectedContractor } =
     useContext(ContractorsContext);
+
+  const [name, setName] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState("Rating");
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +28,57 @@ function AddContractorReview() {
     };
     fetchData();
   }, []);
+
+  const handleSumbitReview = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(`contractors/${id}/addReview`, {
+        name,
+        review: reviewText,
+        rating,
+      });
+      navigate(0);
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const [reviewContent, setReviewContent] = useState({
+  //   name: "",
+  //   review: "",
+  //   rating: "Rating",
+  // });
+
+  // console.log(reviewContent);
+
+  // const handleChange = (e) => {
+  //   setReviewContent({
+  //     ...reviewContent,
+  //     [e.target.id]: e.target.value,
+  //   });
+  // };
+
+  // const handleSubmitReview = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const updatedReviewContent = {
+  //       ...reviewContent,
+  //     };
+
+  //     setReviewContent(updatedReviewContent);
+
+  //     const response = await axios.post(`/contractors/${id}/addReview`, {
+  //       ...reviewContent,
+  //     });
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="review-details">
@@ -49,9 +106,46 @@ function AddContractorReview() {
       <div className="hr-tag">
         <hr />
       </div>
-      <div>
-        <h5>Overall Rating</h5>
-      </div>
+      <form>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            id="name"
+            placeholder="name"
+            type="text"
+          />
+        </div>
+        <div>
+          <h5>Overall Rating</h5>
+          <label htmlFor="rating">Rating</label>
+          <select
+            id="rating"
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+            placeholder="rating"
+          >
+            <option disabled>Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="Review">Review</label>
+          <textarea
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            id="review"
+          ></textarea>
+          <button type="submit" onClick={handleSumbitReview}>
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
