@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import { ContractorsContextProvider } from "./context/ContractorsContext";
 import Reviews from "./Components/Reviews/Reviews";
 import ContractorReviewDetails from "./Components/ContractorReviewDetails/ContractorReviewDetails";
+import AddContractorReview from "./Components/AddContractorReview/AddContractorReview";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
               />
               <Route path="/reviews" element={<Reviews />} />
               <Route
-                path="/contractors/:id"
-                element={<ContractorReviewDetails />}
+                path="/contractors/:id/addReview"
+                element={<AddContractorReview />}
               />
             </Routes>
           </Router>
