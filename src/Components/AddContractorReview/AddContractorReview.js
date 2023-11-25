@@ -3,6 +3,7 @@ import "./AddContractorReview.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
 import axios from "../../Api/axios";
+import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import Reviews from "../Reviews/Reviews";
 
 function AddContractorReview() {
@@ -12,7 +13,7 @@ function AddContractorReview() {
 
   const [name, setName] = useState("");
   const [reviewText, setReviewText] = useState("");
-  const [rating, setRating] = useState("Rating");
+  const [rating, setRating] = useState("");
 
   let navigate = useNavigate();
 
@@ -119,20 +120,7 @@ function AddContractorReview() {
         </div>
         <div>
           <h5>Overall Rating</h5>
-          <label htmlFor="rating">Rating</label>
-          <select
-            id="rating"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            placeholder="rating"
-          >
-            <option disabled>Rating</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <StarHoverRating setRating={setRating} />
         </div>
         <div>
           <label htmlFor="Review">Review</label>
