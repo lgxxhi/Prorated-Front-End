@@ -1,1 +1,30 @@
+.review-details h1 {
+  font-size: 40px;
+}
 
+.review-profile {
+  display: flex;
+  align-items: center;
+}
+
+.review-contractor-details {
+  margin-left: 10px;
+}
+
+.guidelines {
+  transform: translateY(-35%);
+  color: #38b6ff;
+}
+.guidelines:hover {
+  color: #00a0fc;
+  cursor: pointer;
+}
+
+.hr-tag {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  width: 95%;
+}

@@ -32,6 +32,10 @@ function App() {
                 path="/contractors/:id/addReview"
                 element={<AddContractorReview />}
               />
+              <Route
+                path="/contractors/:id/details"
+                element={<ContractorReviewDetails />}
+              />
             </Routes>
           </Router>
         </div>
