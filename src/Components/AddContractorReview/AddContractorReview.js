@@ -4,7 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
 import axios from "../../Api/axios";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
-import Reviews from "../Reviews/Reviews";
+import PhotoDragDrop from "../PhotoDragDrop/PhotoDragDrop";
+import StarRating from "../StarRating/StarRating";
 
 function AddContractorReview() {
   const { id } = useParams();
@@ -21,8 +22,8 @@ function AddContractorReview() {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/contractors/${id}`);
-        console.log(response.data);
-        setSelectedContractor(response.data);
+        console.log(response.data.data);
+        setSelectedContractor(response.data.data);
       } catch (error) {
         console.log(error);
       }
@@ -47,45 +48,11 @@ function AddContractorReview() {
     }
   };
 
-  // const [reviewContent, setReviewContent] = useState({
-  //   name: "",
-  //   review: "",
-  //   rating: "Rating",
-  // });
-
-  // console.log(reviewContent);
-
-  // const handleChange = (e) => {
-  //   setReviewContent({
-  //     ...reviewContent,
-  //     [e.target.id]: e.target.value,
-  //   });
-  // };
-
-  // const handleSubmitReview = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const updatedReviewContent = {
-  //       ...reviewContent,
-  //     };
-
-  //     setReviewContent(updatedReviewContent);
-
-  //     const response = await axios.post(`/contractors/${id}/addReview`, {
-  //       ...reviewContent,
-  //     });
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <div className="review-details">
       {selectedContractor && (
         <div>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <h5>Create Review</h5>
           </div>
 
@@ -98,40 +65,66 @@ function AddContractorReview() {
               />
             </div>
             <div className="review-contractor-details">
-              <h1>{selectedContractor.name}</h1>
+              <h1 style={{ fontSize: "30px" }}>
+                {selectedContractor.contractor.name}
+              </h1>
               <p className="guidelines">Review Guidelines</p>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <StarRating
+                  rating={selectedContractor.contractor.average_rating}
+                />
+
+                <span style={{ fontSize: "small" }} className="count-span">
+                  {selectedContractor.contractor.count
+                    ? `(${selectedContractor.contractor.count})`
+                    : 0}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       )}
       <div className="hr-tag">
-        <hr />
+        <hr style={{ marginBottom: "10px" }} />
       </div>
       <form>
         <div>
-          <label htmlFor="name">Name</label>
+          {/* <label htmlFor="name">Name</label> */}
           <input
+            className="form-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
             id="name"
-            placeholder="name"
+            placeholder="Full name"
             type="text"
+            required=""
           />
         </div>
-        <div>
-          <h5>Overall Rating</h5>
-          <StarHoverRating setRating={setRating} />
+        <div className="hr-tag">
+          <hr style={{ marginTop: "10px", marginBottom: "9px" }} />
         </div>
         <div>
-          <label htmlFor="Review">Review</label>
+          <h5 style={{ marginBottom: "2px" }}>Overall Rating</h5>
+          <StarHoverRating setRating={setRating} />
+        </div>
+        <div className="hr-tag">
+          <hr style={{ marginTop: "13px", marginBottom: "10px" }} />
+        </div>
+        <div>
+          <h5 style={{ marginBottom: "10px" }}>Add a Written Review</h5>
           <textarea
+            className="review-input"
+            style={{ width: "100%", height: "200px" }}
             value={reviewText}
             onChange={(e) => setReviewText(e.target.value)}
             id="review"
           ></textarea>
-          <button type="submit" onClick={handleSumbitReview}>
-            Submit
-          </button>
+        </div>
+        <div>
+          <h5>Add Photos</h5>
+          <div>
+            <PhotoDragDrop handleSumbitReview={handleSumbitReview} />
+          </div>
         </div>
       </form>
     </div>

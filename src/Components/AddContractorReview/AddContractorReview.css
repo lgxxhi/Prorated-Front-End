@@ -1,3 +1,7 @@
+.review-details {
+  padding: 10px;
+}
+
 .review-details h1 {
   font-size: 40px;
 }
@@ -26,5 +30,21 @@
 }
 
 hr {
-  width: 95%;
+  width: 100%;
+  border-color: rgba(255, 244, 244, 0.535);
+}
+
+.form-input {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+
+  /* width: 90%; */
+  display: block;
+  /* border-bottom: 0.3rem solid transparent; */
+  transition: all 0.3s;
 }
