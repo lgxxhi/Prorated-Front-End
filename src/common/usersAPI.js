@@ -1,9 +1,9 @@
 import Axios from "./Axios";
 
-const getSingleUser = async (id) => {
+const getSingleUser = async (id, setFn) => {
   try {
     let result = await Axios.get(`/users/${id}`);
-    return result;
+    setFn(result.data);
   } catch (e) {
     return e;
   }

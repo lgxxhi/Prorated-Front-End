@@ -25,8 +25,7 @@ function ManageUserAccount() {
   useEffect(() => {
     const fetchUserById = async () => {
       try {
-        let result = await getSingleUser(id);
-        setUser(result.data);
+        await getSingleUser(id, setUser);
       } catch (e) {
         console.log(e);
       }
@@ -54,10 +53,11 @@ function ManageUserAccount() {
   return (
     <div className="manageUserContainer">
       <h2 className="accountH2">Manage Account</h2>
-      
-      <div className="imgxPencil"><h4 className="user_Name">
-        {user.first_name} {user.last_name}
-      </h4>
+
+      <div className="imgxPencil">
+        <h4 className="user_Name">
+          {user.first_name} {user.last_name}
+        </h4>
         <img className="img" src={user.profile_picture} alt="profilepic" />
         <div className="editMod">
           <EditPicModal

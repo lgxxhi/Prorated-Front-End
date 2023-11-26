@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
+import ProjectListings from "./ProjectListings";
 import "./UserProfile.css";
 
 function UserProfile() {
@@ -11,9 +12,7 @@ function UserProfile() {
   useEffect(() => {
     const fetchUserById = async () => {
       try {
-        let result = await getSingleUser(id);
-        setUserProfile(result.data);
-        console.log(result);
+        await getSingleUser(id, setUserProfile);
       } catch (e) {
         console.log(e);
       }
@@ -45,11 +44,19 @@ function UserProfile() {
           <p>
             <span>10</span> Past Projects{" "}
           </p>
+          <div>
+            <button
+              className="edit"
+              onClick={() => navigate(`/user-profile/${id}/edit`)}
+            >
+              Edit profile
+            </button>
+          </div>
         </div>
       </div>
 
-      <div>
-        <button onClick={() => navigate(`/edit/${id}`)}>Edit profile</button>
+      <div className="listings">
+        <ProjectListings userId={id} />
       </div>
 
       <div className="saved">
@@ -62,7 +69,7 @@ function UserProfile() {
                 src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
                 alt="contractorImg"
               />{" "}
-              <h5 className="contractorH5">Smith Contruction</h5>
+              <h5 className="contractorH5">Smith Construction</h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
