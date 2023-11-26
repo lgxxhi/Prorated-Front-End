@@ -4,6 +4,7 @@ import "./ContractorCard.css";
 import { v4 as uuidv4 } from "uuid";
 
 import ServicesOffered from "../ServicesOffered/ServicesOffered";
+import StarRating from "../StarRating/StarRating";
 import { motion } from "framer-motion";
 
 function ContractorCard({ contractor }) {
@@ -51,10 +52,12 @@ function ContractorCard({ contractor }) {
             </div>
 
             <div className="ratings">
-              {handleStars(contractor.rating)}
-              <span className="review-count">
-                <small>({contractor.reviews})</small>
-              </span>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <StarRating rating={contractor.average_rating} />
+                <span style={{ fontSize: "small" }} className="count-span">
+                  {contractor.count ? `(${contractor.count})` : 0}
+                </span>
+              </div>
             </div>
             <div className="hires">
               <span>
