@@ -36,7 +36,7 @@ function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  console.log(window.scrollY);
+  // console.log(window.scrollY);
 
   return (
     <nav className="navbar">

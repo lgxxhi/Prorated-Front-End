@@ -8,10 +8,13 @@ export default function Footer() {
         <a href="/">About</a>
         <a href="/">Blog</a>
         <div className="footer__info__social-media">
-          <i class="bx bxl-instagram" style={{ color: "#e1306c" }}></i>
-          <i class="bx bxl-twitter" style={{ color: "#1da1f2" }}></i>
-          <i class="bx bxl-facebook-circle" style={{ color: "#4267b2" }}></i>
-          <i class="bx bxl-youtube" style={{ color: "#ff0000" }}></i>
+          <i className="bx bxl-instagram" style={{ color: "#e1306c" }}></i>
+          <i className="bx bxl-twitter" style={{ color: "#1da1f2" }}></i>
+          <i
+            className="bx bxl-facebook-circle"
+            style={{ color: "#4267b2" }}
+          ></i>
+          <i className="bx bxl-youtube" style={{ color: "#ff0000" }}></i>
         </div>
       </div>
       <div className="footer__email">

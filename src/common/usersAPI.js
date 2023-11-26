@@ -18,4 +18,13 @@ const updateUserById = async (id, user) => {
   }
 };
 
-export { getSingleUser, updateUserById };
+const fetchContractorDetails = async (id) => {
+  try {
+    let result = await Axios.get(`/contractors/${id}`);
+    return result;
+  } catch (e) {
+    return e;
+  }
+};
+
+export { getSingleUser, updateUserById, fetchContractorDetails };
