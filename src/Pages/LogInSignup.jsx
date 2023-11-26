@@ -17,12 +17,15 @@ function LoginSignup() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const navigate = useNavigate();
 
   const url = process.env.REACT_APP_API_URL;
 
   const handleToggle = () => {
+    setError(null);
     setIsLogin(!isLogin);
   };
 
@@ -33,6 +36,31 @@ function LoginSignup() {
 
     if (isLogin) {
       // Login
+      setIsLoggedIn(true);
+
+      try {
+        const response = await axios.get(`${url}/users`, {
+          params: { email: user.email, password: user.password },
+        });
+
+        const foundUser = response.data[0];
+
+        if (foundUser) {
+          setUserData(foundUser);
+        } else {
+          console.error("User not found");
+          setError("Invalid credentials. Please try again.");
+          setIsLoggedIn(false);
+        }
+      } catch (error) {
+        console.error("Error logging in:", error.message);
+        setError("Login failed. Please try again.");
+      } finally {
+        setIsLoading(false);
+        if (userData) {
+          navigate("/");
+        }
+      }
     } else {
       // Sign up
       try {
@@ -46,6 +74,16 @@ function LoginSignup() {
         setIsLoading(false);
       }
     }
+    setUser({
+      email: "",
+      password: "",
+      username: "",
+      first_name: "",
+      last_name: "",
+      phone_number: "",
+      profile_picture: "",
+      location: "",
+    });
   };
 
   const handleChange = (e) => {
@@ -55,6 +93,7 @@ function LoginSignup() {
   return (
     <div className="login-signup container">
       <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+
       {isLoading ? (
         <div className="loader"></div>
       ) : (
