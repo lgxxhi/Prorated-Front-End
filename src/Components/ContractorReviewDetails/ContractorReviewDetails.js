@@ -28,16 +28,15 @@ function ContractorReviewDetails() {
   return (
     <div>
       {selectedContractor && (
-        <div className="review-details">
-          <h1>{selectedContractor.contractor.name}</h1>
-          <div className="reviews-container">
+        <div className="review-details-div">
+          {/* <div className="reviews-container">
             <StarRating rating={selectedContractor.contractor.average_rating} />
             <span style={{ fontSize: "small" }} className="count-span">
               {selectedContractor.contractor.count
                 ? `(${selectedContractor.contractor.count})`
                 : 0}
             </span>
-          </div>
+          </div> */}
           <div className="reviews-div">
             <Reviews
               contractor={selectedContractor}

@@ -34,6 +34,7 @@ function ContractorCard({ contractor }) {
       className="contractor-card"
     >
       <Link
+        to={`/profile/${contractor.id}`}
         key={contractor.id}
         style={{ textDecoration: "none" }}
         className="profile-card"
@@ -87,15 +88,6 @@ function ContractorCard({ contractor }) {
           </div>
           <button className="more-details">More Details</button>
         </div>
-        {/* <div className="services">
-          <div className="show">
-            <i className="bx bx-chevron-down"></i>
-          </div>
-
-          <div className="hide">
-            <ServicesOffered contractorData={service} />
-          </div>
-        </div> */}
       </Link>
     </motion.div>
   );

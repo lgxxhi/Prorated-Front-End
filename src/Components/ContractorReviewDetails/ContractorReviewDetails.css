@@ -6,3 +6,7 @@
   display: flex;
   align-items: center;
 }
+
+.review-details-div {
+  margin-top: 20px;
+}

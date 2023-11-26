@@ -40,7 +40,7 @@ function AddContractorReview() {
         review: reviewText,
         rating,
       });
-      navigate(0);
+      navigate(`/profile/${id}`);
 
       console.log(response);
     } catch (error) {
