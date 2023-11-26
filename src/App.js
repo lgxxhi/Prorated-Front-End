@@ -4,6 +4,8 @@ import ContractorDetails from "./Components/ContractorDetails/ContractorDetails"
 import ContractorListings from "./Components/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LogInSignup";
+import UserProfile from "./Components/User-profile/UserProfile";
+import ManageUserAccount from "./Components/ManageUserAccount/ManageUserAccount";
 import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer";
@@ -14,6 +16,7 @@ import AddContractorReview from "./Components/AddContractorReview/AddContractorR
 
 function App() {
   return (
+
     <ContractorsContextProvider>
       <div className="App">
         <div className="content-wrap">
@@ -21,7 +24,14 @@ function App() {
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<ContractorDetails />} />
+              <Route path="/profile/:id" element={<ContractorDetails />} />
+                     <Route
+              path="/user-profile/:id/edit"
+              element={<ManageUserAccount />}
+            />
+                  <Route path="/user-profile/:id" element={<UserProfile />} />
+                
+                
               <Route path="/login-signup" element={<LogInSignup />} />
               <Route
                 path="/listings"
@@ -40,6 +50,7 @@ function App() {
           </Router>
         </div>
         <Footer />
+
       </div>
     </ContractorsContextProvider>
   );
