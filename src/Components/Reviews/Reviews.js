@@ -1,16 +1,19 @@
 import React from "react";
 import StarRating from "../StarRating/StarRating";
+import moment from "moment";
 import "./Reviews.css";
 
-function Reviews({ reviews }) {
-  // console.log(reviews);
+function Reviews({ reviews, contractor }) {
+  console.log(contractor);
+
   return (
-    <div>
+    <div className="review-card-container">
       {reviews.map((review) => {
         return (
           <div className="review-card">
             <div className="review-card-header">
               <span>{review.name}</span>
+              <div> {moment(review.date).fromNow()}</div>
               <span>
                 <StarRating rating={review.rating} />
               </span>

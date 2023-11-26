@@ -68,17 +68,19 @@ function AddContractorReview() {
               <h1 style={{ fontSize: "30px" }}>
                 {selectedContractor.contractor.name}
               </h1>
-              <p className="guidelines">Review Guidelines</p>
+              <button className="guidelines open-modal-btn">
+                Review Guidelines
+              </button>
+
               <div style={{ display: "flex", alignItems: "center" }}>
                 <StarRating
                   rating={selectedContractor.contractor.average_rating}
                 />
-
                 <span style={{ fontSize: "small" }} className="count-span">
                   {selectedContractor.contractor.count
                     ? `(${selectedContractor.contractor.count})`
                     : 0}
-                </span>
+                </span>{" "}
               </div>
             </div>
           </div>

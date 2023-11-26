@@ -39,7 +39,10 @@ function ContractorReviewDetails() {
             </span>
           </div>
           <div className="reviews-div">
-            <Reviews reviews={selectedContractor.reviews} />
+            <Reviews
+              contractor={selectedContractor}
+              reviews={selectedContractor.reviews}
+            />
           </div>
         </div>
       )}
