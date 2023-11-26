@@ -59,7 +59,7 @@ function Nav() {
         <div className="navbar__menu__buttons">
           <button
             className="navbar__menu__buttons__login-btn btn"
-            onClick={(e) => handleClick(e, "/login")}
+            onClick={(e) => handleClick(e, "/login-signup")}
           >
             Log In
           </button>
