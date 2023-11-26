@@ -21,12 +21,6 @@ function Nav() {
           >
             PRORATED
           </h1>
-          <Link to="/" className="navbar__menu__components__button">
-            Home
-          </Link>
-          <Link to="/profile" className="navbar__menu__components__button">
-            ConProf
-          </Link>
         </div>
         <SearchBar location="navbar" />
 

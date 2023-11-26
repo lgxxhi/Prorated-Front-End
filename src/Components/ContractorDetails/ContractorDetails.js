@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchContractorDetails } from "../../common/usersAPI";
 import "./ContractorDetails.css";
 
 function ContractorDetails() {
+  const { id } = useParams();
+  const [contractorProfile, setContractorProfile] = useState({});
+  useEffect(() => {
+    const fetchContractor = async () => {
+      try {
+        let result = await fetchContractorDetails(id);
+        setContractorProfile(result.data);
+        console.log(result.data);
+      } catch (error) {
+        console.error("Error fetching contractor details:", error);
+      }
+    };
+    fetchContractor();
+  }, [id]);
+
   const contractor = {
     name: "John Doe",
     jobTitle: "Electrician",
@@ -37,42 +54,33 @@ function ContractorDetails() {
   return (
     <div className="contractor-profile-container">
       <div className="container-details">
-        <h3>{contractor.name}</h3>
+        <h3>{contractorProfile.name}</h3>
         <img src={contractor.profileImageSrc} alt={contractor.name} />
-        <p>Job Title: {contractor.jobTitle}</p>
-        <p>Location: {contractor.location}</p>
-        <p>Experience: {contractor.experience}</p>
-        <p>Contact: {contractor.contact}</p>
-        <p>Phone Number: {contractor.phoneNumber}</p>
+        <p>Job Title: {contractorProfile.jobtitle}</p>
+        <p>Location: {contractorProfile.location}</p>
+        <p>Experience: {contractorProfile.experience}</p>
+        <p>Contact: {contractorProfile.contact}</p>
+        <p>Phone Number: {contractorProfile.phonenumber}</p>
       </div>
       <div>
-        <h3>About {contractor.name}</h3>
-        <p>{contractor.description}</p>
+        <h3>About {contractorProfile.name}</h3>
+        <p>{contractorProfile.description}</p>
       </div>
       <div className="past-jobs">
         <h3>Past Jobs</h3>
-        {contractor.pastJobs.map((job, index) => (
-          <div key={index} className="past-job-card">
-            <img src={job.img} alt={`Job ${index + 1}`} />
-            <h3>{job.title}</h3>
-            <div className="reviews">
-              {job.reviews.map((review, i) => (
-                <p key={i} className="review">
-                  {review}
-                </p>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="service-offered">
-        <h3>Services Offered</h3>
-        <ul>
-          {contractor.servicesOffered.map((service, index) => (
-            <li key={index}>{service}</li>
-          ))}
-        </ul>
+        {contractorProfile.pastjobs && contractorProfile.pastjobs.length > 0 ? (
+          <ul>
+            {contractorProfile.pastjobs.map((job, index) => (
+              <li key={index}>
+                <h3>{job.title}</h3>
+                <p>{job.description}</p>
+                <img src={job.image} alt={`Job ${index + 1}`} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No past jobs available</p>
+        )}
       </div>
     </div>
   );

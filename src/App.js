@@ -18,7 +18,7 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<ContractorDetails />} />
+            <Route path="/profile/:id" element={<ContractorDetails />} />
             <Route path="/user-profile/:id" element={<UserProfile />} />
             <Route
               path="/user-profile/:id/edit"
