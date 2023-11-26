@@ -20,7 +20,7 @@ function EditPicModal({ profilePic, handleTextChange }) {
   };
 
   return (
-    <div>
+    <div className="pencil">
       <button onClick={modalOpen} id="myBtn">
         <i className="fa-solid fa-pencil"></i>
       </button>
@@ -32,6 +32,7 @@ function EditPicModal({ profilePic, handleTextChange }) {
           </span>
           <h4>Edit Profile Picture</h4>
           <input
+            className="editPic"
             type="text"
             id="profile_picture"
             name="profile_picture"
