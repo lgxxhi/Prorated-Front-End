@@ -1,0 +1,8 @@
+.review-details {
+  margin-top: 75px;
+}
+
+.reviews-container {
+  display: flex;
+  align-items: center;
+}

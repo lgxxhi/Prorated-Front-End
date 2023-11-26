@@ -4,9 +4,10 @@ import "./ContractorCard.css";
 import { v4 as uuidv4 } from "uuid";
 
 import ServicesOffered from "../ServicesOffered/ServicesOffered";
+import StarRating from "../StarRating/StarRating";
 import { motion } from "framer-motion";
 
-function ContractorCard({ service }) {
+function ContractorCard({ contractor }) {
   function handleStars(rating) {
     let rounded = Math.round(rating / 0.5) * 0.5;
     let arr = [];
@@ -33,24 +34,30 @@ function ContractorCard({ service }) {
       className="contractor-card"
     >
       <Link
-        key={service.id}
+        key={contractor.id}
         style={{ textDecoration: "none" }}
         className="profile-card"
       >
         <div className="profile-split">
           <div className="image">
-            <img className="profile-img" alt="#" src={service.img} />
+            <img
+              className="profile-img"
+              alt="#"
+              src="https://picsum.photos/200/300"
+            />
           </div>
           <div className="card-content">
             <div className="text-data">
-              <span className="name">{service.business_name}</span>
+              <span className="name">{contractor.name}</span>
             </div>
 
             <div className="ratings">
-              {handleStars(service.rating)}
-              <span className="review-count">
-                <small>({service.reviews})</small>
-              </span>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <StarRating rating={contractor.average_rating} />
+                <span style={{ fontSize: "small" }} className="count-span">
+                  {contractor.count ? `(${contractor.count})` : 0}
+                </span>
+              </div>
             </div>
             <div className="hires">
               <span>
@@ -60,7 +67,9 @@ function ContractorCard({ service }) {
               <span>
                 <i className="bx bx-been-here"></i>
                 <small>
-                  <span className="bold">Area:</span> Manhattan, Brooklyn
+                  <span className="bold">
+                    Area: <span>{contractor.location}</span>
+                  </span>
                 </small>
               </span>
             </div>
@@ -78,7 +87,7 @@ function ContractorCard({ service }) {
           </div>
           <button className="more-details">More Details</button>
         </div>
-        <div className="services">
+        {/* <div className="services">
           <div className="show">
             <i className="bx bx-chevron-down"></i>
           </div>
@@ -86,7 +95,7 @@ function ContractorCard({ service }) {
           <div className="hide">
             <ServicesOffered contractorData={service} />
           </div>
-        </div>
+        </div> */}
       </Link>
     </motion.div>
   );
