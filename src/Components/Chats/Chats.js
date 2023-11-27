@@ -35,64 +35,54 @@ export default function Chats() {
   const [loading, setLoading] = useState(true);
   const { authUser } = useAuth();
   const navigate = useNavigate();
-  async function handleLogout() {
-    await auth.signOut();
-    navigate("/");
-  }
+  //   console.log(authUser.email, authUser.uid);
 
   useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
 
-      if (!authUser || authUser === null) {
-        navigate("/");
-        return;
-      }
+      //   if (!authUser || authUser === null) {
+      //     navigate("/");
+      //     return;
+      //   }
 
       axios
         .get("https://api.chatengine.io/users/me/", {
           headers: {
-            "project-id": "784bdb9e-8724-4f63-8ab6-3c10d59f74a7",
-            "user-name": authUser.email,
-            "user-secret": authUser.uid,
+            "Project-ID": "4c4dd93c-8b8a-4c2e-8f06-e269442b9589",
+            "User-Name": "michaelreyes@pursuit.org",
+            "User-Secret": "pP1nQFv4NSUWUgrJIrSKQMuK58v2",
           },
         })
         .then(() => setLoading(false))
         .catch((e) => {
-          let formdata = new FormData();
-          formdata.append("email", authUser.email);
-          formdata.append("username", authUser.email);
-          formdata.append("secret", authUser.uid);
+          //   let formdata = new FormData();
+          //   formdata.append("email", authUser.email);
+          //   formdata.append("username", authUser.email);
+          //   formdata.append("secret", authUser.uid);
 
-          axios
-            .post("https://api.chatengine.io/users/", formdata, {
-              headers: {
-                "private-key": process.env.REACT_APP_CHAT_ENGINE_KEY,
-              },
-            })
-            .then(() => setLoading(false))
-            .catch((e) => console.log("e", e.response));
+          //   axios
+          //     .post("https://api.chatengine.io/users/", formdata, {
+          //       headers: {
+          //         "private-key": "e9414631-c47a-4aea-984b-93403eba4a86",
+          //       },
+          //     })
+          //     .then(() => setLoading(false))
+          //     .catch((e) => console.log("e", e.response));
+          console.log(e);
         });
     }
   }, [authUser, navigate]);
 
-  if (!authUser || loading) return <div />;
+  //   if (!authUser || loading) return <div />;
 
   return (
     <div className="chats-page">
-      <div className="nav-bar">
-        <div className="logo-tab">Unichat</div>
-
-        <div onClick={handleLogout} className="logout-tab">
-          Logout
-        </div>
-      </div>
-
       <ChatEngine
         height="calc(100vh - 66px)"
-        projectID="784bdb9e-8724-4f63-8ab6-3c10d59f74a7"
-        userName={authUser.email}
-        userSecret={authUser.uid}
+        projectID="4c4dd93c-8b8a-4c2e-8f06-e269442b9589"
+        userName="michaelreyes@pursuit.org"
+        userSecret="pP1nQFv4NSUWUgrJIrSKQMuK58v2"
       />
     </div>
   );
