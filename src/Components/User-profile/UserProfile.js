@@ -49,7 +49,9 @@ function UserProfile() {
       </div>
 
       <div>
-        <button onClick={() => navigate(`/edit/${id}`)}>Edit profile</button>
+        <button onClick={() => navigate(`/user-profile/${id}/edit`)}>
+          Edit profile
+        </button>
       </div>
 
       <div className="saved">

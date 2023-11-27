@@ -43,7 +43,6 @@ function ContractorDetails() {
             </div>
           </div>
         </div>
-
         <p>Location: {contractorProfile.location}</p>
         <p>Experience: {contractorProfile.experience} years</p>
         <p>Contact: {contractorProfile.contact}</p>

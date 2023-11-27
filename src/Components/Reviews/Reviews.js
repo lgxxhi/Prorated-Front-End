@@ -26,12 +26,9 @@ function Reviews({ reviews, contractor }) {
             <div className="contact">
               <span>
                 <i
-                  onClick={() => navigate("/login-signup")}
+                  onClick={() => navigate("/chats")}
                   className="bx bx-message-rounded"
                 ></i>
-              </span>
-              <span>
-                <small> Contact For Price</small>
               </span>
             </div>
           </div>
