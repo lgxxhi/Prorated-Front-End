@@ -13,7 +13,8 @@ export default function SearchBar(props) {
     let searchQuerie = e.target.children[1].value;
     setSearch("");
     setSearchNav("");
-    navigate(`/results?q=${searchQuerie}`);
+    navigate(`/listings?q=${searchQuerie}`);
+    window.location.reload(false);
   }
   switch (props.location) {
     case "navbar":
@@ -31,6 +32,7 @@ export default function SearchBar(props) {
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.currentTarget.value)}
+            required
           />
           <input type="submit" className="searchBar-nav__submitBtn btn" />
         </form>
@@ -45,6 +47,7 @@ export default function SearchBar(props) {
             placeholder="Search..."
             value={searchNav}
             onChange={(e) => setSearchNav(e.currentTarget.value)}
+            required
           />
           <input type="submit" className="searchBar__submitBtn btn" />
         </form>

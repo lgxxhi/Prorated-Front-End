@@ -1,19 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Global.scss";
 import SearchBar from "./SearchBar";
 
 function Nav() {
   const navigate = useNavigate();
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   function handleClick(e, location) {
     e.preventDefault();
     navigate(location);
   }
 
+  function displaySearchbar() {
+    return window.location.pathname !== "/" ? (
+      <SearchBar location="navbar" />
+    ) : (
+      <></>
+    );
+  }
+
+  function handleScroll() {
+    const currentScrollPos = window.scrollY;
+    if (currentScrollPos > prevScrollPos && currentScrollPos > 100) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    setPrevScrollPos(currentScrollPos);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  // console.log(window.scrollY);
+
   return (
     <nav className="navbar">
-      <div className="navbar__menu">
+      <div
+        className={`navbar__menu ${visible ? "navbar-show" : "navbar-hide"}`}
+      >
         <div className="navbar__menu__components">
           <h1
             onClick={(e) => handleClick(e, "/")}
@@ -21,25 +50,16 @@ function Nav() {
           >
             PRORATED
           </h1>
-          <Link to="/" className="navbar__menu__components__button">
-            Home
+          <Link to="/about-us" className="navbar__menu__components__button">
+            About us
           </Link>
-          <Link to="/profile" className="navbar__menu__components__button">
-            ConProf
-          </Link>
+          {displaySearchbar()}
         </div>
-        <SearchBar location="navbar" />
 
         <div className="navbar__menu__buttons">
           <button
-            className="navbar__menu__buttons__signup-btn btn"
-            onClick={(e) => handleClick(e, "/signup")}
-          >
-            Sign Up
-          </button>
-          <button
             className="navbar__menu__buttons__login-btn btn"
-            onClick={(e) => handleClick(e, "/login")}
+            onClick={(e) => handleClick(e, "/login-signup")}
           >
             Log In
           </button>
