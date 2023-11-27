@@ -30,9 +30,6 @@ function Reviews({ reviews, contractor }) {
                   className="bx bx-message-rounded"
                 ></i>
               </span>
-              <span>
-                <small> Contact </small>
-              </span>
             </div>
           </div>
         );

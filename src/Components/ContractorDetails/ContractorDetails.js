@@ -4,6 +4,7 @@ import { fetchContractorDetails } from "../../common/usersAPI";
 import "./ContractorDetails.css";
 import Reviews from "../Reviews/Reviews";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
+import StarRating from "../StarRating/StarRating";
 
 function ContractorDetails() {
   const { id } = useParams();
@@ -26,11 +27,22 @@ function ContractorDetails() {
   return (
     <div className="contractor-profile-container">
       <div className="container-details">
-        <h3>{contractorProfile.name}</h3>
-        <div className="image">
-          <img className="profile-img" src="https://picsum.photos/200/300" />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="image">
+            <img className="profile-img" src="https://picsum.photos/200/300" />
+          </div>
+          <div style={{ marginLeft: "10px" }}>
+            <h3>{contractorProfile.name}</h3>
+            <div className="ratings">
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <StarRating rating={contractorProfile.average_rating} />
+                <span style={{ fontSize: "small" }} className="count-span">
+                  {contractorProfile.count ? `(${contractorProfile.count})` : 0}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-
         <p>Location: {contractorProfile.location}</p>
         <p>Experience: {contractorProfile.experience} years</p>
         <p>Contact: {contractorProfile.contact}</p>

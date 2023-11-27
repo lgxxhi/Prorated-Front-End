@@ -16,3 +16,7 @@
   align-items: center;
   text-align: center;
 }
+
+.contact i {
+  cursor: pointer;
+}
