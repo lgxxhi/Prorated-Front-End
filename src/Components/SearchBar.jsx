@@ -16,41 +16,28 @@ export default function SearchBar(props) {
     navigate(`/listings?q=${searchQuerie}`);
     window.location.reload(false);
   }
-  switch (props.location) {
-    case "navbar":
-      return (
-        <form
-          className="searchBar-nav"
-          onSubmit={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          <img src={searchIcon} alt="" />
-          <input
-            type="search"
-            className="searchBar-nav__input"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => setSearch(e.currentTarget.value)}
-            required
-          />
-          <input type="submit" className="searchBar-nav__submitBtn btn" />
-        </form>
-      );
-    default:
-      return (
-        <form className="searchBar" onSubmit={(e) => handleSubmit(e)}>
-          <img src={searchIcon} alt="" />
-          <input
-            type="search"
-            className="searchBar__input"
-            placeholder="Search..."
-            value={searchNav}
-            onChange={(e) => setSearchNav(e.currentTarget.value)}
-            required
-          />
-          <input type="submit" className="searchBar__submitBtn btn" />
-        </form>
-      );
-  }
+  return (
+    <form
+      className={`searchBar ${
+        props.location !== "navbar" ? "searchBar__homeSize" : ""
+      }`}
+      onSubmit={(e) => handleSubmit(e)}
+    >
+      <i class="fa fa-search searchBar__icon"></i>
+      <input
+        type="search"
+        className="searchBar__input"
+        placeholder="Search..."
+        value={searchNav}
+        onChange={(e) => setSearchNav(e.currentTarget.value)}
+        required
+      />
+      <input
+        type="submit"
+        className={`btn searchBar__submitBtn ${
+          props.location === "navbar" ? "searchBar__nav" : ""
+        }`}
+      />
+    </form>
+  );
 }
