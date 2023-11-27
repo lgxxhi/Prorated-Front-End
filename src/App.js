@@ -14,6 +14,7 @@ import { ContractorsContextProvider } from "./context/ContractorsContext";
 import Reviews from "./Components/Reviews/Reviews";
 import ContractorReviewDetails from "./Components/ContractorReviewDetails/ContractorReviewDetails";
 import AddContractorReview from "./Components/AddContractorReview/AddContractorReview";
+import Chats from "./Components/Chats/Chats";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
                   path="/contractors/:id/details"
                   element={<ContractorReviewDetails />}
                 />
+                <Route path="/chats" element={<Chats />} />
               </Routes>
             </AuthProvider>
           </Router>

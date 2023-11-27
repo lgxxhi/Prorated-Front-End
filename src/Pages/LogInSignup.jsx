@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../Components/Firebase/Firebase";
+import { useAuth } from "../Components/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -23,11 +24,10 @@ function LoginSignup() {
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState(null);
-
   const navigate = useNavigate();
+  const { setAuthUser } = useAuth();
 
-  const url = process.env.REACT_APP_API_URL;
+  const url = process.env.REACT_APP_API_KEY;
 
   const handleToggle = () => {
     setError(null);
@@ -49,37 +49,19 @@ function LoginSignup() {
           user.email,
           user.password
         );
-        console.log(userCredentials);
+        setAuthUser(userCredentials.user);
+        const response = await axios.post(`${url}users/login`, {
+          email: user.email,
+        });
+        navigate(`/user-profile/${response.data.id}`);
+        // console.log(userCredentials);
+        // console.log(response.data);
       } catch (error) {
         console.log(error);
         setError("Sign-in failed. Please check your email and password.");
       } finally {
         setIsLoading(false);
       }
-
-      // try {
-      //   const response = await axios.get(`${url}/users`, {
-      //     params: { email: user.email, password: user.password },
-      //   });
-
-      //   const foundUser = response.data[0];
-
-      //   if (foundUser) {
-      //     setUserData(foundUser);
-      //   } else {
-      //     console.error("User not found");
-      //     setError("Invalid credentials. Please try again.");
-      //     setIsLoggedIn(false);
-      //   }
-      // } catch (error) {
-      //   console.error("Error logging in:", error.message);
-      //   setError("Login failed. Please try again.");
-      // } finally {
-      //   setIsLoading(false);
-      //   if (userData) {
-      //     navigate("/");
-      //   }
-      // }
     } else {
       // Sign up
       try {
@@ -88,7 +70,8 @@ function LoginSignup() {
           user.email,
           user.password
         );
-        const response = await axios.post(`${url}/users`, user);
+        console.log(user);
+        const response = await axios.post(`${url}users`, user);
 
         console.log(userCredentials, response);
         alert("New account created!");
