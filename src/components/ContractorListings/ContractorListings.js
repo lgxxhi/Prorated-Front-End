@@ -26,6 +26,7 @@ function ContractorListings(props) {
       const response = await getServicesResults(urlParams.get("q"));
       // setContractors(response);
       // console.log(contractors);
+      console.log(response);
       setDataObj(response);
       setLoading(false);
       console.log(response);
