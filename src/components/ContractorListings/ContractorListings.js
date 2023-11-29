@@ -12,43 +12,45 @@ import axios from "../../Api/axios";
 import { ContractorsContext } from "../../context/ContractorsContext";
 
 function ContractorListings(props) {
-  const [services, setServices] = useState([]);
-  const [filtered, setFiltered] = useState([]);
-  const [activeService, setActiveService] = useState("");
-
-  const { contractors, setContractors } = useContext(ContractorsContext);
-
+  // const [services, setServices] = useState([]);
+  // const [filtered, setFiltered] = useState([]);
+  // const [activeService, setActiveService] = useState("");
+  // const { contractors, setContractors } = useContext(ContractorsContext);
+  const [loading, setLoading] = useState(true);
   const [dataObj, setDataObj] = useState([]);
+
   const urlParams = new URLSearchParams(window.location.search);
 
-  // const fetchResults = async () => {
-  //   try {
-  //     const response = await getServicesResults(urlParams.get("q"));
-
-  //     setContractors(response);
-
-  //     // console.log(contractors);
-  //     // setDataObj(response[0]);
-  //     // console.log(response);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const fetchResults = async () => {
+    try {
+      const response = await getServicesResults(urlParams.get("q"));
+      // setContractors(response);
+      // console.log(contractors);
+      setDataObj(response);
+      setLoading(false);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    async function fetchResults() {
-      try {
-        const response = await axios.get(`/contractors`);
-        setContractors(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    // async function fetchResults() {
+    //   try
+    //     const response = await axios.get(`/contractors`);
+    //     setContractors(response.data);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
     fetchResults();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // console.log(services);
   // console.log(filtered);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="container contractor-listings-route">
@@ -59,7 +61,7 @@ function ContractorListings(props) {
               <span className="results-for">Results For</span>
               <span className="service-found"> Contractors</span>
             </h2>
-            <p>{contractors.length} services available </p>
+            <p>{dataObj.length} services available </p>
           </div>
 
           {/* <Filter
@@ -72,7 +74,7 @@ function ContractorListings(props) {
 
         <motion.div layout className="main-content">
           <AnimatePresence>
-            {contractors.map((contractor) => {
+            {dataObj.map((contractor) => {
               return (
                 <ContractorCard key={contractor.id} contractor={contractor} />
               );
