@@ -17,7 +17,6 @@ function LoginSignup() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
   const navigate = useNavigate();
@@ -35,9 +34,6 @@ function LoginSignup() {
     setIsLoading(true);
 
     if (isLogin) {
-      // Login
-      setIsLoggedIn(true);
-
       try {
         const response = await axios.get(`${url}/users`, {
           params: { email: user.email, password: user.password },
@@ -50,7 +46,6 @@ function LoginSignup() {
         } else {
           console.error("User not found");
           setError("Invalid credentials. Please try again.");
-          setIsLoggedIn(false);
         }
       } catch (error) {
         console.error("Error logging in:", error.message);
@@ -62,7 +57,6 @@ function LoginSignup() {
         }
       }
     } else {
-      // Sign up
       try {
         const response = await axios.post(`${url}/users`, user);
         console.log("User signed up successfully!", response.data);
