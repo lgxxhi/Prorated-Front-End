@@ -32,6 +32,7 @@ export default function Home() {
   const fetchServices = async () => {
     try {
       const services = await getAllServices();
+      console.log(services);
       setServicesObj(services);
       setLoading(false);
     } catch (error) {
