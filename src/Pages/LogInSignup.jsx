@@ -184,9 +184,9 @@ function LoginSignup() {
           </form>
           <p>
             {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
+            <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
-            </a>
+            </button>
           </p>
           {error && <p className="error-message">{error}</p>}
         </div>
