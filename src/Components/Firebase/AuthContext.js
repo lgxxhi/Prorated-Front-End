@@ -9,20 +9,18 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [authUser, setAuthUser] = useState({});
-
+  const [authUser, setAuthUser] = useState(null);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setAuthUser(user);
     });
 
-    return unsubscribe;
+    return () => unsubscribe();
   }, []);
 
-  // Include setAuthUser in the context value
   const contextValue = {
     authUser,
-    setAuthUser, // Include the setAuthUser function
+    setAuthUser,
   };
 
   return (

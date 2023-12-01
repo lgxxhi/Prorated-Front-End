@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ContractorsContext } from "../context/ContractorsContext";
 import { auth } from "../Components/Firebase/Firebase";
 import { useAuth } from "../Components/Firebase/AuthContext";
 import {
@@ -26,6 +27,7 @@ function LoginSignup() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
+  const { setNewUserData } = useContext(ContractorsContext);
 
   const url = process.env.REACT_APP_API_KEY;
 
@@ -41,7 +43,6 @@ function LoginSignup() {
 
     if (isLogin) {
       // Login
-      setIsLoggedIn(true);
 
       try {
         const userCredentials = await signInWithEmailAndPassword(
@@ -53,6 +54,9 @@ function LoginSignup() {
         const response = await axios.post(`${url}users/login`, {
           email: user.email,
         });
+
+        setNewUserData(response.data);
+
         navigate(`/user-profile/${response.data.id}`);
         // console.log(userCredentials);
         // console.log(response.data);
