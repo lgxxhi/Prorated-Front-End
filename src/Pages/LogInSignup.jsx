@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import "./LoginSignup.css";
+import "../Styles/LoginSignup.scss";
 
 function LoginSignup() {
   const [user, setUser] = useState({
@@ -104,13 +104,14 @@ function LoginSignup() {
   };
 
   return (
-    <div className="login-signup container">
-      <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-
+    <div className="login-signup">
       {isLoading ? (
         <div className="loader"></div>
       ) : (
-        <div className="form container">
+        <div className="login-signup__form">
+          <h2 className="login-signup__form__title">
+            {isLogin ? "Login" : "Sign Up"}
+          </h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email: </label>
             <input
@@ -197,11 +198,15 @@ function LoginSignup() {
                 />
               </div>
             )}
-            <button type="submit" disabled={isLoading}>
-              {isLogin ? "Login" : "Sign Up"}
-            </button>
           </form>
-          <p>
+          <button
+            className="login-signup__submitbtn"
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLogin ? "Login" : "Sign Up"}
+          </button>
+          <p className="login-signup__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <a href="#" onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
