@@ -198,20 +198,22 @@ function LoginSignup() {
                 />
               </div>
             )}
+            <button
+              className="login-signup__form__submitbtn"
+              type="submit"
+              disabled={isLoading}
+            >
+              {isLogin ? "Login" : "Sign Up"}
+            </button>
+            <p className="login-signup__form__signUp">
+              {isLogin
+                ? "Don't have an account? "
+                : "Already have an account? "}
+              <a href="#" onClick={handleToggle} disabled={isLoading}>
+                {isLogin ? "Sign up" : "Login"}
+              </a>
+            </p>
           </form>
-          <button
-            className="login-signup__submitbtn"
-            type="submit"
-            disabled={isLoading}
-          >
-            {isLogin ? "Login" : "Sign Up"}
-          </button>
-          <p className="login-signup__signUp">
-            {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
-              {isLogin ? "Sign up" : "Login"}
-            </a>
-          </p>
           {error && <p className="error-message">{error}</p>}
         </div>
       )}
