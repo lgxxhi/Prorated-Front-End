@@ -7,7 +7,7 @@ const ContractorProfileImages = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleShowModal = (image) => {
-    setSelectedImage(image);
+    setSelectedImage(image.image_url);
     setShowModal(true);
   };
 
