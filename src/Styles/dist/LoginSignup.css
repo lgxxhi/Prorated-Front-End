@@ -1,22 +1,20 @@
 .login-signup {
-  align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 .login-signup__form {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 20vh;
+  align-items: center;
+  width: 50%;
+  height: fit-content;
+  box-shadow: 0 0 3px rgb(191, 191, 191);
+  padding: 20px;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
   background-image: linear-gradient(to bottom right, #7bc4ff, #5fb4f9, #5f7ef9, #5971f6);
-  border-radius: 20px;
-  box-shadow: 0 0 3px rgb(191, 191, 191);
-  margin-top: 20px;
-  padding: 20px;
-  width: 50%;
 }
 .login-signup__form__title {
   color: #ffffff;
@@ -27,29 +25,33 @@
   color: #ffffff;
   display: block;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 .login-signup__form input {
-  border: 1px solid #cccccc;
-  border-radius: 10px;
-  margin-bottom: 16px;
+  border: 0;
+  border-radius: 15px;
+  margin-bottom: 20px;
   padding: 8px;
   width: 100%;
 }
-.login-signup__submitbtn {
-  background-color: #4caf50;
-  color: #ffffff;
-  padding: 10px;
+.login-signup__form input::placeholder {
+  color: grey;
+}
+.login-signup__form__submitbtn {
+  background-color: #38c13d;
   border: none;
-  border-radius: 4px;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 20px;
   cursor: pointer;
 }
-.login-signup__submitbtn:disabled {
+.login-signup__form__submitbtn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.login-signup__signUp {
+.login-signup__form__signUp {
   color: white;
 }
 

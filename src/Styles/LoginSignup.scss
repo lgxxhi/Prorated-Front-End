@@ -1,24 +1,26 @@
 $deepskyblue_0ac2ff: #0ac2ff;
-$forestgreen_4caf50: #4caf50;
+$forestgreen_4caf50: #38c13d;
 $lightgray_ccc: #cccccc;
 $lightskyblue_7bd3ff: #7bd3ff;
 $tomato_ff6347: #ff6347;
 $white_fff: #ffffff;
 $white_ffffff: #ffffff;
 
-@mixin container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .login-signup {
-  @include container;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 
   &__form {
-    @include container;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    align-items: center;
+    width: 50%;
+    height: fit-content;
+    box-shadow: 0 0 3px rgb(191, 191, 191);
+    padding: 20px;
+    border-radius: 20px;
     backdrop-filter: blur(10px);
     background-image: linear-gradient(
       to bottom right,
@@ -27,11 +29,6 @@ $white_ffffff: #ffffff;
       #5f7ef9,
       #5971f6
     );
-    border-radius: 20px;
-    box-shadow: 0 0 3px rgb(191, 191, 191);
-    margin-top: 20px;
-    padding: 20px;
-    width: 50%;
 
     &__title {
       color: $white_ffffff;
@@ -42,32 +39,36 @@ $white_ffffff: #ffffff;
       color: $white_ffffff;
       display: block;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
     input {
-      border: 1px solid $lightgray_ccc;
-      border-radius: 10px;
-      margin-bottom: 16px;
+      border: 0;
+      border-radius: 15px;
+      margin-bottom: 20px;
       padding: 8px;
       width: 100%;
+      &::placeholder {
+        color: grey;
+      }
     }
-  }
-  &__submitbtn {
-    background-color: $forestgreen_4caf50;
-    color: $white_fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    width: 50%;
-    cursor: pointer;
+    &__submitbtn {
+      background-color: $forestgreen_4caf50;
+      border: none;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      color: $white_fff;
+      border-radius: 20px;
+      cursor: pointer;
 
-    &:disabled {
-      background-color: $lightgray_ccc;
-      cursor: not-allowed;
+      &:disabled {
+        background-color: $lightgray_ccc;
+        cursor: not-allowed;
+      }
     }
-  }
-  &__signUp {
-    color: white;
+    &__signUp {
+      color: white;
+    }
   }
 }
 
