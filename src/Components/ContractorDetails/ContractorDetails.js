@@ -5,7 +5,7 @@ import "./ContractorDetails.css";
 import Reviews from "../Reviews/Reviews";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
-
+import ContractorProfileImages from "./ContractorProfileImages";
 function ContractorDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -16,14 +16,14 @@ function ContractorDetails() {
       try {
         let result = await fetchContractorDetails(id);
         setContractorProfile(result.data.data.contractor);
-        console.log(result.data.data);
+        console.log(result.data.data.contractor);
       } catch (error) {
         console.error("Error fetching contractor details:", error);
       }
     };
     fetchContractor();
   }, [id]);
-
+  console.log(contractorProfile.images);
   return (
     <div className="contractor-profile-container">
       <div className="container-details">
@@ -54,16 +54,9 @@ function ContractorDetails() {
       </div>
       <div className="past-jobs">
         <h3>Past Jobs</h3>
-        {contractorProfile.pastjobs && contractorProfile.pastjobs.length > 0 ? (
-          <ul>
-            {contractorProfile.pastjobs.map((job, index) => (
-              <li key={index}>
-                <h3>{job.title}</h3>
-                <p>{job.description}</p>
-                <img src={job.image} alt={`Job ${index + 1}`} />
-              </li>
-            ))}
-          </ul>
+
+        {contractorProfile.images && contractorProfile.images.length > 0 ? (
+          <ContractorProfileImages images={contractorProfile.images} />
         ) : (
           <p>No past jobs available</p>
         )}

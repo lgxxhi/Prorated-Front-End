@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Axios from "./axios";
 
 async function getAllServices() {
