@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UsersContext } from "../../context/UsersContext";
 import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
 import "./UserProfile.css";
@@ -7,6 +8,7 @@ function UserProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState({});
+  const { userData } = useContext(UsersContext);
 
   useEffect(() => {
     const fetchUserById = async () => {
@@ -52,6 +54,10 @@ function UserProfile() {
         <button onClick={() => navigate(`/user-profile/${id}/edit`)}>
           Edit profile
         </button>
+      </div>
+      <div>
+        <h2>User Profile</h2>
+        <p>Email: {userData.email}</p>
       </div>
 
       <div className="saved">

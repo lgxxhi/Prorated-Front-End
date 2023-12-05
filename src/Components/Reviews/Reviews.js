@@ -12,7 +12,7 @@ function Reviews({ reviews, contractor }) {
     <div className="review-card-container">
       {reviews.map((review) => {
         return (
-          <div className="review-card">
+          <div className="review-card" key={review.id}>
             <div className="review-card-header">
               <span>{review.name}</span>
               <div> {moment(review.date).fromNow()}</div>
