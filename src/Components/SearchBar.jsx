@@ -14,6 +14,7 @@ export default function SearchBar(props) {
     setSearch("");
     setSearchNav("");
     navigate(`/listings/${searchQuerie}`);
+    navigate(0);
     // window.location.reload(false);
   }
   return (
