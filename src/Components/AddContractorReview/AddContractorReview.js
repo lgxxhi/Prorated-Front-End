@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./AddContractorReview.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
+import { UsersContext } from "../../context/UsersContext";
 import axios from "../../Api/axios";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import PhotoDragDrop from "../PhotoDragDrop/PhotoDragDrop";
@@ -11,7 +12,7 @@ function AddContractorReview() {
   const { id } = useParams();
   const { selectedContractor, setSelectedContractor } =
     useContext(ContractorsContext);
-
+  const { userData } = useContext(UsersContext);
   const [name, setName] = useState("");
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
@@ -30,7 +31,7 @@ function AddContractorReview() {
     };
     fetchData();
   }, []);
-
+  console.log(userData);
   const handleSumbitReview = async (e) => {
     e.preventDefault();
 

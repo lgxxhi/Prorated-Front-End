@@ -9,19 +9,18 @@ export default function Home() {
   const [servicesObj, setServicesObj] = useState({});
 
   const displayServices = () => {
-    return servicesObj.map(({ name, description, custom, image }) => {
+    return servicesObj.map(({ name, description, custom, image, id }) => {
       if (!custom) {
         return (
-          <>
-            <ServiceCard
-              data={{
-                name: name,
-                description: description,
-                custom: custom,
-                image: image,
-              }}
-            />
-          </>
+          <ServiceCard
+            key={id}
+            data={{
+              name: name,
+              description: description,
+              custom: custom,
+              image: image,
+            }}
+          />
         );
       } else {
         return "";

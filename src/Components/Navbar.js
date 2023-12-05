@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Styles/Global.scss";
 import SearchBar from "./SearchBar";
 import { auth } from "./Firebase/Firebase";
+import { useAuth } from "../Components/Firebase/AuthContext";
 import { signOut } from "firebase/auth";
-import { useAuth } from "./Firebase/AuthContext";
+import { UsersContext } from "../context/UsersContext";
 
 function Nav() {
   const navigate = useNavigate();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const { authUser } = useAuth();
+  const { userData } = useContext(UsersContext);
+  console.log(userData);
 
   function handleClick(e, location) {
     e.preventDefault();
@@ -25,20 +28,20 @@ function Nav() {
     );
   }
 
-  function handleScroll() {
-    const currentScrollPos = window.scrollY;
-    if (currentScrollPos > prevScrollPos && currentScrollPos > 100) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-    setPrevScrollPos(currentScrollPos);
-  }
+  // function handleScroll() {
+  //   const currentScrollPos = window.scrollY;
+  //   if (currentScrollPos > prevScrollPos && currentScrollPos > 100) {
+  //     setVisible(false);
+  //   } else {
+  //     setVisible(true);
+  //   }
+  //   setPrevScrollPos(currentScrollPos);
+  // }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
 
   // console.log(window.scrollY);
 
@@ -75,7 +78,7 @@ function Nav() {
             <div>
               <button
                 className="navbar__menu__buttons__dashboard-btn btn"
-                onClick={(e) => handleClick(e, "/user-profile/6")}
+                onClick={(e) => handleClick(e, `/user-profile/${userData.id}`)}
               >
                 My profile
               </button>

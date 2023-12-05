@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ContractorsContext } from "../context/ContractorsContext";
 import { auth } from "../Components/Firebase/Firebase";
 import { useAuth } from "../Components/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { UsersContext } from "../context/UsersContext";
 import "../Styles/LoginSignup.scss";
 
 function LoginSignup() {
@@ -27,7 +27,7 @@ function LoginSignup() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
-  const { setNewUserData } = useContext(ContractorsContext);
+  const { setUserData } = useContext(UsersContext);
 
   const url = process.env.REACT_APP_API_KEY;
 
@@ -54,9 +54,8 @@ function LoginSignup() {
         const response = await axios.post(`${url}users/login`, {
           email: user.email,
         });
-
-        setNewUserData(response.data);
-
+        setUserData(response.data);
+        console.log("User data after setting:", response.data);
         navigate(`/user-profile/${response.data.id}`);
         // console.log(userCredentials);
         // console.log(response.data);
@@ -199,21 +198,19 @@ function LoginSignup() {
               </div>
             )}
             <button
-              className="login-signup__form__submitbtn"
+              className="login-signup__submitbtn"
               type="submit"
               disabled={isLoading}
             >
               {isLogin ? "Login" : "Sign Up"}
             </button>
-            <p className="login-signup__form__signUp">
-              {isLogin
-                ? "Don't have an account? "
-                : "Already have an account? "}
-              <a href="#" onClick={handleToggle} disabled={isLoading}>
-                {isLogin ? "Sign up" : "Login"}
-              </a>
-            </p>
           </form>
+          <p className="login-signup__signUp">
+            {isLogin ? "Don't have an account? " : "Already have an account? "}
+            <a href="#" onClick={handleToggle} disabled={isLoading}>
+              {isLogin ? "Sign up" : "Login"}
+            </a>
+          </p>
           {error && <p className="error-message">{error}</p>}
         </div>
       )}
