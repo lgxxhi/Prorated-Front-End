@@ -35,7 +35,7 @@ function App() {
 
                 <Route path="/login-signup" element={<LogInSignup />} />
                 <Route
-                  path="/listings"
+                  path="/listings/:q"
                   element={
                     <ContractorListings contractorData={contractorData} />
                   }

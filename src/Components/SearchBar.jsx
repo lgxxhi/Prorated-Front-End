@@ -13,7 +13,7 @@ export default function SearchBar(props) {
     let searchQuerie = e.target.children[1].value;
     setSearch("");
     setSearchNav("");
-    navigate(`/listings?q=${searchQuerie}`);
+    navigate(`/listings/${searchQuerie}`);
     window.location.reload(false);
   }
   return (
