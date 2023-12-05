@@ -9,7 +9,7 @@ import StarRating from "../StarRating/StarRating";
 
 function AddContractorReview() {
   const { id } = useParams();
-  const { selectedContractor, setSelectedContractor } =
+  const { selectedContractor, setSelectedContractor, userData } =
     useContext(ContractorsContext);
 
   const [name, setName] = useState("");
@@ -30,6 +30,11 @@ function AddContractorReview() {
     };
     fetchData();
   }, []);
+  if (userData) {
+    console.log(userData);
+  } else {
+    console.log("error");
+  }
 
   const handleSumbitReview = async (e) => {
     e.preventDefault();

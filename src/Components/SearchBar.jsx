@@ -23,7 +23,7 @@ export default function SearchBar(props) {
       }`}
       onSubmit={(e) => handleSubmit(e)}
     >
-      <i class="fa fa-search searchBar__icon"></i>
+      <i className="fa fa-search searchBar__icon"></i>
       <input
         type="search"
         className="searchBar__input"

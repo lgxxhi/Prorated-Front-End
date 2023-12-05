@@ -1,12 +1,15 @@
 import "../../Styles/Global.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getAllServices } from "../../Api/Api";
 import SearchBar from "../../Components/SearchBar";
 import ServiceCard from "./ServiceCard";
+import { ContractorsContext } from "../../context/ContractorsContext";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [servicesObj, setServicesObj] = useState({});
+
+  const { userData } = useContext(ContractorsContext);
 
   const displayServices = () => {
     return servicesObj.map(({ name, description, custom, image }) => {
@@ -42,6 +45,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchServices();
+    console.log(userData);
   }, []);
 
   if (loading) {
