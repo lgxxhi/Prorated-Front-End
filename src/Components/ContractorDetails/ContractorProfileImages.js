@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./ContractorProfileImages.css";
 
 const ContractorProfileImages = ({ images }) => {
   const [showModal, setShowModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  const handleShowModal = (image) => {
-    setSelectedImage(image.image_url);
+  const handleShowModal = (index) => {
+    setSelectedImageIndex(index);
     setShowModal(true);
   };
 
   const handleCloseModal = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
     setShowModal(false);
   };
 
@@ -20,7 +21,7 @@ const ContractorProfileImages = ({ images }) => {
     <div>
       <Carousel>
         {images.map((image, index) => (
-          <div key={index} onClick={() => handleShowModal(image)}>
+          <div key={index} onClick={() => handleShowModal(index)}>
             <img src={image.image_url} alt={`Job ${index + 1}`} />
           </div>
         ))}
@@ -32,7 +33,10 @@ const ContractorProfileImages = ({ images }) => {
             <span className="close" onClick={handleCloseModal}>
               &times;
             </span>
-            <img src={selectedImage} alt="Selected Job" />
+            <img
+              src={images[selectedImageIndex].image_url}
+              alt="Selected Job"
+            />
           </div>
         </div>
       )}
