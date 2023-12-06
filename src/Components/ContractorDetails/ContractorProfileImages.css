@@ -1,12 +1,20 @@
-.carousel {
-  display: inline-block;
-}
-
 .carousel .slide img {
   width: 30%;
   height: 300px;
 }
+.carousel-root {
+  width: fit-content;
+}
 
+.carousel.carousel-slider {
+  padding-left: 40px;
+  padding-right: 50px;
+}
+
+.carousel {
+  padding: 10px;
+  padding-left: 25px;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -29,6 +37,21 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
+  color: red;
   cursor: pointer;
+}
+.contractor-profile-container {
+  display: inline-block;
+}
+
+div {
+  margin: 0;
+}
+
+div {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
 }
