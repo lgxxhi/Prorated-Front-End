@@ -5,13 +5,13 @@
   align-items: center;
   justify-content: space-between;
   max-width: 100%;
-  width: 100%;
-  background-color: white;
+  background-color: rgb(243, 243, 243);
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+  border-radius: 10px;
   padding: 25px;
   box-shadow: 0, 5px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
+  margin: 10px 15px;
 }
 
 .profile-card:last-child {
