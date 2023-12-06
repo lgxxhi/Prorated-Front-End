@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { getAllServices } from "../../Api/Api";
 import SearchBar from "../../Components/SearchBar";
 import ServiceCard from "./ServiceCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [servicesObj, setServicesObj] = useState({});
 
@@ -57,9 +59,24 @@ export default function Home() {
           <SearchBar location="home-page" />
           <div className="home-page__search__suggestions">
             <p>Popular services:</p>
-            <button className="btn btn__full-round">Plumbing</button>
-            <button className="btn btn__medium-round">Electrician</button>
-            <button className="btn btn__medium-round">Handyman</button>
+            <button
+              className="btn btn__full-round"
+              onClick={() => navigate("/listings/plumbing")}
+            >
+              Plumbing
+            </button>
+            <button
+              className="btn btn__medium-round"
+              onClick={() => navigate("/listings/Electrician")}
+            >
+              Electrician
+            </button>
+            <button
+              className="btn btn__medium-round"
+              onClick={() => navigate("/listings/Handyman")}
+            >
+              Handyman
+            </button>
           </div>
         </div>
       </div>
