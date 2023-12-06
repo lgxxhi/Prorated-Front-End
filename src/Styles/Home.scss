@@ -29,20 +29,15 @@
         margin: 0% 1%;
         border: 0;
         border-radius: 15px;
-        box-shadow: 0px 0px 1px black;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-        background-image: linear-gradient(
-          to bottom right,
-          #7bc4ff,
-          #5fb4f9,
-          #5f7ef9
-        );
+        background-color: #5fb4f9;
 
         padding: 5px;
         color: white;
         font-size: 50%;
         font-weight: 500;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
       }
     }
   }
