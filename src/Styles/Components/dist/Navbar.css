@@ -52,7 +52,6 @@
   background: 0;
   color: rgb(91, 91, 91);
   text-decoration: none;
-  font-size: 1.6vw;
   transition: 0.15s;
 }
 .navbar__menu__components__button:hover {
@@ -118,7 +117,6 @@
   background: 0;
   color: rgb(91, 91, 91);
   text-decoration: none;
-  font-size: 1.6vw;
   transition: 0.15s;
 }
 .navbar__menu__buttons__dashboard-btn:hover {
