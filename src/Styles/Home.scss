@@ -1,28 +1,22 @@
 .home-page {
-  h1 {
-    font-size: 2.5em;
-  }
   &__search {
     display: flex;
     justify-content: center;
     max-height: 500px;
-    padding: 20px 0% 200px 0%;
+    padding: 10vh 10% 200px 10%;
     margin-bottom: 50px;
     background-image: url("../Assets/Images/contractor-background.jpg");
     background-size: cover;
+    background-position: center;
     color: white;
     text-shadow: 0px 0px 10px black;
     &__input {
       padding: 10% 5%;
-      width: 60%;
-      h1 {
+      width: 100%;
+      &__title {
+        font-size: 2.5em;
         margin-bottom: 50px;
       }
-    }
-    &__img {
-      border: 1px solid rgb(106, 255, 0);
-      align-self: center;
-      width: 90%;
     }
     &__suggestions {
       display: flex;
@@ -36,9 +30,19 @@
         border: 0;
         border-radius: 15px;
         box-shadow: 0px 0px 1px black;
+
+        background-image: linear-gradient(
+          to bottom right,
+          #7bc4ff,
+          #5fb4f9,
+          #5f7ef9
+        );
+
         padding: 5px;
-        font-size: 1vw;
+        color: white;
+        font-size: 50%;
         font-weight: 500;
+        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -48,5 +52,18 @@
     justify-items: center;
     gap: 2%;
     padding: 0% 2%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .home-page {
+    &__search {
+      &__input {
+        padding: 20% 0%;
+        &__title {
+          font-size: 2em;
+        }
+      }
+    }
   }
 }

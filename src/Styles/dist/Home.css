@@ -1,0 +1,56 @@
+.home-page__search {
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  padding: 10vh 10% 200px 10%;
+  margin-bottom: 50px;
+  background-image: url("../Assets/Images/contractor-background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+}
+.home-page__search__input {
+  padding: 10% 5%;
+  width: 100%;
+}
+.home-page__search__input__title {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+.home-page__search__suggestions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2%;
+  margin-top: 20px;
+  font-size: 1.3em;
+}
+.home-page__search__suggestions button {
+  margin: 0% 1%;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px black;
+  background-image: linear-gradient(to bottom right, #7bc4ff, #5fb4f9, #5f7ef9);
+  padding: 5px;
+  color: white;
+  font-size: 50%;
+  font-weight: 500;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.home-page__popular-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-items: center;
+  gap: 2%;
+  padding: 0% 2%;
+}
+
+@media only screen and (max-width: 550px) {
+  .home-page__search__input {
+    padding: 20% 0%;
+  }
+  .home-page__search__input__title {
+    font-size: 2em;
+  }
+}
