@@ -51,7 +51,7 @@ export default function Home() {
     <div className="home-page">
       <div className="home-page__search">
         <div className="home-page__search__input">
-          <h1>
+          <h1 className="home-page__search__input__title">
             Building trust <br /> One project at a time
           </h1>
           <SearchBar location="home-page" />
