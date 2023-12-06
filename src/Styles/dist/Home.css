@@ -47,6 +47,9 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .home-page {
+    margin-bottom: 500px;
+  }
   .home-page__search__input {
     padding: 20% 0%;
   }
