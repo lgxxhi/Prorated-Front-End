@@ -19,7 +19,7 @@ const ContractorProfileImages = ({ images }) => {
 
   return (
     <div>
-      <Carousel>
+      <Carousel width={"700px"}>
         {images.map((image, index) => (
           <div
             className="resizeable-div"
