@@ -21,8 +21,16 @@ const ContractorProfileImages = ({ images }) => {
     <div>
       <Carousel>
         {images.map((image, index) => (
-          <div key={index} onClick={() => handleShowModal(index)}>
-            <img src={image.image_url} alt={`Job ${index + 1}`} />
+          <div
+            className="resizeable-div"
+            key={index}
+            onClick={() => handleShowModal(index)}
+          >
+            <img
+              className="responsive-image"
+              src={image.image_url}
+              alt={`Job ${index + 1}`}
+            />
           </div>
         ))}
       </Carousel>
