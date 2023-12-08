@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
 import ContractorListings from "./Components/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
-import ManageUserAccount from "./Pages/ManageUserAccount/ManageUserAccount";
 import LogInSignup from "./Pages/LogInSignup";
 import UserProfile from "./Components/User-profile/UserProfile";
 import ManageUserAccount from "./Components/ManageUserAccount/ManageUserAccount";
