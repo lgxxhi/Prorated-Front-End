@@ -13,7 +13,7 @@ function AddContractorReview() {
   const { selectedContractor, setSelectedContractor } =
     useContext(ContractorsContext);
   const { userData } = useContext(UsersContext);
-  const [name, setName] = useState("");
+  const [name, setName] = useState(userData.username);
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
 
@@ -36,11 +36,14 @@ function AddContractorReview() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`contractors/${id}/addReview`, {
-        name,
-        review: reviewText,
-        rating,
-      });
+      const response = await axios.post(
+        `contractors/${id}/user/${userData.id}/addReview`,
+        {
+          name,
+          review: reviewText,
+          rating,
+        }
+      );
       navigate(`/profile/${id}`);
 
       console.log(response);
@@ -93,15 +96,9 @@ function AddContractorReview() {
       <form>
         <div>
           {/* <label htmlFor="name">Name</label> */}
-          <input
-            className="form-input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            id="name"
-            placeholder="Full name"
-            type="text"
-            required=""
-          />
+          <div>
+            <h2>{userData.username}</h2>
+          </div>
         </div>
         <div className="hr-tag">
           <hr style={{ marginTop: "10px", marginBottom: "9px" }} />

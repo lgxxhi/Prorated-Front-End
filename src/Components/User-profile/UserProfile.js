@@ -3,6 +3,8 @@ import { UsersContext } from "../../context/UsersContext";
 import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
 import "./UserProfile.css";
+import moment from "moment";
+import StarRating from "../../Components/StarRating/StarRating";
 
 function UserProfile() {
   const { id } = useParams();
@@ -15,6 +17,7 @@ function UserProfile() {
     const fetchUserById = async () => {
       try {
         let result = await getSingleUser(id);
+
         setUserProfile(result.data.data.user);
         setUserReviews(result.data.data.reviews);
         // console.log(result.data.data.reviews);
@@ -41,7 +44,7 @@ function UserProfile() {
             {userProfile.first_name} {userProfile.last_name}
           </h3>
           <p>
-            <span>{userProfile.count === 0 ? userProfile.count : 0}</span>{" "}
+            <span>{userProfile.count !== 0 ? userProfile.count : 0}</span>{" "}
             Reviews
           </p>
           <p>
@@ -61,7 +64,7 @@ function UserProfile() {
       </div>
       <div>
         <h2>User Profile</h2>
-        <p>Email: {userData.email}</p>
+        <p>Email: {userData?.email}</p>
       </div>
 
       <div className="saved">
@@ -98,51 +101,27 @@ function UserProfile() {
       <div className="pastReviews">
         <h3>Past Reviews</h3>
         <ul>
-          {userReviews.map((review) => {
-            return (
-              <li>
-                <img
-                  className="contractor"
-                  src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-                  alt="contractorImg"
-                />
-                <h5>Danny</h5>
-              </li>
-            );
-          })}
-          <li>
-            <h6 className="locationh6">Manhattan</h6>
-            <p className="rating">
-              <span>⭐️⭐️⭐️⭐️⭐️</span> | 4 months ago
-            </p>
-            <p className="review">He unclogged my pipes!</p>
-          </li>
-          <li>
-            <img
-              className="contractor"
-              src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-              alt="contractorImg"
-            />
-            <h5>Smith Contruction</h5>
-            <h6 className="locationh6">Manhattan</h6>
-            <p className="rating">
-              <span>⭐️⭐️⭐️⭐️</span> | 5 months ago
-            </p>
-            <p className="review">Fixed My Roof!</p>
-          </li>
-          <li>
-            <img
-              className="contractor"
-              src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-              alt="contractorImg"
-            />
-            <h5>Landscapes Landscaping</h5>
-            <h6 className="locationh6">Manhattan</h6>
-            <p className="rating">
-              <span>⭐️⭐️⭐️⭐️⭐️</span> | 6 months ago
-            </p>
-            <p className="review">Fixed My Garden!</p>
-          </li>
+          {userReviews &&
+            userReviews.map((review) => {
+              return (
+                <li>
+                  <img
+                    className="contractor"
+                    src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+                    alt="contractorImg"
+                  />
+                  <h5>
+                    <small>{review.name}</small>
+                  </h5>
+                  <h6 className="locationh6">{review.location}</h6>
+                  <p className="rating">
+                    <span>{<StarRating rating={review.rating} />}</span> |{" "}
+                    {moment(review.date).fromNow()}
+                  </p>
+                  <p className="review">{review.review}</p>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>
