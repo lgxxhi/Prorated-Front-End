@@ -1,0 +1,59 @@
+.select-menu {
+  width: 300px;
+  text-align: left;
+  user-select: none;
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn i {
+  font-size: 25px;
+}
+
+.select-menu .options {
+  position: absolute;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  box-shadow: 0, 0, 3px rgba(0, 0, 0, 0.1);
+}
+
+.select-menu.active .options {
+  display: none;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.options .option:hover {
+  background-color: lightgray;
+}
+
+.option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+
+.option .option-text {
+  font-size: 18px;
+  color: #333;
+}
