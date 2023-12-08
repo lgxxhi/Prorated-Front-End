@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
-import ContractorListings from "./Components/ContractorListings/ContractorListings";
+import ContractorDetails from "./components/ContractorDetails/ContractorDetails";
+import ContractorListings from "./components/ContractorListings/ContractorListings";
 import ManageUserAccount from "./Pages/ManageUserAccount/ManageUserAccount";
 import LogInSignup from "./Pages/LogInSignup";
-import Nav from "./Components/Navbar";
+import Nav from "./components/Navbar";
 import Home from "./Pages/Home/Home";
 import "./Styles/Global.scss";
 import "./App.css";
