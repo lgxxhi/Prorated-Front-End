@@ -46,10 +46,11 @@ function ContractorDetails() {
           </div>
           <hr />
           <div className="contractor-details__profile__about">
-            <h3>About {contractorProfile.name}</h3>
+            <h3>Description</h3>
             <p>{contractorProfile.description}</p>
           </div>
           <div className="contractor-details__profile__info">
+            <h3>Details</h3>
             <p>
               <b>Location</b>: {contractorProfile.location}
             </p>

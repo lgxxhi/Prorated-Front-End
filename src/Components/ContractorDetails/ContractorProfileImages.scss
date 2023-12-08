@@ -1,5 +1,6 @@
 .carousel {
   &-slider {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
     background-color: #c8c8c8;
     border-radius: 5px;
     border: 1px solid rgb(212, 212, 212);
@@ -15,7 +16,7 @@
 }
 
 img.responsive-image {
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .modal {
