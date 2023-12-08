@@ -10,6 +10,7 @@ import {
 } from "../../Api/Api";
 import axios from "../../Api/axios";
 import { ContractorsContext } from "../../context/ContractorsContext";
+import { useParams } from "react-router-dom";
 
 function ContractorListings(props) {
   // const [services, setServices] = useState([]);
@@ -19,11 +20,12 @@ function ContractorListings(props) {
   const [loading, setLoading] = useState(true);
   const [dataObj, setDataObj] = useState([]);
 
-  const urlParams = new URLSearchParams(window.location.search);
+  const { q } = useParams();
+  console.log("THIS IS Q" + q);
 
   const fetchResults = async () => {
     try {
-      const response = await getServicesResults(urlParams.get("q"));
+      const response = await getServicesResults(q);
       // setContractors(response);
       // console.log(contractors);
       console.log(response);
@@ -60,7 +62,7 @@ function ContractorListings(props) {
           <div className="left-main">
             <h2>
               <span className="results-for">Results For</span>
-              <span className="service-found"> Contractors</span>
+              <span className="service-found"> {q}</span>
             </h2>
             <p>{dataObj.length} services available </p>
           </div>

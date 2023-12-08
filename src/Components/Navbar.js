@@ -40,8 +40,6 @@ function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  // console.log(window.scrollY);
-
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -70,31 +68,31 @@ function Nav() {
           {displaySearchbar()}
         </div>
 
-        <div className="navbar__menu__buttons">
-          {authUser ? (
-            <div>
-              <button
-                className="navbar__menu__buttons__dashboard-btn btn"
-                onClick={(e) => handleClick(e, "/user-profile/6")}
-              >
-                My profile
-              </button>
-              <button
-                className="navbar__menu__buttons__logout-btn btn"
-                onClick={handleLogout}
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
+        {authUser ? (
+          <div className="navbar__menu__buttons">
+            <button
+              className="navbar__menu__buttons__dashboard-btn btn"
+              onClick={(e) => handleClick(e, "/user-profile/6")}
+            >
+              My profile
+            </button>
+            <button
+              className="navbar__menu__buttons__logout-btn btn"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="navbar__menu__buttons">
             <button
               className="navbar__menu__buttons__login-btn btn"
               onClick={(e) => handleClick(e, "/login-signup")}
             >
               Log In
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./AddContractorReview.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
+import { UsersContext } from "../../context/UsersContext";
 import axios from "../../Api/axios";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import PhotoDragDrop from "../PhotoDragDrop/PhotoDragDrop";
@@ -9,10 +10,10 @@ import StarRating from "../StarRating/StarRating";
 
 function AddContractorReview() {
   const { id } = useParams();
-  const { selectedContractor, setSelectedContractor, userData } =
+  const { selectedContractor, setSelectedContractor } =
     useContext(ContractorsContext);
-
-  const [name, setName] = useState("");
+  const { userData } = useContext(UsersContext);
+  const [name, setName] = useState(userData.username);
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
 
@@ -30,21 +31,19 @@ function AddContractorReview() {
     };
     fetchData();
   }, []);
-  if (userData) {
-    console.log(userData);
-  } else {
-    console.log("error");
-  }
-
+  console.log(userData);
   const handleSumbitReview = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`contractors/${id}/addReview`, {
-        name,
-        review: reviewText,
-        rating,
-      });
+      const response = await axios.post(
+        `contractors/${id}/user/${userData.id}/addReview`,
+        {
+          name,
+          review: reviewText,
+          rating,
+        }
+      );
       navigate(`/profile/${id}`);
 
       console.log(response);
@@ -97,15 +96,9 @@ function AddContractorReview() {
       <form>
         <div>
           {/* <label htmlFor="name">Name</label> */}
-          <input
-            className="form-input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            id="name"
-            placeholder="Full name"
-            type="text"
-            required=""
-          />
+          <div>
+            <h2>{userData.username}</h2>
+          </div>
         </div>
         <div className="hr-tag">
           <hr style={{ marginTop: "10px", marginBottom: "9px" }} />

@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ContractorsContext } from "../context/ContractorsContext";
 import { auth } from "../Components/Firebase/Firebase";
 import { useAuth } from "../Components/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import "./LoginSignup.css";
+import { UsersContext } from "../context/UsersContext";
+import "../Styles/LoginSignup.scss";
 
 function LoginSignup() {
   const [user, setUser] = useState({
@@ -27,7 +27,7 @@ function LoginSignup() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
-  const { setNewUserData, userData } = useContext(ContractorsContext);
+  const { setUserData, userData } = useContext(UsersContext);
 
   const url = process.env.REACT_APP_API_KEY;
 
@@ -42,8 +42,6 @@ function LoginSignup() {
     setIsLoading(true);
 
     if (isLogin) {
-      // Login
-
       try {
         const userCredentials = await signInWithEmailAndPassword(
           auth,
@@ -54,12 +52,9 @@ function LoginSignup() {
         const response = await axios.post(`${url}users/login`, {
           email: user.email,
         });
-
-        setNewUserData(response.data);
-
+        setUserData(response.data);
+        console.log("User data after setting:", response.data);
         navigate(`/user-profile/${response.data.id}`);
-        // console.log(userCredentials);
-        // console.log(response.data);
       } catch (error) {
         console.log(error);
         setError("Sign-in failed. Please check your email and password.");
@@ -67,7 +62,6 @@ function LoginSignup() {
         setIsLoading(false);
       }
     } else {
-      // Sign up
       try {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
@@ -104,13 +98,14 @@ function LoginSignup() {
   };
 
   return (
-    <div className="login-signup container">
-      <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-
+    <div className="login-signup">
       {isLoading ? (
         <div className="loader"></div>
       ) : (
-        <div className="form container">
+        <div className="login-signup__form">
+          <h2 className="login-signup__form__title">
+            {isLogin ? "Login" : "Sign Up"}
+          </h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email: </label>
             <input
@@ -197,15 +192,19 @@ function LoginSignup() {
                 />
               </div>
             )}
-            <button type="submit" disabled={isLoading}>
+            <button
+              className="login-signup__submitbtn"
+              type="submit"
+              disabled={isLoading}
+            >
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
-          <p>
+          <p className="login-signup__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
+            <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
-            </a>
+            </button>
           </p>
           {error && <p className="error-message">{error}</p>}
         </div>
