@@ -1,26 +1,26 @@
-@use 'Home';
-@use 'Components/Buttons';
-@use 'Components/SearchBar';
-@use 'Components/ServiceCard.scss';
-@use 'Components/Navbar.scss';
+@use "Home";
+@use "Components/Buttons";
+@use "Components/SearchBar";
+@use "Components/ServiceCard.scss";
+@use "Components/Navbar.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
 
 // Font Variables
-$main: 'Poppins', sans-serif;
+$main: "Poppins", sans-serif;
 
-body{
-    font-family: $main;
+body {
+  font-family: $main;
 }
 
-nav{
-    position: fixed;
-    top: 0;
+nav {
+  position: fixed;
+  top: 0;
 }
 
 /** Global settings for the project should be coded here. Like
 pre-defined app colors, main fonts, secondary fonts, or
-any other property for the whole project*/ 
+any other property for the whole project*/
 
 /* This should be the only file that will be imported on any
 file. This is because all the other SCSS files will
