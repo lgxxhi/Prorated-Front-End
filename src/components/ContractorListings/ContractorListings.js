@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-
+import React, { useState, useEffect } from "react";
 import "./ContractorListings.css";
 import Filter from "../Filter/Filter";
 import ContractorCard from "../ContractorCard/ContractorCard";
@@ -8,8 +7,6 @@ import {
   getAllContractorsByServiceId,
   getServicesResults,
 } from "../../Api/Api";
-import axios from "../../Api/axios";
-import { ContractorsContext } from "../../context/ContractorsContext";
 import { useParams } from "react-router-dom";
 
 function ContractorListings(props) {

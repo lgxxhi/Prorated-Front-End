@@ -24,6 +24,7 @@ function ContractorDetails() {
     fetchContractor();
   }, [id]);
 
+
   return (
     <div className="contractor-profile-container">
       <div className="container-details">
