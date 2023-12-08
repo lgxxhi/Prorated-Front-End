@@ -42,8 +42,6 @@ function LoginSignup() {
     setIsLoading(true);
 
     if (isLogin) {
-      // Login
-
       try {
         const userCredentials = await signInWithEmailAndPassword(
           auth,
@@ -57,8 +55,6 @@ function LoginSignup() {
         setUserData(response.data);
         console.log("User data after setting:", response.data);
         navigate(`/user-profile/${response.data.id}`);
-        // console.log(userCredentials);
-        // console.log(response.data);
       } catch (error) {
         console.log(error);
         setError("Sign-in failed. Please check your email and password.");
@@ -66,7 +62,6 @@ function LoginSignup() {
         setIsLoading(false);
       }
     } else {
-      // Sign up
       try {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
@@ -207,9 +202,9 @@ function LoginSignup() {
           </form>
           <p className="login-signup__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
+            <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
-            </a>
+            </button>
           </p>
           {error && <p className="error-message">{error}</p>}
         </div>
