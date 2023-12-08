@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
+.home-page h1 {
+  font-size: 2.5em;
+}
+.home-page__search {
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  padding: 20px 0% 200px 0%;
+  margin-bottom: 50px;
+  background-image: url("../Assets/Images/contractor-background.jpg");
+  background-size: cover;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+}
+.home-page__search__input {
+  padding: 10% 5%;
+  width: 60%;
+}
+.home-page__search__input h1 {
+  margin-bottom: 50px;
+}
+.home-page__search__img {
+  border: 1px solid rgb(106, 255, 0);
+  align-self: center;
+  width: 90%;
+}
+.home-page__search__suggestions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2%;
+  margin-top: 20px;
+  font-size: 1.3em;
+}
+.home-page__search__suggestions button {
+  margin: 0% 1%;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1px black;
+  padding: 5px;
+  font-size: 1vw;
+  font-weight: 500;
+}
+.home-page__popular-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-items: center;
+  gap: 2%;
+  padding: 0% 2%;
+}
+
+.btn {
+  border: 2.5px solid rgb(177, 177, 177);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.btn__medium-round {
+  border-radius: 5px;
+}
+.btn__full-round {
+  border-radius: 5px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 20px;
+  background: white;
+}
+.searchBar__icon {
+  margin: 0px 10px;
+  color: rgb(143, 143, 143);
+  text-shadow: none;
+}
+.searchBar__input {
+  height: 40px;
+  width: 100%;
+  margin: 0px;
+  border: 0;
+  font-size: 1.5em;
+}
+.searchBar__input:focus {
+  outline: none;
+}
+.searchBar__submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  padding: 0px;
+  border: 0px;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 1.3em;
+  background: #5271ff;
+  color: white;
+  transition: 0.15s;
+}
+.searchBar__submitBtn:hover {
+  opacity: 90%;
+}
+.searchBar__nav {
+  background-color: rgb(230, 230, 230);
+  color: rgb(106, 106, 106);
+}
+.searchBar__homeSize {
+  width: 100%;
+}
+
+.serviceCard {
+  width: 240px;
+  height: 300px;
+  border: 1px solid rgb(141, 141, 141);
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px black;
+  text-shadow: 0px 0px 1px rgb(118, 118, 118);
+}
+.serviceCard__top {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  color: white;
+  transition-duration: 0.1s;
+}
+.serviceCard__top__title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 6%;
+  width: 240px;
+  margin: 0px;
+  padding: 10px 0px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(62, 62, 70, 0));
+  border-radius: 9px 9px 0px 0px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.serviceCard__top__info {
+  display: flex;
+  height: 170px;
+  margin: 0px;
+  padding: 60px 20px 0px 20px;
+  opacity: 0;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+.serviceCard__top__info:hover {
+  opacity: 1;
+  transform: translateY(12px);
+}
+.serviceCard__top:hover {
+  backdrop-filter: blur(10px) brightness(75%);
+  border: 2px solid rgb(75, 75, 75);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  margin-top: 10px;
+  z-index: 1;
+}
+.navbar__menu {
+  display: grid;
+  grid-template-columns: auto 16%;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 3px rgb(191, 191, 191);
+  border-radius: 20px;
+  height: 60px;
+  width: 95%;
+}
+.navbar__menu__components {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar__menu__components__logo {
+  margin: 0% 2% 0% 2%;
+  font-family: "Open Sans", sans-serif;
+  background: -webkit-linear-gradient(#38b6ff, #5271ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar__menu__components__logo:hover {
+  cursor: pointer;
+}
+.navbar__menu__components__button {
+  display: flex;
+  height: 100%;
+  width: 15%;
+  padding: 0px 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: rgb(91, 91, 91);
+  text-decoration: none;
+  font-size: 1.6vw;
+  transition: 0.15s;
+}
+.navbar__menu__components__button:hover {
+  background-color: rgba(82, 113, 255, 0.9);
+  color: white;
+}
+.navbar__menu__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-left: 20px;
+}
+.navbar__menu__buttons__login-btn {
+  height: 80%;
+  width: 100%;
+  margin-right: 20px;
+  border: 0;
+  border-radius: 20px;
+  background: rgba(50, 210, 50, 0.8);
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 0px 0px 5px #32d232;
+  transition: 0.15s;
+}
+.navbar__menu__buttons__login-btn:hover {
+  opacity: 70%;
+}
+
+.navbar-hide {
+  opacity: 0;
+  position: fixed;
+  transform: scale(0.98);
+  transition: 0.2s;
+}
+
+.navbar-show {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.2s;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  background-color: #d0d8df;
+  margin-top: 100px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 30px;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+}
+.footer__info a {
+  color: #191919;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.footer__info h1 {
+  color: #191919;
+  margin: 0;
+}
+.footer__info__social-media {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.footer__info__social-media i {
+  font-size: 30px;
+}
+.footer__info__social-media i:hover {
+  cursor: pointer;
+}
+.footer__email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__email h2 {
+  margin: 10px 0 0 0;
+}
+.footer__email p {
+  margin: 0;
+  color: #00a0fc;
+}
+.footer__email__form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__email__form__text {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 15px;
+  padding: 2%;
+}
+.footer__email__form__text:focus {
+  outline: none;
+}
+.footer__email__form__submit {
+  margin-top: 20px;
+  width: 20%;
+  padding: 5px 0;
+  background-color: #38b6ff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: white;
+}
+.footer__email__form__submit:hover {
+  background-color: #00a0fc;
+  cursor: pointer;
+}
+.footer__support {
+  display: flex;
+  flex-direction: column;
+}
+.footer__support h2 {
+  margin: 0px 0px 10px 0px;
+}
+.footer__support a:hover {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+}
+
+.content-wrap {
+  flex: 1;
+  min-height: 65vh;
+}
+
+/** Global settings for the project should be coded here. Like
+pre-defined app colors, main fonts, secondary fonts, or
+any other property for the whole project*/
+/* This should be the only file that will be imported on any
+file. This is because all the other SCSS files will
+be imported in this global file.*/
+.contractor-listings-route,
+.contractor-profile-container {
+  margin-top: 100px;
+}

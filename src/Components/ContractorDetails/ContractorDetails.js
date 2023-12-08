@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchContractorDetails } from "../../common/usersAPI";
-import "./ContractorDetails.css";
 import Reviews from "../Reviews/Reviews";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
+import ContractorProfileImages from "./ContractorProfileImages";
+import "./ContractorDetails.scss";
 
 function ContractorDetails() {
   const { id } = useParams();
@@ -25,58 +26,72 @@ function ContractorDetails() {
   }, [id]);
 
   return (
-    <div className="contractor-profile-container">
-      <div className="container-details">
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div className="image">
-            <img className="profile-img" src="https://picsum.photos/200/300" />
-          </div>
-          <div style={{ marginLeft: "10px" }}>
-            <h3>{contractorProfile.name}</h3>
-            <div className="ratings">
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <StarRating rating={contractorProfile.average_rating} />
-                <span style={{ fontSize: "small" }} className="count-span">
-                  {contractorProfile.count ? `(${contractorProfile.count})` : 0}
-                </span>
-              </div>
+    <div className="contractor-details-container">
+      <div className="contractor-details">
+        <div className="contractor-details__profile">
+          <img
+            className="contractor-details__profile__profile-picture"
+            src="https://picsum.photos/200/300"
+          />
+          <div className="contractor-details__profile__title">
+            <h3 className="contractor-details__profile__title__name">
+              {contractorProfile.name}
+            </h3>
+            <div className="contractor-details__profile__title__ratings">
+              <span>
+                {contractorProfile.count ? `${contractorProfile.count}` : 0}
+              </span>
+              <StarRating rating={contractorProfile.average_rating} />
             </div>
           </div>
+          <hr />
+          <div className="contractor-details__profile__about">
+            <h3>About {contractorProfile.name}</h3>
+            <p>{contractorProfile.description}</p>
+          </div>
+          <div className="contractor-details__profile__info">
+            <p>
+              <b>Location</b>: {contractorProfile.location}
+            </p>
+            <p>
+              <b>Experience</b>: {contractorProfile.experience} years
+            </p>
+            <p>
+              {" "}
+              <b> Contact </b> : {contractorProfile.contact}
+            </p>
+            <p>
+              <b> Phone Number </b>: {contractorProfile.phone_number}
+            </p>
+          </div>
         </div>
-        <p>Location: {contractorProfile.location}</p>
-        <p>Experience: {contractorProfile.experience} years</p>
-        <p>Contact: {contractorProfile.contact}</p>
-        <p>Phone Number: {contractorProfile.phone_number}</p>
+        <div className="contractor-details__details">
+          <button className="contractor-details__details__toggle contractor-details__details__toggle__past-jobs">
+            Past Jobs
+          </button>
+          <div className="contractor-details__details__past-jobs">
+            {contractorProfile.images && contractorProfile.images.length > 0 ? (
+              <ContractorProfileImages images={contractorProfile.images} />
+            ) : (
+              <p>No past jobs available</p>
+            )}
+          </div>
+          <button className="contractor-details__details__toggle">
+            Reviews
+          </button>
+          <div className="contractor-details__details__reviews">
+            <ContractorReviewDetails />
+            <button
+              onClick={() =>
+                navigate(`/contractors/${contractorProfile.id}/addReview`)
+              }
+              className="more-details"
+            >
+              Add Review
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>About {contractorProfile.name}</h3>
-        <p>{contractorProfile.description}</p>
-      </div>
-      <div className="past-jobs">
-        <h3>Past Jobs</h3>
-        {contractorProfile.pastjobs && contractorProfile.pastjobs.length > 0 ? (
-          <ul>
-            {contractorProfile.pastjobs.map((job, index) => (
-              <li key={index}>
-                <h3>{job.title}</h3>
-                <p>{job.description}</p>
-                <img src={job.image} alt={`Job ${index + 1}`} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No past jobs available</p>
-        )}
-      </div>
-      <ContractorReviewDetails />
-      <button
-        onClick={() =>
-          navigate(`/contractors/${contractorProfile.id}/addReview`)
-        }
-        className="more-details"
-      >
-        Add Review
-      </button>
     </div>
   );
 }
