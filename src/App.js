@@ -18,7 +18,7 @@ function App() {
         <Route path="/profile" element={<ContractorDetails />} />
         <Route path="/edit/:id" element={<ManageUserAccount />} />
         <Route path="/login-signup" element={<LogInSignup />} />
-        <Route path="/listings" element={<ContractorListings/>}
+        <Route path="/listings" element={<ContractorListings/>} />
       </Routes>
     </Router>
   );
