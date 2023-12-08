@@ -3,7 +3,7 @@ import ContractorDetails from "./components/ContractorDetails/ContractorDetails"
 import ContractorListings from "./components/ContractorListings/ContractorListings";
 import ManageUserAccount from "./Pages/ManageUserAccount/ManageUserAccount";
 import LogInSignup from "./Pages/LogInSignup";
-import Nav from "./components/Navbar";
+import Nav from "./Components/Navbar";
 import Home from "./Pages/Home/Home";
 import "./Styles/Global.scss";
 import "./App.css";
