@@ -60,9 +60,33 @@ async function getServicesResults(query) {
   }
 }
 
+async function createUser(user) {
+  try {
+    const newUser = await Axios.post("/users", user);
+
+    return newUser.data;
+  } catch (error) {
+    return error;
+  }
+}
+
+async function fetchUserInfo(email) {
+  try {
+    const user = await Axios.post("/users/login", {
+      email: email,
+    });
+
+    return user.data;
+  } catch (error) {
+    return error;
+  }
+}
+
 export {
   getAllServices,
   getAllContractors,
   getAllContractorsByServiceId,
   getServicesResults,
+  fetchUserInfo,
+  createUser,
 };
