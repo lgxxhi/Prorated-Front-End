@@ -24,16 +24,16 @@ function Reviews({ reviews, contractor }) {
                   ></i>
                 </span>
               </div>
-              <span>
+              <div className="review__card__header__rating">
                 <StarRating rating={review.rating} />
-              </span>
+              </div>
             </div>
             <p className="review__card__date">
               {" "}
               {moment(review.date).fromNow()}
             </p>
-            <div className="review__card__body">
-              <p className="review__card__body--text">{review.review}</p>
+            <div className="review__card__content">
+              <p>{review.review}</p>
             </div>
           </div>
         );
