@@ -49,6 +49,7 @@ function ContractorDetails() {
             <h3>Description</h3>
             <p>{contractorProfile.description}</p>
           </div>
+          <hr />
           <div className="contractor-details__profile__info">
             <h3>Details</h3>
             <p>
