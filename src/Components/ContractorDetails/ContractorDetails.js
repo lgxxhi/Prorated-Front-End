@@ -67,29 +67,26 @@ function ContractorDetails() {
           </div>
         </div>
         <div className="contractor-details__details">
-          <button className="contractor-details__details__toggle contractor-details__details__toggle__past-jobs">
-            Past Jobs
-          </button>
           <div className="contractor-details__details__past-jobs">
+            <p>Past Jobs</p>
             {contractorProfile.images && contractorProfile.images.length > 0 ? (
               <ContractorProfileImages images={contractorProfile.images} />
             ) : (
               <p>No past jobs available</p>
             )}
           </div>
-          <button className="contractor-details__details__toggle">
-            Reviews
-          </button>
           <div className="contractor-details__details__reviews">
             <ContractorReviewDetails />
-            <button
-              onClick={() =>
-                navigate(`/contractors/${contractorProfile.id}/addReview`)
-              }
-              className="more-details"
-            >
-              Add Review
-            </button>
+            <div className="contractor-details__details__reviews__button">
+              <button
+                onClick={() =>
+                  navigate(`/contractors/${contractorProfile.id}/addReview`)
+                }
+                className="more-details"
+              >
+                Add Review
+              </button>
+            </div>
           </div>
         </div>
       </div>
