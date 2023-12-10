@@ -21,11 +21,11 @@ import "./App.css";
 function App() {
   return (
     <ContractorsContextProvider>
-      <UsersProvider>
-        <div className="App">
-          <div className="content-wrap">
-            <Router>
-              <AuthProvider>
+      <AuthProvider>
+        <UsersProvider>
+          <div className="App">
+            <div className="content-wrap">
+              <Router>
                 <Nav />
                 <Routes>
                   <Route path="/" element={<Home />} />
@@ -54,12 +54,12 @@ function App() {
                   />
                   <Route path="/chats" element={<Chats />} />
                 </Routes>
-              </AuthProvider>
-            </Router>
+              </Router>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </UsersProvider>
+        </UsersProvider>
+      </AuthProvider>
     </ContractorsContextProvider>
   );
 }

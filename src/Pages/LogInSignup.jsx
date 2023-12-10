@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../ReactComponents/Firebase/Firebase";
-import { useAuth } from "../ReactComponents/Firebase/AuthContext";
+import { fetchUserInfo, createUser } from "../Api/Api";
+import { auth } from "../Components/Firebase/Firebase";
+import { useAuth } from "../Components/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -28,8 +28,6 @@ function LoginSignup() {
   const { setAuthUser } = useAuth();
   const { setUserData } = useContext(UsersContext);
 
-  const url = process.env.REACT_APP_API_KEY;
-
   const handleToggle = () => {
     setError(null);
     setIsLogin(!isLogin);
@@ -48,12 +46,10 @@ function LoginSignup() {
           user.password
         );
         setAuthUser(userCredentials.user);
-        const response = await axios.post(`${url}users/login`, {
-          email: user.email,
-        });
-        setUserData(response.data);
-        console.log("User data after setting:", response.data);
-        navigate(`/user-profile/${response.data.id}`);
+        const loggedUser = await fetchUserInfo(user.email);
+        setUserData(loggedUser);
+        console.log("User data after setting:", loggedUser);
+        navigate(`/user-profile/${loggedUser.id}`);
       } catch (error) {
         console.log(error);
         setError("Sign-in failed. Please check your email and password.");
@@ -67,12 +63,9 @@ function LoginSignup() {
           user.email,
           user.password
         );
-        console.log(user);
-        const response = await axios.post(`${url}users`, user);
-
-        console.log(userCredentials, response);
+        const signedUpUser = await createUser(user);
         alert("New account created!");
-        navigate(`/`);
+        navigate(`/user-profile/${signedUpUser.id}`);
       } catch (error) {
         console.error("Error signing up:", error.message);
         setError("Sign up failed. Please try again.");
