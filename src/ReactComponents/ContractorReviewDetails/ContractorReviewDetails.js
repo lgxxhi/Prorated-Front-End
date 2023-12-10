@@ -22,7 +22,7 @@ function ContractorReviewDetails() {
       }
     };
     fetchData();
-  }, [id, selectedContractor]);
+  }, [id, setSelectedContractor]);
 
   return (
     <div>
