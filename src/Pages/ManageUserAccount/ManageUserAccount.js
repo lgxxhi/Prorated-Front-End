@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import EditPicModal from "./EditPicModal";
 import "./ManageUserAccount.css";
 
-import { getSingleUser, updateUserById } from "../../common/usersAPI";
+import {
+  getSingleUser,
+  updateUserById,
+} from "../../Components/common/usersAPI";
 
 function ManageUserAccount() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [user, setUser] = useState({
@@ -26,7 +29,7 @@ function ManageUserAccount() {
     const fetchUserById = async () => {
       try {
         let result = await getSingleUser(id);
-        setUser(result.data);
+        setUser(result.data.data.user);
       } catch (e) {
         console.log(e);
       }
@@ -45,7 +48,7 @@ function ManageUserAccount() {
     e.preventDefault();
     try {
       await updateUserById(id, user);
-      // navigate(`/edit/${id}`)
+      navigate(`user-profile/${id}/edit`);
       window.alert("Account Updated!");
     } catch (e) {
       console.log(e);
