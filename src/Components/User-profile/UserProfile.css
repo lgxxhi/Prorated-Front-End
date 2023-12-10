@@ -1,0 +1,123 @@
+.profile {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50px 220px 1fr 1fr;
+  grid-area: 1 / 1 / 6 / 3;
+  margin-top: 50px;
+  padding: 50px;
+  gap: 15px;
+}
+
+.dashboardH2 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.userProfile {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-area: 2 / 1 / 2 / 2;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.user {
+  border-radius: 50%;
+  width: 200px;
+  max-height: fit-content;
+}
+
+span {
+  color: rgb(104, 103, 103);
+}
+
+.edit {
+  background-color: lightgray;
+  border: 1px solid rgb(104, 103, 103);
+  padding: 5px 10px;
+}
+
+.saved {
+  background-color: rgb(242, 239, 239);
+  grid-area: 4 / 1 / 6 / 2;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.savedH3 {
+  background-color: rgb(234, 234, 235);
+  border: 1px dotted rgb(167, 167, 167);
+  border-radius: 50px;
+  margin: 5px 35px;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.picNdesc {
+  max-width: fit-content;
+}
+
+.picNdesc ul li {
+  display: grid;
+  border-bottom: 1px solid grey;
+  grid-template-columns: 100px 500px;
+  grid-template-rows: repeat(2, 30px);
+}
+
+.contractor {
+  height: 100px;
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.contractorH5 {
+  padding: 5px 10px;
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.contractorPtag {
+  padding: 10px 5px;
+  grid-area: 2 / 2 / 4 / 4;
+}
+
+.pastReviews {
+  grid-area: 2 / 2 / 5 / 3;
+  background-color: rgb(203, 202, 202);
+  padding: 5px 10px;
+}
+
+.pastReviews h3 {
+  border: 1px solid grey;
+  border-radius: 200px;
+  margin: 15px;
+  padding: 5px;
+  text-align: center;
+}
+.pastReviews li {
+  background-color: white;
+  border: 1px solid rgb(182, 180, 180);
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  list-style: none;
+  padding: 15px;
+}
+.pastReviews .contractor {
+  grid-area: 1 / 1 / 5 / 2;
+}
+
+.pastReviews h5 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.locationh6 {
+  color: rgb(82, 81, 81);
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.rating {
+  font-size: x-small;
+  grid-area: 3 / 2 / 4 / 3;
+}
+.review {
+  grid-area: 4 / 2 / 5 / 3;
+}
