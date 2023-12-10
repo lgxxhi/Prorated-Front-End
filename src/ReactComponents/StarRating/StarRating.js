@@ -9,7 +9,7 @@ function StarRating({ rating }) {
 
   for (let i = rounded; i >= 1; i--) {
     stars.push(<i className="bx bxs-star" style={{ color: "gold" }}></i>);
-    if (i == 1.5) {
+    if (i === 1.5) {
       stars.push(
         <i className="bx bxs-star-half" style={{ color: "gold" }}></i>
       );

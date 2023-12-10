@@ -24,10 +24,9 @@ function LoginSignup() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
-  const { setUserData, userData } = useContext(UsersContext);
+  const { setUserData } = useContext(UsersContext);
 
   const url = process.env.REACT_APP_API_KEY;
 

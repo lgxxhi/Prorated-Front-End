@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
 import axios from "../../Api/axios";
 import Reviews from "../Reviews/Reviews";
-import StarRating from "../StarRating/StarRating";
 
 function ContractorReviewDetails() {
   const { id } = useParams();
@@ -23,7 +22,7 @@ function ContractorReviewDetails() {
       }
     };
     fetchData();
-  }, []);
+  }, [id, selectedContractor]);
 
   return (
     <div>

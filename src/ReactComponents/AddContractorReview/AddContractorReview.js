@@ -13,7 +13,7 @@ function AddContractorReview() {
   const { selectedContractor, setSelectedContractor } =
     useContext(ContractorsContext);
   const { userData } = useContext(UsersContext);
-  const [name, setName] = useState(userData.username);
+  const name = userData.username;
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
 
@@ -30,7 +30,7 @@ function AddContractorReview() {
       }
     };
     fetchData();
-  }, []);
+  }, [id, setSelectedContractor]);
   console.log(userData);
   const handleSumbitReview = async (e) => {
     e.preventDefault();
