@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../Components/Firebase/Firebase";
-import { useAuth } from "../Components/Firebase/AuthContext";
+import { auth } from "../ReactComponents/Firebase/Firebase";
+import { useAuth } from "../ReactComponents/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
