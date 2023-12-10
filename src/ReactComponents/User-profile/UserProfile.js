@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../common/usersAPI";
 import "./UserProfile.css";
 import moment from "moment";
-import StarRating from "../../Components/StarRating/StarRating";
+import StarRating from "../StarRating/StarRating";
 
 function UserProfile() {
   const { id } = useParams();

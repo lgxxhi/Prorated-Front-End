@@ -1,21 +1,21 @@
 import "./Styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
-import ContractorListings from "./components/ContractorListings/ContractorListings";
+import ContractorDetails from "./ReactComponents/ContractorDetails/ContractorDetails";
+import ContractorListings from "./ReactComponents/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LogInSignup";
-import UserProfile from "./Components/User-profile/UserProfile";
-import ManageUserAccount from "./Components/ManageUserAccount/ManageUserAccount";
-import Nav from "./Components/Navbar";
+import UserProfile from "./ReactComponents/User-profile/UserProfile";
+import ManageUserAccount from "./ReactComponents/ManageUserAccount/ManageUserAccount";
+import Nav from "./ReactComponents/Navbar";
 import Home from "./Pages/Home/Home";
-import { AuthProvider } from "./Components/Firebase/AuthContext";
-import Footer from "./Components/Footer";
+import { AuthProvider } from "./ReactComponents/Firebase/AuthContext";
+import Footer from "./ReactComponents/Footer";
 import { ContractorsContextProvider } from "./context/ContractorsContext";
 import { UsersProvider } from "./context/UsersContext";
-import Reviews from "./Components/Reviews/Reviews";
-import ContractorReviewDetails from "./Components/ContractorReviewDetails/ContractorReviewDetails";
-import AddContractorReview from "./Components/AddContractorReview/AddContractorReview";
-import Chats from "./Components/Chats/Chats";
+import Reviews from "./ReactComponents/Reviews/Reviews";
+import ContractorReviewDetails from "./ReactComponents/ContractorReviewDetails/ContractorReviewDetails";
+import AddContractorReview from "./ReactComponents/AddContractorReview/AddContractorReview";
+import Chats from "./ReactComponents/Chats/Chats";
 import "./App.css";
 
 function App() {
