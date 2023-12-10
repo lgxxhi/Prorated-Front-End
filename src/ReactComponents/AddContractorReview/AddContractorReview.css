@@ -1,0 +1,57 @@
+.review-details {
+  padding: 10px;
+}
+
+.review-details h1 {
+  font-size: 40px;
+}
+
+.review-profile {
+  display: flex;
+  align-items: center;
+}
+
+.review-contractor-details {
+  margin-left: 10px;
+}
+
+.guidelines {
+  transform: translateY(-35%);
+  color: #38b6ff;
+}
+.guidelines:hover {
+  color: #00a0fc;
+  cursor: pointer;
+}
+
+.hr-tag {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  width: 100%;
+  border-color: rgba(255, 244, 244, 0.535);
+}
+
+.form-input {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  transition: all 0.3s;
+}
+
+.guidelines {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+}
+
+.guidelines:hover {
+  text-decoration: underline;
+}

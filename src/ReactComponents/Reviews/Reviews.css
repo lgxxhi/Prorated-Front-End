@@ -1,0 +1,22 @@
+.review-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.review-card {
+  border-radius: 20%/50%;
+  width: 100%;
+
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact i {
+  cursor: pointer;
+}

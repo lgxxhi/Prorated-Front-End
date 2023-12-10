@@ -1,0 +1,96 @@
+.manageUserContainer {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 85px 1fr;
+  padding: 100px 50px;
+}
+
+.accountH2 {
+  border: 5px solid rgb(200, 200, 198);
+  color: rgb(87, 87, 87);
+  grid-area: 1 / 1 / 2 / 3;
+  padding: 10px 50px;
+  margin: 10px;
+  text-align: center;
+}
+
+/* - - - PROFILE PIC - - - */
+.imgxPencil {
+  align-items: center;
+  border: 2px dotted lightgrey;
+  border-radius: 35px;
+  grid-area: 2 / 1 / 3 / 2;
+  max-width: 500px;
+  position: relative;
+  margin: 15px;
+}
+.user_Name {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 50px;
+}
+.img {
+  padding: 10px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* - - - PENCIL - - -  */
+.editMod {
+  align-items: center;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.editMod #myBtn {
+  border-radius: 20px;
+  position: absolute;
+  top: 80%;
+  right: 40%;
+}
+
+/* - - - FORM - - - */
+form > .editDetails {
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 10px;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 12px 20px 12px 12px;
+  margin: 10px 0 10px 0px;
+  width: 400px;
+}
+
+/* - - - PASSWORD - - - */
+#password {
+  width: 400px;
+  position: relative;
+}
+
+#password input[type="password"],
+#password input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px 12px 12px;
+}
+
+/* - - - EYECON 4 PSWD - - - */
+.fa-eye,
+.fa-eye-slash {
+  color: lightgray;
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  top: 55%;
+}
+
+/* - - - SAVE BTN - - - */
+.saveButton {
+  background-color: lightgray;
+  border: none;
+  grid-area: saveButton;
+  padding: 15px 20px;
+}
