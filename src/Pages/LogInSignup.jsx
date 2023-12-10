@@ -63,7 +63,9 @@ function LoginSignup() {
           user.email,
           user.password
         );
+        setAuthUser(userCredentials.user);
         const signedUpUser = await createUser(user);
+        setUserData(signedUpUser);
         alert("New account created!");
         navigate(`/user-profile/${signedUpUser.id}`);
       } catch (error) {
