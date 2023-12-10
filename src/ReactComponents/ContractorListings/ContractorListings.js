@@ -1,15 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-
+import React, { useState, useEffect } from "react";
 import "./ContractorListings.css";
-import Filter from "../Filter/Filter";
 import ContractorCard from "../ContractorCard/ContractorCard";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  getAllContractorsByServiceId,
-  getServicesResults,
-} from "../../Api/Api";
-import axios from "../../Api/axios";
-import { ContractorsContext } from "../../context/ContractorsContext";
+import { getServicesResults } from "../../Api/Api";
 import { useParams } from "react-router-dom";
 
 function ContractorListings(props) {

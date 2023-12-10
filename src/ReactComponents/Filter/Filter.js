@@ -12,7 +12,7 @@ function Filter({ services, setFiltered, setActiveService, activeService }) {
       service.services_offerred.includes(activeService)
     );
     setFiltered(filtered);
-  }, [activeService]);
+  }, [activeService, services, setFiltered]);
 
   return (
     <div className="filter-container">

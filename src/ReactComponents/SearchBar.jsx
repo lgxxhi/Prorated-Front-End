@@ -3,15 +3,12 @@ import "../Styles/Global.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBar(props) {
-  const searchIcon = require("../Assets/Images/search-icon.png");
-  const [search, setSearch] = useState("");
   const [searchNav, setSearchNav] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     let searchQuerie = e.target.children[1].value;
-    setSearch("");
     setSearchNav("");
     navigate(`/listings/${searchQuerie}`);
     navigate(0);

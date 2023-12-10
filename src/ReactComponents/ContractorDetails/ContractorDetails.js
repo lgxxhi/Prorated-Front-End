@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchContractorDetails } from "../../common/usersAPI";
 import "./ContractorDetails.css";
-import Reviews from "../Reviews/Reviews";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 
@@ -29,7 +28,11 @@ function ContractorDetails() {
       <div className="container-details">
         <div style={{ display: "flex", alignItems: "center" }}>
           <div className="image">
-            <img className="profile-img" src="https://picsum.photos/200/300" />
+            <img
+              className="profile-img"
+              src="https://picsum.photos/200/300"
+              alt=""
+            />
           </div>
           <div style={{ marginLeft: "10px" }}>
             <h3>{contractorProfile.name}</h3>

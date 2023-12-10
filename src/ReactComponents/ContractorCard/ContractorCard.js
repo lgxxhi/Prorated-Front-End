@@ -1,29 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.css";
-import { v4 as uuidv4 } from "uuid";
-
-import ServicesOffered from "../ServicesOffered/ServicesOffered";
 import StarRating from "../StarRating/StarRating";
 import { motion } from "framer-motion";
 
 function ContractorCard({ contractor }) {
-  function handleStars(rating) {
-    let rounded = Math.round(rating / 0.5) * 0.5;
-    let arr = [];
-
-    for (let i = rounded; i >= 1; i--) {
-      arr.push(<i key={uuidv4()} className="bx bxs-star"></i>);
-      if (i == 1.5) {
-        arr.push(<i key={uuidv4()} className="bx bxs-star-half"></i>);
-      }
-    }
-    for (let i = 5 - rounded; i >= 1; i--) {
-      arr.push(<i key={uuidv4()} className="bx bx-star"></i>);
-    }
-    return arr;
-  }
-
   return (
     <motion.div
       layout

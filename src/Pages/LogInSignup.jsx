@@ -24,7 +24,6 @@ function LoginSignup() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
   const { setUserData } = useContext(UsersContext);
@@ -40,8 +39,6 @@ function LoginSignup() {
     setIsLoading(true);
 
     if (isLogin) {
-      // Login
-
       try {
         const userCredentials = await signInWithEmailAndPassword(
           auth,
@@ -60,7 +57,6 @@ function LoginSignup() {
         setIsLoading(false);
       }
     } else {
-      // Sign up
       try {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
@@ -198,9 +194,9 @@ function LoginSignup() {
           </form>
           <p className="login-signup__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
+            <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
-            </a>
+            </button>
           </p>
           {error && <p className="error-message">{error}</p>}
         </div>

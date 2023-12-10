@@ -32,10 +32,10 @@ export default function Footer() {
       </div>
       <div className="footer__support">
         <h2>Support</h2>
-        <a>Help</a>
-        <a>Safety</a>
-        <a>Terms of Use</a>
-        <a>Privacy Policy</a>
+        <button>Help</button>
+        <button>Safety</button>
+        <button>Terms of Use</button>
+        <button>Privacy Policy</button>
       </div>
     </footer>
   );
