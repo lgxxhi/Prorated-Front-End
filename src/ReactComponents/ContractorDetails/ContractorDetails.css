@@ -15,10 +15,7 @@
 }
 
 .past-jobs {
-  flex: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  text-align: center;
 }
 
 .past-job-card {
@@ -35,4 +32,24 @@
 
 .review {
   margin-bottom: 10px;
+}
+.description {
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+hr {
+  max-width: 50%;
+  margin: 0 auto;
+}
+.container-details {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.contact-info-description {
+  align-self: center;
 }
