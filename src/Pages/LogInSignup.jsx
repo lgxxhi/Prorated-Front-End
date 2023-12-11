@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../Components/Firebase/Firebase";
-import { useAuth } from "../Components/Firebase/AuthContext";
+import { fetchUserInfo, createUser } from "../Api/Api";
+import { auth } from "../ReactComponents/Firebase/Firebase";
+import { useAuth } from "../ReactComponents/Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import "./LoginSignup.css";
+import { UsersContext } from "../context/UsersContext";
+import "../Styles/LoginSignup.scss";
 
 function LoginSignup() {
   const [user, setUser] = useState({
@@ -23,11 +24,9 @@ function LoginSignup() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const { setAuthUser } = useAuth();
-
-  const url = process.env.REACT_APP_API_KEY;
+  const { setUserData } = useContext(UsersContext);
 
   const handleToggle = () => {
     setError(null);
@@ -40,9 +39,6 @@ function LoginSignup() {
     setIsLoading(true);
 
     if (isLogin) {
-      // Login
-      setIsLoggedIn(true);
-
       try {
         const userCredentials = await signInWithEmailAndPassword(
           auth,
@@ -50,12 +46,10 @@ function LoginSignup() {
           user.password
         );
         setAuthUser(userCredentials.user);
-        const response = await axios.post(`${url}users/login`, {
-          email: user.email,
-        });
-        navigate(`/user-profile/${response.data.id}`);
-        // console.log(userCredentials);
-        // console.log(response.data);
+        const loggedUser = await fetchUserInfo(user.email);
+        setUserData(loggedUser);
+        console.log("User data after setting:", loggedUser);
+        navigate(`/user-profile/${loggedUser.id}`);
       } catch (error) {
         console.log(error);
         setError("Sign-in failed. Please check your email and password.");
@@ -63,19 +57,17 @@ function LoginSignup() {
         setIsLoading(false);
       }
     } else {
-      // Sign up
       try {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
           user.email,
           user.password
         );
-        console.log(user);
-        const response = await axios.post(`${url}users`, user);
-
-        console.log(userCredentials, response);
+        setAuthUser(userCredentials.user);
+        const signedUpUser = await createUser(user);
+        setUserData(signedUpUser);
         alert("New account created!");
-        navigate(`/`);
+        navigate(`/user-profile/${signedUpUser.id}`);
       } catch (error) {
         console.error("Error signing up:", error.message);
         setError("Sign up failed. Please try again.");
@@ -100,13 +92,14 @@ function LoginSignup() {
   };
 
   return (
-    <div className="login-signup container">
-      <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-
+    <div className="login-signup">
       {isLoading ? (
         <div className="loader"></div>
       ) : (
-        <div className="form container">
+        <div className="login-signup__form">
+          <h2 className="login-signup__form__title">
+            {isLogin ? "Login" : "Sign Up"}
+          </h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email: </label>
             <input
@@ -193,15 +186,19 @@ function LoginSignup() {
                 />
               </div>
             )}
-            <button type="submit" disabled={isLoading}>
+            <button
+              className="login-signup__submitbtn"
+              type="submit"
+              disabled={isLoading}
+            >
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
-          <p>
+          <p className="login-signup__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <a href="#" onClick={handleToggle} disabled={isLoading}>
+            <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
-            </a>
+            </button>
           </p>
           {error && <p className="error-message">{error}</p>}
         </div>

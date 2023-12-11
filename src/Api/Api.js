@@ -31,17 +31,51 @@ async function getServicesResults(query) {
   try {
     let queryArray = query.toLowerCase().split(" ");
     let allServices = await getAllServices();
-    let servicesArray = [];
-    allServices.forEach(async (serviceObj) => {
+    let allContractors = await getAllContractors();
+    let results = [];
+
+    for (let serviceObj of allServices) {
       let serviceName = serviceObj.name.toLowerCase();
       for (let queryWord of queryArray) {
-        if (serviceName.includes(queryWord)) {
+        if (serviceName.includes(queryWord.toLowerCase())) {
           let contractors = await getAllContractorsByServiceId(serviceObj.id);
-          servicesArray.push(...contractors);
+          results.push(...contractors);
         }
       }
+    }
+
+    for (let contractorObj of allContractors) {
+      let contractorName = contractorObj.name.toLowerCase();
+      for (let queryWord of queryArray) {
+        if (contractorName.includes(queryWord.toLowerCase())) {
+          results.push(contractorObj);
+        }
+      }
+    }
+
+    return results;
+  } catch (error) {
+    return error;
+  }
+}
+
+async function createUser(user) {
+  try {
+    const newUser = await Axios.post("/users", user);
+
+    return newUser.data;
+  } catch (error) {
+    return error;
+  }
+}
+
+async function fetchUserInfo(email) {
+  try {
+    const user = await Axios.post("/users/login", {
+      email: email,
     });
-    return servicesArray;
+
+    return user.data;
   } catch (error) {
     return error;
   }
@@ -52,4 +86,6 @@ export {
   getAllContractors,
   getAllContractorsByServiceId,
   getServicesResults,
+  fetchUserInfo,
+  createUser,
 };
