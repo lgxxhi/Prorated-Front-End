@@ -26,7 +26,10 @@ function ContractorDetails() {
   return (
     <div className="contractor-profile-container">
       <div className="container-details">
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          className="profile-header"
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <div className="image">
             <img
               className="profile-img"
@@ -46,15 +49,28 @@ function ContractorDetails() {
             </div>
           </div>
         </div>
-        <p>Location: {contractorProfile.location}</p>
-        <p>Experience: {contractorProfile.experience} years</p>
-        <p>Contact: {contractorProfile.contact}</p>
-        <p>Phone Number: {contractorProfile.phone_number}</p>
+        <div className="contact-info-description">
+          <p>
+            <b>Location</b>: {contractorProfile.location}
+          </p>
+          <p>
+            <b>Experience</b>: {contractorProfile.experience} years
+          </p>
+          <p>
+            {" "}
+            <b> Contact </b> : {contractorProfile.contact}
+          </p>
+          <p>
+            <b> Phone Number </b>: {contractorProfile.phone_number}
+          </p>
+        </div>
       </div>
-      <div>
+      <hr />
+      <div className="description">
         <h3>About {contractorProfile.name}</h3>
         <p>{contractorProfile.description}</p>
       </div>
+      <hr />
       <div className="past-jobs">
         <h3>Past Jobs</h3>
 
@@ -64,6 +80,7 @@ function ContractorDetails() {
           <p>No past jobs available</p>
         )}
       </div>
+      <hr />
       <ContractorReviewDetails />
       <button
         onClick={() =>

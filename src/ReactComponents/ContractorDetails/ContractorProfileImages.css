@@ -1,12 +1,26 @@
-.carousel {
-  display: inline-block;
-}
-
 .carousel .slide img {
-  width: 30%;
+  width: 100%;
   height: 300px;
 }
+img.responsive-image {
+  object-fit: cover;
+}
+.carousel-root {
+  width: fit-content;
+  padding: 100px;
+}
 
+.carousel-slider {
+  width: 700px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.carousel {
+  padding: 10px;
+  padding-left: 25px;
+  border: 1px solid #ccc;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -29,6 +43,24 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
+  color: red;
   cursor: pointer;
+}
+.contractor-profile-container {
+  display: inline-block;
+}
+
+div {
+  margin: 0;
+}
+
+div {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+.resizeable-div {
+  padding: 50px;
 }
