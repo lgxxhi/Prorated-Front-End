@@ -31,11 +31,7 @@ function ContractorDetails() {
           style={{ display: "flex", alignItems: "center" }}
         >
           <div className="image">
-            <img
-              className="profile-img"
-              src="https://picsum.photos/200/300"
-              alt=""
-            />
+            <img className="profile-img" src={contractorProfile.logo} alt="" />
           </div>
           <div style={{ marginLeft: "10px" }}>
             <h3>{contractorProfile.name}</h3>
