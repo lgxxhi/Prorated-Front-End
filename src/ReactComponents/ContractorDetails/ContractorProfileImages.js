@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./ContractorProfileImages.css";
+import "./ContractorProfileImages.scss";
 
 const ContractorProfileImages = ({ images }) => {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +19,7 @@ const ContractorProfileImages = ({ images }) => {
 
   return (
     <div>
-      <Carousel width={"700px"}>
+      <Carousel>
         {images.map((image, index) => (
           <div
             className="resizeable-div"
