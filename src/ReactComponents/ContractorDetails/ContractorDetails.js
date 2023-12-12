@@ -30,7 +30,7 @@ function ContractorDetails() {
         <div className="contractor-details__profile">
           <img
             className="contractor-details__profile__profile-picture"
-            src="https://picsum.photos/200/300"
+            src={contractorProfile.logo}
             alt=""
           />
           <div className="contractor-details__profile__title">
