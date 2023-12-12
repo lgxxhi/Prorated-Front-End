@@ -31,6 +31,7 @@ function ContractorDetails() {
           <img
             className="contractor-details__profile__profile-picture"
             src="https://picsum.photos/200/300"
+            alt=""
           />
           <div className="contractor-details__profile__title">
             <h3 className="contractor-details__profile__title__name">
