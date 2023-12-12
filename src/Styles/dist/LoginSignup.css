@@ -34,19 +34,20 @@
   border: 0;
   border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
-  color: rgb(255, 255, 255);
 }
 .login-signup__form input::placeholder {
   text-shadow: none;
 }
 .login-signup__form__submitbtn {
   background-color: #38c13d;
-  border: none;
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
-  color: #ffffff;
+  border: none;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3), 0px 0px 3px rgba(0, 0, 0, 0.3) inset;
+  color: #ffffff;
+  font-size: 1em;
   cursor: pointer;
 }
 .login-signup__form__submitbtn:disabled {
