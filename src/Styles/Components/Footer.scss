@@ -81,8 +81,14 @@ $secondaryColor: #191919;
     h2 {
       margin: 0px 0px 10px 0px;
     }
-    a:hover {
-      cursor: pointer;
+    button {
+      border: 0;
+      background: none;
+      margin: 5px;
+      font-size: 1em;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

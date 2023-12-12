@@ -1,0 +1,91 @@
+.footer {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  background-color: #d0d8df;
+  margin-top: 100px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 30px;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+}
+.footer__info a {
+  color: #191919;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.footer__info h1 {
+  color: #191919;
+  margin: 0;
+}
+.footer__info__social-media {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.footer__info__social-media i {
+  font-size: 30px;
+}
+.footer__info__social-media i:hover {
+  cursor: pointer;
+}
+.footer__email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__email h2 {
+  margin: 10px 0 0 0;
+}
+.footer__email p {
+  margin: 0;
+  color: #00a0fc;
+}
+.footer__email__form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__email__form__text {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 15px;
+  padding: 2%;
+}
+.footer__email__form__text:focus {
+  outline: none;
+}
+.footer__email__form__submit {
+  margin-top: 20px;
+  width: 20%;
+  padding: 5px 0;
+  background-color: #38b6ff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: white;
+}
+.footer__email__form__submit:hover {
+  background-color: #00a0fc;
+  cursor: pointer;
+}
+.footer__support {
+  display: flex;
+  flex-direction: column;
+}
+.footer__support h2 {
+  margin: 0px 0px 10px 0px;
+}
+.footer__support button {
+  border: 0;
+  background: none;
+  margin: 5px;
+  font-size: 1em;
+}
+.footer__support button:hover {
+  cursor: pointer;
+}
