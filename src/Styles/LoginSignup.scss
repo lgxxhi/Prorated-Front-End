@@ -42,13 +42,15 @@ $white_ffffff: #ffffff;
       margin-bottom: 5px;
     }
     input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
       border: 0;
       border-radius: 15px;
-      margin-bottom: 20px;
-      padding: 8px;
-      width: 100%;
+      box-shadow: 0px 0px 5px rgba(#000000, 0.5) inset;
+      color: rgb(255, 255, 255);
       &::placeholder {
-        color: grey;
+        text-shadow: none;
       }
     }
     &__submitbtn {
@@ -66,8 +68,15 @@ $white_ffffff: #ffffff;
         cursor: not-allowed;
       }
     }
-    &__signUp {
-      color: white;
+  }
+  &__signUp {
+    color: white;
+    button {
+      border: none;
+      background: none;
+      font-size: 1em;
+      color: #ffffff;
+      text-decoration: underline;
     }
   }
 }
