@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import StarRating from "../StarRating/StarRating";
+import { useAuth } from "../Firebase/AuthContext";
 import moment from "moment";
 import "./Reviews.css";
 
 function Reviews({ reviews, contractor }) {
+  const { authUser } = useAuth();
   console.log(contractor);
   const navigate = useNavigate();
 
@@ -25,10 +27,17 @@ function Reviews({ reviews, contractor }) {
             </div>
             <div className="contact">
               <span>
-                <i
-                  onClick={() => navigate("/chats")}
-                  className="bx bx-message-rounded"
-                ></i>
+                {authUser ? (
+                  <i
+                    onClick={() => navigate("/chats")}
+                    className="bx bx-message-rounded"
+                  ></i>
+                ) : (
+                  <i
+                    onClick={() => navigate("/login-signup")}
+                    className="bx bx-message-rounded"
+                  ></i>
+                )}{" "}
               </span>
             </div>
           </div>
