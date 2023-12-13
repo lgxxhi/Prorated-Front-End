@@ -187,7 +187,7 @@ function LoginSignup() {
               </div>
             )}
             <button
-              className="login-signup__submitbtn"
+              className="login-signup__form__submitbtn"
               type="submit"
               disabled={isLoading}
             >

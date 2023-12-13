@@ -28,31 +28,41 @@
   margin-bottom: 5px;
 }
 .login-signup__form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
   border: 0;
   border-radius: 15px;
-  margin-bottom: 20px;
-  padding: 8px;
-  width: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
 }
 .login-signup__form input::placeholder {
-  color: grey;
+  text-shadow: none;
 }
 .login-signup__form__submitbtn {
   background-color: #38c13d;
-  border: none;
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
-  color: #ffffff;
+  border: none;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3), 0px 0px 3px rgba(0, 0, 0, 0.3) inset;
+  color: #ffffff;
+  font-size: 1em;
   cursor: pointer;
 }
 .login-signup__form__submitbtn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.login-signup__form__signUp {
+.login-signup__signUp {
   color: white;
+}
+.login-signup__signUp button {
+  border: none;
+  background: none;
+  font-size: 1em;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .error-message {
