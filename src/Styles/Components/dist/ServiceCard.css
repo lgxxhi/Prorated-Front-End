@@ -49,3 +49,16 @@
   transform: scale(1.02);
   cursor: pointer;
 }
+
+@media only screen and (max-width: 550px) {
+  .serviceCard {
+    width: 180px;
+    height: 250px;
+  }
+  .serviceCard__top {
+    width: 100%;
+  }
+  .serviceCard__top__title {
+    width: 180px;
+  }
+}

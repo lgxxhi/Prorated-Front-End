@@ -90,3 +90,25 @@
 .footer__support button:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 550px) {
+  .footer {
+    display: block;
+  }
+  .footer__info h1 {
+    font-size: 2em;
+  }
+  .footer__info__social-media {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__email h2 {
+    font-size: 2em;
+  }
+  .footer__email__form__submit {
+    width: 50%;
+  }
+  .footer__support h2 {
+    font-size: 2em;
+  }
+}
