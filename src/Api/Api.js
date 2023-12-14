@@ -39,7 +39,13 @@ async function getServicesResults(query) {
       for (let queryWord of queryArray) {
         if (serviceName.includes(queryWord.toLowerCase())) {
           let contractors = await getAllContractorsByServiceId(serviceObj.id);
-          results.push(...contractors);
+          for (const contractor of contractors) {
+            if (
+              !results.some((resultsObj) => resultsObj.id === contractor.id)
+            ) {
+              results.push(contractor);
+            }
+          }
         }
       }
     }
@@ -47,7 +53,10 @@ async function getServicesResults(query) {
     for (let contractorObj of allContractors) {
       let contractorName = contractorObj.name.toLowerCase();
       for (let queryWord of queryArray) {
-        if (contractorName.includes(queryWord.toLowerCase())) {
+        if (
+          contractorName.includes(queryWord.toLowerCase()) &&
+          !results.some((contractor) => contractor.id === contractorObj.id)
+        ) {
           results.push(contractorObj);
         }
       }
