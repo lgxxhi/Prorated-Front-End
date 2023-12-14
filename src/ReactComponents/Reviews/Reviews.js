@@ -11,7 +11,7 @@ function Reviews({ reviews, contractor }) {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="reviewList">
       {reviews.map((review) => {
         return (
           <div className="review-card" key={review.id}>
@@ -47,7 +47,7 @@ function Reviews({ reviews, contractor }) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

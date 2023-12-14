@@ -93,3 +93,35 @@ $secondaryColor: #191919;
     }
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .footer {
+    display: block;
+    &__info {
+      h1 {
+        font-size: 2em;
+      }
+      a {
+      }
+      &__social-media {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &__email {
+      h2 {
+        font-size: 2em;
+      }
+      &__form {
+        &__submit {
+          width: 50%;
+        }
+      }
+    }
+    &__support {
+      h2 {
+        font-size: 2em;
+      }
+    }
+  }
+}

@@ -68,4 +68,8 @@
   .home-page__search__suggestions button {
     font-size: 60%;
   }
+  .home-page__popular-services {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding-bottom: 50px;
+  }
 }

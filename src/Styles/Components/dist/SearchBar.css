@@ -47,3 +47,15 @@
 .searchBar__homeSize {
   width: 100%;
 }
+
+@media only screen and (max-width: 550px) {
+  .searchBar {
+    height: 30px;
+  }
+  .searchBar__input {
+    height: 30px;
+  }
+  .searchBar__submitBtn {
+    font-size: 0.8em;
+  }
+}
