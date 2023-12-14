@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import StarRating from "../StarRating/StarRating";
 import { useAuth } from "../Firebase/AuthContext";
 import moment from "moment";
-import "./Reviews.css";
+import "./Reviews.scss";
 
 function Reviews({ reviews, contractor }) {
   const { authUser } = useAuth();
@@ -11,39 +11,43 @@ function Reviews({ reviews, contractor }) {
   const navigate = useNavigate();
 
   return (
-    <div className="review-card-container">
+    <>
       {reviews.map((review) => {
         return (
           <div className="review-card" key={review.id}>
-            <div className="review-card-header">
-              <span>{review.name}</span>
-              <div> {moment(review.date).fromNow()}</div>
-              <span>
+            <div className="review-card__header">
+              <p className="review-card__header__name">
+                {review.name}
+                <span className="review-card__header__name__chat">
+                  {authUser ? (
+                    <i
+                      onClick={() => navigate("/chats")}
+                      className="bx bx-message-rounded"
+                    ></i>
+                  ) : (
+                    <i
+                      onClick={() => navigate("/login-signup")}
+                      className="bx bx-message-rounded"
+                    ></i>
+                  )}{" "}
+                </span>
+              </p>
+
+              <span className="review-card__header__stars">
                 <StarRating rating={review.rating} />
               </span>
             </div>
-            <div className="review-card-body">
-              <p className="review-card-text">{review.review}</p>
+            <div className="review-card__date">
+              {" "}
+              {moment(review.date).fromNow()}
             </div>
-            <div className="contact">
-              <span>
-                {authUser ? (
-                  <i
-                    onClick={() => navigate("/chats")}
-                    className="bx bx-message-rounded"
-                  ></i>
-                ) : (
-                  <i
-                    onClick={() => navigate("/login-signup")}
-                    className="bx bx-message-rounded"
-                  ></i>
-                )}{" "}
-              </span>
+            <div className="review-card__body">
+              <p className="review-card__body__text">{review.review}</p>
             </div>
           </div>
         );
       })}
-    </div>
+    </>
   );
 }
 

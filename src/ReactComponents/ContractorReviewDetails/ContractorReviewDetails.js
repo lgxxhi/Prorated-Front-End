@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import "./ContractorReviewDetails.css";
+import "./ContractorReviewDetails.scss";
 import { useParams } from "react-router-dom";
 import { ContractorsContext } from "../../context/ContractorsContext";
 import axios from "../../Api/axios";
@@ -25,24 +25,14 @@ function ContractorReviewDetails() {
   }, [id, setSelectedContractor]);
 
   return (
-    <div>
+    <div className="reviews-container">
       {selectedContractor && (
-        <div className="review-details-div">
-          {/* <div className="reviews-container">
-            <StarRating rating={selectedContractor.contractor.average_rating} />
-            <span style={{ fontSize: "small" }} className="count-span">
-              {selectedContractor.contractor.count
-                ? `(${selectedContractor.contractor.count})`
-                : 0}
-            </span>
-          </div> */}
-          <div className="reviews-div">
-            <Reviews
-              contractor={selectedContractor}
-              reviews={selectedContractor.reviews}
-            />
-          </div>
-        </div>
+        <>
+          <Reviews
+            contractor={selectedContractor}
+            reviews={selectedContractor.reviews}
+          />
+        </>
       )}
     </div>
   );
