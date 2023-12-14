@@ -1,9 +1,9 @@
 .login-signup {
   display: flex;
   justify-content: center;
-  height: 100%;
+  padding: 0px;
 }
-.login-signup__form {
+.login-signup__box {
   display: flex;
   flex-direction: column;
   margin-top: 20vh;
@@ -16,18 +16,23 @@
   backdrop-filter: blur(10px);
   background-image: linear-gradient(to bottom right, #7bc4ff, #5fb4f9, #5f7ef9, #5971f6);
 }
-.login-signup__form__title {
+.login-signup__box__title {
   color: #ffffff;
   font-size: 2em;
   margin-bottom: 20px;
 }
-.login-signup__form label {
+.login-signup__box__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+.login-signup__box__form__label {
   color: #ffffff;
-  display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.login-signup__form input {
+.login-signup__box__form__textBox {
   width: 100%;
   padding: 8px;
   margin-bottom: 20px;
@@ -35,10 +40,10 @@
   border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
 }
-.login-signup__form input::placeholder {
+.login-signup__box__form__textBox::placeholder {
   text-shadow: none;
 }
-.login-signup__form__submitbtn {
+.login-signup__box__form__submitbtn {
   background-color: #38c13d;
   width: 100%;
   margin-bottom: 20px;
@@ -50,14 +55,14 @@
   font-size: 1em;
   cursor: pointer;
 }
-.login-signup__form__submitbtn:disabled {
+.login-signup__box__form__submitbtn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.login-signup__signUp {
+.login-signup__box__signUp {
   color: white;
 }
-.login-signup__signUp button {
+.login-signup__box__signUp button {
   border: none;
   background: none;
   font-size: 1em;
@@ -146,5 +151,10 @@
   40% {
     box-shadow: 0 -2em;
     height: 5em;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .login-signup__box {
+    width: 80%;
   }
 }

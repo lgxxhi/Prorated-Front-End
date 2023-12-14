@@ -96,15 +96,17 @@ function LoginSignup() {
       {isLoading ? (
         <div className="loader"></div>
       ) : (
-        <div className="login-signup__form">
-          <h2 className="login-signup__form__title">
+        <div className="login-signup__box">
+          <h2 className="login-signup__box__title">
             {isLogin ? "Login" : "Sign Up"}
           </h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email: </label>
+          <form className="login-signup__box__form" onSubmit={handleSubmit}>
+            <label className="login-signup__box__form__label" htmlFor="email">
+              Email:{" "}
+            </label>
             <input
+              className="login-signup__box__form__textBox"
               type="email"
-              id="email"
               name="email"
               placeholder="Enter your email"
               value={user.email}
@@ -112,10 +114,15 @@ function LoginSignup() {
               onChange={handleChange}
             />
 
-            <label htmlFor="password">Password: </label>
+            <label
+              className="login-signup__box__form__label"
+              htmlFor="password"
+            >
+              Password:{" "}
+            </label>
             <input
+              className="login-signup__box__form__textBox"
               type="password"
-              id="password"
               name="password"
               placeholder="Enter your password"
               value={user.password}
@@ -124,77 +131,107 @@ function LoginSignup() {
             />
 
             {!isLogin && (
-              <div>
-                <label htmlFor="username">Username: </label>
+              <>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="username"
+                >
+                  Username:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="username"
                   name="username"
                   placeholder="Enter your username"
                   value={user.username}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="first_name">First Name: </label>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="first_name"
+                >
+                  First Name:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="first_name"
                   name="first_name"
                   placeholder="Enter your first name"
                   value={user.first_name}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="last_name">Last Name: </label>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="last_name"
+                >
+                  Last Name:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="last_name"
                   name="last_name"
                   placeholder="Enter your last name"
                   value={user.last_name}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="phone_number">Phone Number: </label>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="phone_number"
+                >
+                  Phone Number:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="phone_number"
                   name="phone_number"
                   placeholder="Enter your phone number"
                   value={user.phone_number}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="profile_picture">Profile Picture URL: </label>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="profile_picture"
+                >
+                  Profile Picture URL:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="profile_picture"
                   name="profile_picture"
                   placeholder="Enter your profile picture URL"
                   value={user.profile_picture}
                   onChange={handleChange}
                 />
 
-                <label htmlFor="location">Location: </label>
+                <label
+                  className="login-signup__box__form__label"
+                  htmlFor="location"
+                >
+                  Location:{" "}
+                </label>
                 <input
+                  className="login-signup__box__form__textBox"
                   type="text"
-                  id="location"
                   name="location"
                   placeholder="Enter your location"
                   value={user.location}
                   onChange={handleChange}
                 />
-              </div>
+              </>
             )}
             <button
-              className="login-signup__form__submitbtn"
+              className="login-signup__box__form__submitbtn"
               type="submit"
               disabled={isLoading}
             >
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
-          <p className="login-signup__signUp">
+          <p className="login-signup__box__signUp">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <button onClick={handleToggle} disabled={isLoading}>
               {isLogin ? "Sign up" : "Login"}
