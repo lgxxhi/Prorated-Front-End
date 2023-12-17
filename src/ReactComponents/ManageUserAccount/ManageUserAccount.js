@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EditPicModal from "./EditPicModal";
+import Button from "../Button/Button";
 import "./ManageUserAccount.css";
 
-import { getSingleUser, updateUserById } from "../../common/usersAPI";
+import { getSingleUser, updateUserById } from "../../Api/usersAPI";
 
 function ManageUserAccount() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function ManageUserAccount() {
     const fetchUserById = async () => {
       try {
         let result = await getSingleUser(id);
-        setUser(result.data);
+        setUser(result.data.data.user);
       } catch (e) {
         console.log(e);
       }
@@ -54,10 +55,11 @@ function ManageUserAccount() {
   return (
     <div className="manageUserContainer">
       <h2 className="accountH2">Manage Account</h2>
-      
-      <div className="imgxPencil"><h4 className="user_Name">
-        {user.first_name} {user.last_name}
-      </h4>
+
+      <div className="imgxPencil">
+        <h4 className="user_Name">
+          {user.first_name} {user.last_name}
+        </h4>
         <img className="img" src={user.profile_picture} alt="profilepic" />
         <div className="editMod">
           <EditPicModal
@@ -134,7 +136,7 @@ function ManageUserAccount() {
             onChange={handleTextChange}
           />
           <br />
-          <button className="saveButton">Save</button>
+          <Button value={"Save"} id={1} className={"button-save"} />
         </div>
       </form>
     </div>

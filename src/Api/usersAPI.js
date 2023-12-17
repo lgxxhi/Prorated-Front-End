@@ -1,4 +1,4 @@
-import Axios from "./Axios";
+import Axios from "../Api/axios";
 
 const getSingleUser = async (id) => {
   try {

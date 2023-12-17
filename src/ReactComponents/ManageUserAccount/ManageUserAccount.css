@@ -7,7 +7,7 @@
 
 .accountH2 {
   border: 5px solid rgb(200, 200, 198);
-  color: rgb(87, 87, 87);
+  color: #001c99;
   grid-area: 1 / 1 / 2 / 3;
   padding: 10px 50px;
   margin: 10px;
