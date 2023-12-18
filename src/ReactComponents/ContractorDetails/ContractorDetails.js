@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { fetchContractorDetails } from "../../common/usersAPI";
+import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";

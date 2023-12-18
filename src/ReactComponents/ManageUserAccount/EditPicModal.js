@@ -1,4 +1,5 @@
 import React from "react";
+import { MdOutlineEditNote } from "react-icons/md";
 import "./EditPicModal.css";
 
 function EditPicModal({ profilePic, handleTextChange }) {
@@ -22,15 +23,15 @@ function EditPicModal({ profilePic, handleTextChange }) {
   return (
     <div className="pencil">
       <button onClick={modalOpen} id="myBtn">
-        <i className="fa-solid fa-pencil"></i>
+        <MdOutlineEditNote /> Edit Profile
       </button>
 
       <div id="myModal" className="editPicMod">
         <div className="picModContent">
-          <span onClick={modalClose} className="close">
+          <button onClick={modalClose} className="close">
             &times;
-          </span>
-          <h4>Edit Profile Picture</h4>
+          </button>
+          <h4 className="editProfilePic">Edit Profile Picture</h4>
           <input
             className="editPic"
             type="text"

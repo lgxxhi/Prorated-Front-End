@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
 import { useParams, useNavigate } from "react-router-dom";
-import { getSingleUser } from "../../common/usersAPI";
+import { getSingleUser } from "../../Api/usersAPI";
 import "./UserProfile.css";
 import moment from "moment";
 import StarRating from "../StarRating/StarRating";
