@@ -11,36 +11,48 @@
   z-index: 1;
 }
 
+.editProfilePic {
+  color: #001c99;
+}
 .picModContent {
   background-color: #fefefe;
-  border: 1px solid #888;
+  border: 1px solid #385dff;
+  border-radius: 7px;
   margin: 15% auto;
-  padding: 25px;
-  width: 50%;
+  padding: 20px 30px;
+  width: 65%;
 }
 
 .editPic {
   width: 100%;
 }
 .close {
+  background-color: transparent;
+  border: none;
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #385dff;
   cursor: pointer;
   text-decoration: none;
 }
 
 #myBtn {
-  background-color: whitesmoke;
-  border: none;
-  border-radius: px;
-  color: rgb(53, 53, 53);
-  padding: 20px 50px;
-  position: absolute;
+  background-color: #f2f2f2;
+  border: 1px solid #5271ff;
+  border-radius: 7px;
+  color: #5271ff;
+  padding: 10px 5px;
+  margin-top: 20px;
+  width: 100px;
+}
+
+#myBtn:hover {
+  background-color: hsl(229, 100%, 66%);
+  color: #fefefe;
 }
