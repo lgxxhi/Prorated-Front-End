@@ -3,11 +3,12 @@ $searchbar-height: 40px;
 .searchBar {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 800px;
   height: $searchbar-height;
   box-shadow: 0px 0px 2px black;
   border-radius: 20px;
   background: white;
-  width: 100%;
 
   &__icon {
     margin: 0px 10px;
@@ -30,7 +31,7 @@ $searchbar-height: 40px;
     align-items: center;
     height: 100%;
     width: fit-content;
-    padding: 0px 10px;
+    margin: 0px;
     border: 0px;
     border-radius: 0px 20px 20px 0px;
     font-size: 1.3em;
@@ -45,8 +46,5 @@ $searchbar-height: 40px;
   &__nav {
     background-color: rgb(230, 230, 230);
     color: rgb(106, 106, 106);
-  }
-  &__homeSize {
-    width: 100%;
   }
 }

@@ -1,11 +1,12 @@
 .searchBar {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 800px;
   height: 40px;
   box-shadow: 0px 0px 2px black;
   border-radius: 20px;
   background: white;
-  width: 100%;
 }
 .searchBar__icon {
   margin: 0px 10px;
@@ -28,7 +29,7 @@
   align-items: center;
   height: 100%;
   width: fit-content;
-  padding: 0px 10px;
+  margin: 0px;
   border: 0px;
   border-radius: 0px 20px 20px 0px;
   font-size: 1.3em;
@@ -43,19 +44,4 @@
 .searchBar__nav {
   background-color: rgb(230, 230, 230);
   color: rgb(106, 106, 106);
-}
-.searchBar__homeSize {
-  width: 100%;
-}
-
-@media only screen and (max-width: 550px) {
-  .searchBar {
-    height: 30px;
-  }
-  .searchBar__input {
-    height: 30px;
-  }
-  .searchBar__submitBtn {
-    font-size: 0.8em;
-  }
 }
