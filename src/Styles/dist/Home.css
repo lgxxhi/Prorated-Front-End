@@ -45,7 +45,7 @@
 }
 .home-page__popular-services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
   justify-items: center;
   gap: 2%;
   padding: 0% 2%;
