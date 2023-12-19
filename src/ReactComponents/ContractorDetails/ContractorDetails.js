@@ -5,6 +5,10 @@ import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReview
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";
 import "./ContractorDetails.scss";
+import { BiPhone } from "react-icons/bi";
+import { MdLocationPin } from "react-icons/md";
+import { FaRegBuilding } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 function ContractorDetails() {
   const { id } = useParams();
@@ -24,15 +28,25 @@ function ContractorDetails() {
     fetchContractor();
   }, [id]);
 
+  const openContact = (contactType) => {
+    if (contactType === "email") {
+      window.location.href = `mailto:${contractorProfile.contact}`;
+    } else if (contactType === "phone") {
+      window.location.href = `mailto:${contractorProfile.phone_number}`;
+    }
+  };
+
   return (
     <div className="contractor-details-container">
       <div className="contractor-details">
         <div className="contractor-details__profile">
-          <img
-            className="contractor-details__profile__profile-picture"
-            src={contractorProfile.logo}
-            alt=""
-          />
+          <div className="contractor-details__profile__profile-img">
+            <img
+              className="contractor-details__profile__profile-img__profile-picture"
+              src={contractorProfile.logo}
+              alt=""
+            />
+          </div>
           <div className="contractor-details__profile__title">
             <h3 className="contractor-details__profile__title__name">
               {contractorProfile.name}
@@ -41,35 +55,36 @@ function ContractorDetails() {
               <span>
                 {contractorProfile.count ? `${contractorProfile.count}` : 0}
               </span>
+
               <StarRating rating={contractorProfile.average_rating} />
             </div>
           </div>
-          <hr />
+
           <div className="contractor-details__profile__about">
-            <h3>Description</h3>
             <p>{contractorProfile.description}</p>
           </div>
-          <hr />
+
           <div className="contractor-details__profile__info">
-            <h3>Details</h3>
             <p>
+              <MdLocationPin />
               <b>Location</b>: {contractorProfile.location}
             </p>
             <p>
+              <FaRegBuilding />
               <b>Experience</b>: {contractorProfile.experience} years
             </p>
             <p>
-              {" "}
-              <b> Contact </b> : {contractorProfile.contact}
+              <MdOutlineEmail />
+              <b> Email </b> : {contractorProfile.contact}
             </p>
             <p>
+              <BiPhone />
               <b> Phone Number </b>: {contractorProfile.phone_number}
             </p>
           </div>
         </div>
         <div className="contractor-details__details">
           <div className="contractor-details__details__past-jobs">
-            <p>Past Jobs</p>
             {contractorProfile.images && contractorProfile.images.length > 0 ? (
               <ContractorProfileImages images={contractorProfile.images} />
             ) : (
