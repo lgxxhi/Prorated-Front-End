@@ -36,9 +36,10 @@ body {
     color: rgb(76, 76, 76);
 
     &__profile-img {
+      align-items: center;
       border-radius: 100%;
       overflow: hidden;
-      margin: 0;
+      margin-left: 22%;
       padding: 0;
       height: 200px;
       width: 200px;
@@ -57,7 +58,7 @@ body {
       font-size: 1.2em;
       margin-bottom: 20px;
       &__name {
-        text-align: left;
+        text-align: center;
         margin: 0px 5px 1% 1%;
         font-size: 30px;
       }
@@ -67,7 +68,7 @@ body {
         align-items: center;
         text-align: left;
         margin-top: 1%;
-        margin-right: 30%;
+        margin-right: 1%;
         span {
           margin-right: 5px;
         }
@@ -77,6 +78,7 @@ body {
       width: 90%;
       p {
         margin: 5px 0px;
+        margin-left: 25px;
         text-align: left;
       }
     }
@@ -88,6 +90,7 @@ body {
       padding: 20px;
       display: flex;
       flex-direction: column;
+      margin-left: 25px;
 
       p {
         margin: 5px 0px;
