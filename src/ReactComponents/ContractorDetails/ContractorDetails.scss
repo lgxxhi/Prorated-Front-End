@@ -36,16 +36,18 @@ body {
     color: rgb(76, 76, 76);
 
     &__profile-img {
-      border-radius: 50%;
+      border-radius: 100%;
       overflow: hidden;
       margin: 0;
       padding: 0;
       height: 200px;
+      width: 200px;
+      border: 5px solid #ccc;
 
       &__profile-picture {
-        object-fit: cover;
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -55,13 +57,17 @@ body {
       font-size: 1.2em;
       margin-bottom: 20px;
       &__name {
-        text-align: center;
-        margin: 0px 5px;
+        text-align: left;
+        margin: 0px 5px 1% 1%;
         font-size: 1.5em;
       }
       &__ratings {
         display: flex;
-        flex-direction: row;
+
+        align-items: center;
+        text-align: left;
+        margin-top: 1%;
+        margin-right: 175px;
         span {
           margin-right: 5px;
         }

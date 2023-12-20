@@ -52,11 +52,12 @@ function ContractorDetails() {
               {contractorProfile.name}
             </h3>
             <div className="contractor-details__profile__title__ratings">
-              <span>
-                {contractorProfile.count ? `${contractorProfile.count}` : 0}
-              </span>
-
               <StarRating rating={contractorProfile.average_rating} />
+              <span>
+                {contractorProfile.count
+                  ? `(${contractorProfile.count})`
+                  : "(0)"}
+              </span>
             </div>
           </div>
 
