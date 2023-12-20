@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
@@ -28,11 +28,11 @@ function ContractorDetails() {
     fetchContractor();
   }, [id]);
 
-  const openContact = (contactType) => {
+  const openContact = (contactType, value) => {
     if (contactType === "email") {
-      window.location.href = `mailto:${contractorProfile.contact}`;
+      navigate(`/email/${value}`);
     } else if (contactType === "phone") {
-      window.location.href = `mailto:${contractorProfile.phone_number}`;
+      navigate(`/phone/${value}`);
     }
   };
 
@@ -74,13 +74,23 @@ function ContractorDetails() {
               <FaRegBuilding />
               <b>Experience</b>: {contractorProfile.experience} years
             </p>
-            <p>
+            <p onClick={() => openContact("email", contractorProfile.contact)}>
               <MdOutlineEmail />
-              <b>Email</b>: {contractorProfile.contact}
+              <b>Email</b>:{" "}
+              <Link to={`/email/${contractorProfile.contact}`}>
+                {contractorProfile.contact}
+              </Link>
             </p>
-            <p>
+            <p
+              onClick={(e) =>
+                openContact("phone", contractorProfile.phone_number)
+              }
+            >
               <BiPhone />
-              <b>Phone</b>: {contractorProfile.phone_number}
+              <b>Phone</b>:{" "}
+              <Link to={`/phone/${contractorProfile.phone_number}`}>
+                {contractorProfile.phone_number}
+              </Link>
             </p>
           </div>
         </div>
