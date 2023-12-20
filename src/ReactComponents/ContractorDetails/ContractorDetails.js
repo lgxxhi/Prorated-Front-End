@@ -75,11 +75,11 @@ function ContractorDetails() {
             </p>
             <p>
               <MdOutlineEmail />
-              <b> Email </b> : {contractorProfile.contact}
+              <b>Email</b>: {contractorProfile.contact}
             </p>
             <p>
               <BiPhone />
-              <b> Phone Number </b>: {contractorProfile.phone_number}
+              <b>Phone</b>: {contractorProfile.phone_number}
             </p>
           </div>
         </div>
