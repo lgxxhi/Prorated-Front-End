@@ -67,7 +67,10 @@ function StarHoverRating({ setRating }) {
             <FaStar
               key={index}
               size={24}
-              style={{ marginRight: 10, cursor: "pointer" }}
+              style={{
+                marginRight: 10,
+                cursor: "pointer",
+              }}
               color={
                 (hoverValue || currentValue) > index
                   ? colors.orange
@@ -79,7 +82,7 @@ function StarHoverRating({ setRating }) {
             />
           );
         })}
-        <p>{finalRatingComment ? finalRatingComment : ratingComment}</p>
+        {/* <p>{finalRatingComment ? finalRatingComment : ratingComment}</p> */}
       </div>
     </div>
   );

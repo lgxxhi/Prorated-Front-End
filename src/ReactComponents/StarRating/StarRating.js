@@ -1,7 +1,7 @@
 import React from "react";
 import "./StarRating.css";
 
-function StarRating({ rating }) {
+function StarRating({ rating, color }) {
   //   const stars = [];
 
   let rounded = Math.round(rating / 0.5) * 0.5;
