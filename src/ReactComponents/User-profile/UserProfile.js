@@ -1,7 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import { UsersContext } from "../../context/UsersContext";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../Api/usersAPI";
+import { FaRegStar } from "react-icons/fa";
+import { MdOutlineEditNote } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
+import { VscTools } from "react-icons/vsc";
+import ProjectListings from "./ProjectListings";
 import "./UserProfile.css";
 import moment from "moment";
 import StarRating from "../StarRating/StarRating";
@@ -11,17 +15,13 @@ function UserProfile() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
-  const { userData } = useContext(UsersContext);
 
   useEffect(() => {
     const fetchUserById = async () => {
       try {
         let result = await getSingleUser(id);
-
         setUserProfile(result.data.data.user);
         setUserReviews(result.data.data.reviews);
-        // console.log(result.data.data.reviews);
-        console.log(result);
       } catch (e) {
         console.log(e);
       }
@@ -31,40 +31,47 @@ function UserProfile() {
 
   return (
     <div className="profile">
-      <h2 className="dashboardH2">My Dashboard</h2>
       <div className="userProfile">
         <img
           className="user"
           src={userProfile.profile_picture}
           alt="profilepic"
         />
-
+        <h2 className="userH2">
+          {userProfile.first_name} {userProfile.last_name}
+        </h2>
         <div className="userInfo">
-          <h3>
-            {userProfile.first_name} {userProfile.last_name}
-          </h3>
           <p>
+            <FaRegStar />{" "}
             <span>{userProfile.count !== 0 ? userProfile.count : 0}</span>{" "}
             Reviews
           </p>
           <p>
-            From | <span>{userProfile.location}</span>
+            <CiLocationOn /> {userProfile.location}
           </p>
 
           <p>
-            <span>10</span> Past Projects{" "}
+            <VscTools />
+            <span>
+              {userProfile.listings_count > 0 ? userProfile.listings_count : 0}
+            </span>{" "}
+            Projects{" "}
           </p>
         </div>
       </div>
 
-      <div>
-        <button onClick={() => navigate(`/user-profile/${id}/edit`)}>
-          Edit profile
-        </button>
+      <div className="listings">
+        <ProjectListings userId={id} />
       </div>
+
       <div>
-        <h2>User Profile</h2>
-        <p>Email: {userData?.email}</p>
+        <button
+          value={"Edit Profile"}
+          className={"button-edit"}
+          onClick={() => navigate(`/user-profile/${id}/edit`)}
+        >
+          <MdOutlineEditNote /> Edit Profile
+        </button>
       </div>
 
       <div className="saved">
@@ -104,7 +111,7 @@ function UserProfile() {
           {userReviews &&
             userReviews.map((review) => {
               return (
-                <li>
+                <li key={review.id}>
                   <img
                     className="contractor"
                     src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="

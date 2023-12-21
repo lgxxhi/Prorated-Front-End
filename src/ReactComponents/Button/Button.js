@@ -1,20 +1,16 @@
 import React from "react";
 import "./Button.css";
 
-function Button({ value, className, onHandleClick, id }) {
+function Button({ value, className, onClick }) {
   return (
-    <button
-      className={`button ${className}`}
-      onClick={() => onHandleClick(id, value)}
-    >
-      {value}
+    <button className={`button ${className}`} onClick={onClick} >{value}
     </button>
   );
 }
 
 Button.defaultProps = {
   className: "button-default",
-  onHandleClick: () => {},
+  onClick: () => {},
 };
 
 export default Button;

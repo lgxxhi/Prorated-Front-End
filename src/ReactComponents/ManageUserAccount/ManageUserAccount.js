@@ -138,7 +138,9 @@ function ManageUserAccount() {
               />
             </div>
           </div>
-          <Button value={"Save"} id={1} className={"button-save"} />
+          <Button id={1} value={"Save"} className={"button-save"}>
+            Save
+          </Button>
         </div>
       </form>
     </div>

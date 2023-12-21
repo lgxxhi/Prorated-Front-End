@@ -23,7 +23,7 @@ function EditPicModal({ profilePic, handleTextChange }) {
   return (
     <div className="pencil">
       <button onClick={modalOpen} id="myBtn">
-        <MdOutlineEditNote /> Edit Profile
+        <MdOutlineEditNote /> Edit Photo
       </button>
 
       <div id="myModal" className="editPicMod">
