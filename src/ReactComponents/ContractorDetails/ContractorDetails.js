@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
@@ -7,6 +7,10 @@ import ContractorProfileImages from "./ContractorProfileImages";
 import DetailsAddContractorReview from "../DetailsAddContractorReview/DetailsAddContractorReview";
 import { TbPencil } from "react-icons/tb";
 import "./ContractorDetails.scss";
+import { BiPhone } from "react-icons/bi";
+import { MdLocationPin } from "react-icons/md";
+import { FaRegBuilding } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 function ContractorDetails() {
   const { id } = useParams();
@@ -26,52 +30,74 @@ function ContractorDetails() {
     fetchContractor();
   }, [id]);
 
+  const openContact = (contactType, value) => {
+    if (contactType === "email") {
+      navigate(`/email/${value}`);
+    } else if (contactType === "phone") {
+      navigate(`/phone/${value}`);
+    }
+  };
+
   return (
     <div className="contractor-details-container">
       <div className="contractor-details">
         <div className="contractor-details__profile">
-          <img
-            className="contractor-details__profile__profile-picture"
-            src={contractorProfile.logo}
-            alt=""
-          />
+          <div className="contractor-details__profile__profile-img">
+            <img
+              className="contractor-details__profile__profile-img__profile-picture"
+              src={contractorProfile.logo}
+              alt=""
+            />
+          </div>
           <div className="contractor-details__profile__title">
             <h3 className="contractor-details__profile__title__name">
               {contractorProfile.name}
             </h3>
             <div className="contractor-details__profile__title__ratings">
-              <span>
-                {contractorProfile.count ? `${contractorProfile.count}` : 0}
-              </span>
               <StarRating rating={contractorProfile.average_rating} />
+              <span>
+                {contractorProfile.count
+                  ? `(${contractorProfile.count})`
+                  : "(0)"}
+              </span>
             </div>
           </div>
-          <hr />
+
           <div className="contractor-details__profile__about">
-            <h3>Description</h3>
             <p>{contractorProfile.description}</p>
           </div>
-          <hr />
+
           <div className="contractor-details__profile__info">
-            <h3>Details</h3>
             <p>
+              <MdLocationPin />
               <b>Location</b>: {contractorProfile.location}
             </p>
             <p>
+              <FaRegBuilding />
               <b>Experience</b>: {contractorProfile.experience} years
             </p>
-            <p>
-              {" "}
-              <b> Contact </b> : {contractorProfile.contact}
+            <p onClick={() => openContact("email", contractorProfile.contact)}>
+              <MdOutlineEmail />
+              <b>Email</b>:{" "}
+              <Link to={`/email/${contractorProfile.contact}`}>
+                {contractorProfile.contact}
+              </Link>
             </p>
-            <p>
-              <b> Phone Number </b>: {contractorProfile.phone_number}
+            <p
+              onClick={(e) =>
+                openContact("phone", contractorProfile.phone_number)
+              }
+            >
+              <BiPhone />
+              <b>Phone</b>:{" "}
+              <Link to={`/phone/${contractorProfile.phone_number}`}>
+                {contractorProfile.phone_number}
+              </Link>
             </p>
           </div>
         </div>
         <div className="contractor-details__details">
           <div className="contractor-details__details__past-jobs">
-            <p>Past Jobs</p>
             {contractorProfile.images && contractorProfile.images.length > 0 ? (
               <ContractorProfileImages images={contractorProfile.images} />
             ) : (
