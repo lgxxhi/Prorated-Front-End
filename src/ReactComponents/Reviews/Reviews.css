@@ -1,0 +1,71 @@
+.review-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  border: 1px solid Silver;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.review-card-header {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.review-card-name {
+  margin-bottom: 2px;
+}
+
+.review-card-image {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: hsl(52, 96%, 69%);
+  padding: 3.5px;
+  margin-bottom: 10px;
+  margin-right: 12px;
+}
+
+.review-card-image img {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.review-card-header-content {
+  height: 50px;
+}
+
+.review-card-name p {
+  font-weight: 700;
+}
+
+.review-card-info {
+  display: flex;
+  font-size: 12px;
+}
+
+.chat-div div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.info-line {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: silver;
+}
+
+.review-card-review {
+  display: flex;
+  text-align: start;
+  font-size: 15px;
+}

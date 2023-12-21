@@ -1,0 +1,150 @@
+.add_review_section {
+  margin: 15px 2%;
+  background-color: hsl(0, 0%, 95%);
+  padding: 15px;
+  border-radius: 0.5rem;
+
+  &__header {
+    display: flex;
+    text-align: start;
+    border: 1px solid silver;
+    border-radius: 0.5rem;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 7px;
+    background-color: white;
+    margin-bottom: 1rem;
+    // align-items: center;
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      &__items {
+        display: flex;
+        font-size: 13px;
+
+        &__icon {
+          margin-bottom: 2px;
+          margin-right: 3px;
+          display: flex;
+          align-items: center;
+        }
+
+        &__info_line {
+          margin-left: 8px;
+          margin-right: 8px;
+          color: silver;
+        }
+      }
+      &__name {
+        font-weight: 700;
+        padding-top: 4px;
+      }
+    }
+    &__image {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: hsl(52, 96%, 69%);
+      padding: 3.5px;
+      margin-bottom: 10px;
+      margin-right: 12px;
+
+      img {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  &__review_input_section {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1.2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 0.5fr);
+    grid-template-areas:
+      "date date date review review review"
+      "rating rating rating review review review"
+      "photo_file photo_file photo_file review review review"
+      "submit submit submit submit submit submit";
+    grid-gap: 10px;
+    &__date {
+      grid-area: date;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      h3 {
+        color: hsl(229, 100%, 71%);
+      }
+      input {
+        width: auto;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+    &__rating {
+      grid-area: rating;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      margin-bottom: 7px;
+      &__stars {
+        padding: 8.75px 7px;
+        background-color: white;
+        border-radius: 8px;
+      }
+      h3 {
+        color: hsl(229, 100%, 71%);
+      }
+    }
+    &__photo_file {
+      grid-area: photo_file;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      h3 {
+        color: hsl(229, 100%, 71%);
+      }
+
+      input {
+        width: auto;
+        background-color: white;
+        border-radius: 8px;
+      }
+    }
+    &__review {
+      grid-area: review;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      h3 {
+        color: hsl(229, 100%, 71%);
+      }
+      textarea {
+        height: 100%;
+        width: 100%;
+        border: none;
+
+        border-radius: 8px;
+      }
+    }
+    &__submit {
+      grid-area: submit;
+      display: flex;
+      justify-content: end;
+
+      text-align: end;
+      margin-top: 5px;
+
+      button {
+        padding: 7px 30px;
+        border-radius: 1.5rem;
+        border: none;
+        background-color: hsl(52, 96%, 69%);
+      }
+    }
+  }
+}

@@ -4,6 +4,8 @@ import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";
+import DetailsAddContractorReview from "../DetailsAddContractorReview/DetailsAddContractorReview";
+import { TbPencil } from "react-icons/tb";
 import "./ContractorDetails.scss";
 import { BiPhone } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
@@ -102,18 +104,46 @@ function ContractorDetails() {
               <p>No past jobs available</p>
             )}
           </div>
+
           <div className="contractor-details__details__reviews">
-            <ContractorReviewDetails />
-            <div className="contractor-details__details__reviews__button">
-              <button
-                onClick={() =>
-                  navigate(`/contractors/${contractorProfile.id}/addReview`)
-                }
-                className="more-details"
-              >
-                Add Review
-              </button>
+            <div className="contractor-details__details__reviews__header">
+              <div className="contractor-details__details__reviews__header__star-reviews">
+                <i className="contractor-details__details__reviews__header__header-star fa-regular fa-star"></i>
+                <h3 className="contractor-details__details__reviews__header__title">
+                  Reviews
+                </h3>
+              </div>
+              <div className="contractor-details__details__reviews__header__button">
+                <button
+                  onClick={() =>
+                    navigate(`/contractors/${contractorProfile.id}/addReview`)
+                  }
+                >
+                  <TbPencil style={{ marginRight: "2px" }} />
+                  Write A Review
+                </button>
+              </div>
             </div>
+            <div className="contractor-details__details__reviews__user-or-not">
+              <div className="contractor-details__details__reviews__user-or-not__paragraph">
+                <p>
+                  In order to reach our goal of a more transparent contractor
+                  experience, you must have an account to leave a review. No
+                  worries, it's really simple!
+                </p>
+              </div>
+              <div className="contractor-details__details__reviews__user-or-not__buttons">
+                <button className="contractor-details__details__reviews__user-or-not__buttons__log-in">
+                  Login
+                </button>
+                <button className="contractor-details__details__reviews__user-or-not__buttons__sign-up">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <DetailsAddContractorReview />
+
+            <ContractorReviewDetails />
           </div>
         </div>
       </div>
