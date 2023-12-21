@@ -1,5 +1,5 @@
 body {
-  background-color: hsl(0, 0%, 95%);
+  background-color: white;
 }
 
 @mixin container {
@@ -9,7 +9,6 @@ body {
 }
 
 @mixin section {
-
   border: 1px solid silver;
   border-radius: 8px;
   margin: 10px 0px;
