@@ -61,12 +61,12 @@
   }
   &__review_input_section {
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 1.2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(4, 0.5fr);
     grid-template-areas:
-      "date date date review review review"
-      "rating rating rating review review review"
-      "photo_file photo_file photo_file review review review"
+      "date date review review review review"
+      "rating rating review review review review"
+      "photo_file photo_file review review review review"
       "submit submit submit submit submit submit";
     grid-gap: 10px;
     &__date {

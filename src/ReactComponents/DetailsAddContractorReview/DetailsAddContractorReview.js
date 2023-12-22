@@ -1,4 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
+// import { useParams, useNavigate } from "react-router-dom";
+// import { ContractorsContext } from "../../context/ContractorsContext";
+// import { UsersContext } from "../../context/UsersContext";
+// import axios from "../../Api/axios";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
 import { TbTools } from "react-icons/tb";
@@ -7,7 +11,17 @@ import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import "./DetailsAddContractorReview.scss";
 
 function DetailsAddContractorReview() {
+  //   const { id } = useParams();
+  //   const { userData } = useContext(UsersContext);
+
+  //   let name = "";
+  //   if (userData) {
+  //     name = userData.name;
+  //   }
+  //   let navigate = useNavigate();
+  //   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
+
   return (
     <div className="add_review_section">
       <div className="add_review_section__header">
@@ -57,7 +71,7 @@ function DetailsAddContractorReview() {
         <div className="add_review_section__review_input_section__rating">
           <h3>RATING</h3>
           <div className="add_review_section__review_input_section__rating__stars">
-            <StarHoverRating setRating={setRating} />
+            <StarHoverRating rating={rating} setRating={setRating} />
           </div>
         </div>
         <div className="add_review_section__review_input_section__photo_file">

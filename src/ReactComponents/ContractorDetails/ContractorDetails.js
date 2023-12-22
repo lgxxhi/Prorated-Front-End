@@ -70,15 +70,15 @@ function ContractorDetails() {
           <div className="contractor-details__profile__info">
             <p>
               <MdLocationPin />
-              <b>Location</b>: {contractorProfile.location}
+              <b>Location:</b> {contractorProfile.location}
             </p>
             <p>
               <FaRegBuilding />
-              <b>Experience</b>: {contractorProfile.experience} years
+              <b>Experience:</b> {contractorProfile.experience} years
             </p>
             <p onClick={() => openContact("email", contractorProfile.contact)}>
               <MdOutlineEmail />
-              <b>Email</b>:{" "}
+              <b>Email:</b>
               <Link to={`/email/${contractorProfile.contact}`}>
                 {contractorProfile.contact}
               </Link>
@@ -89,7 +89,7 @@ function ContractorDetails() {
               }
             >
               <BiPhone />
-              <b>Phone</b>:{" "}
+              <b>Phone:</b>
               <Link to={`/phone/${contractorProfile.phone_number}`}>
                 {contractorProfile.phone_number}
               </Link>
