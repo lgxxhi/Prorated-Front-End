@@ -1,24 +1,26 @@
 .footer {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
-  background-color: #d0d8df;
   margin-top: 100px;
-  height: 100%;
+  bottom: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #d0d8df;
+  height: auto;
   width: 100%;
   padding: 20px 30px;
 }
 .footer__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.footer__info h1 {
+  color: #191919;
+  margin: 0;
 }
 .footer__info a {
   color: #191919;
   text-decoration: none;
   margin-bottom: 8px;
-}
-.footer__info h1 {
-  color: #191919;
-  margin: 0;
 }
 .footer__info__social-media {
   display: flex;
@@ -26,9 +28,26 @@
   margin-top: 5px;
 }
 .footer__info__social-media i {
-  font-size: 30px;
+  font-size: 40px;
 }
 .footer__info__social-media i:hover {
+  cursor: pointer;
+}
+.footer__sitemap {
+  display: flex;
+  flex-direction: column;
+}
+.footer__sitemap h2 {
+  margin: 0px 0px 10px 0px;
+}
+.footer__sitemap button {
+  border: 0;
+  background: none;
+  margin: 5px;
+  font-size: 1.2em;
+  color: rgb(61, 61, 61);
+}
+.footer__sitemap button:hover {
   cursor: pointer;
 }
 .footer__email {
@@ -62,32 +81,16 @@
 }
 .footer__email__form__submit {
   margin-top: 20px;
-  width: 20%;
-  padding: 5px 0;
+  width: auto;
+  padding: 5px 10px;
   background-color: #38b6ff;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   font-size: 1.1em;
   color: white;
 }
 .footer__email__form__submit:hover {
   background-color: #00a0fc;
-  cursor: pointer;
-}
-.footer__support {
-  display: flex;
-  flex-direction: column;
-}
-.footer__support h2 {
-  margin: 0px 0px 10px 0px;
-}
-.footer__support button {
-  border: 0;
-  background: none;
-  margin: 5px;
-  font-size: 1em;
-}
-.footer__support button:hover {
   cursor: pointer;
 }
 
@@ -102,13 +105,13 @@
     display: flex;
     justify-content: center;
   }
+  .footer__newsletter h2 {
+    font-size: 2em;
+  }
   .footer__email h2 {
     font-size: 2em;
   }
   .footer__email__form__submit {
     width: 50%;
-  }
-  .footer__support h2 {
-    font-size: 2em;
   }
 }
