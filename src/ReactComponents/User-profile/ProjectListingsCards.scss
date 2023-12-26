@@ -1,0 +1,50 @@
+.project-card {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "image content content content content content";
+
+  width: 100%;
+
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: hsl(0, 0%, 95%);
+    cursor: pointer;
+  }
+
+  &__image {
+    position: relative;
+    height: 70px;
+    width: 90px;
+    border-radius: 8%;
+    background-color: hsl(52, 96%, 69%);
+    padding: 3.5px;
+    grid-area: image;
+    margin-right: 1rem;
+
+    img {
+      object-fit: cover;
+      border-radius: 8%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    text-align: start;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      svg {
+        margin-right: 6px;
+      }
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}

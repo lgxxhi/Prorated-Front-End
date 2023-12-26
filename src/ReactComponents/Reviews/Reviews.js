@@ -31,7 +31,7 @@ function Reviews({ reviews, contractor }) {
                   <StarRating rating={review.rating} />
                   <div className="info-line">|</div>
                   <div>
-                    <i class="fa-regular fa-calendar"></i>{" "}
+                    <i class="fa-regular fa-calendar"></i>
                     {moment(review.date).fromNow()}
                   </div>
                   <div className="info-line">|</div>

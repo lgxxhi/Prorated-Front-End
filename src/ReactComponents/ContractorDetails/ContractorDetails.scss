@@ -23,7 +23,6 @@ body {
   padding-top: 110px;
   padding-left: 20px;
   padding-right: 20px;
-  border: 2px solid black;
 }
 
 .contractor-details {
@@ -167,7 +166,7 @@ body {
         }
         &__title {
           color: hsl(229, 100%, 30%);
-          font-weight: 6 00;
+          font-weight: 600;
         }
         &__button {
           button {
