@@ -23,8 +23,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+  max-width: 800px;
   margin-left: 2%;
   margin-top: 20px;
+  padding: 0px 5%;
   font-size: 1.3em;
 }
 .home-page__search__suggestions button {

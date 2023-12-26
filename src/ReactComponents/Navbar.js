@@ -63,14 +63,17 @@ function Nav() {
           >
             PRORATED
           </h1>
-          <Link to="/about-us" className="navbar__menu__components__button">
-            About us
-          </Link>
           {displaySearchbar()}
         </div>
 
         {authUser ? (
           <div className="navbar__menu__buttons">
+            <button
+              className="navbar__menu__buttons__about-us-btn btn"
+              onClick={(e) => handleClick(e, "/about-us")}
+            >
+              About us
+            </button>
             <button
               className="navbar__menu__buttons__dashboard-btn btn"
               onClick={(e) => handleClick(e, "/user-profile/6")}

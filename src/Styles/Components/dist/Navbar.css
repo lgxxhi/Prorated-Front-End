@@ -14,7 +14,7 @@
   flex-direction: row;
   background-color: rgba(228, 228, 228, 0.7);
   backdrop-filter: blur(20px);
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3), 0px 0px 3px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(0, 0, 0, 0.7) inset;
   border-radius: 15px;
   height: 60px;
   width: 95%;
@@ -123,6 +123,30 @@
   transition: 0.15s;
 }
 .navbar__menu__buttons__dashboard-btn:hover {
+  background-color: rgba(82, 113, 255, 0.9);
+  color: white;
+}
+.navbar__menu__buttons__about-us-btn {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  border: 0;
+  text-wrap: nowrap;
+  margin-right: 10px;
+  font-size: 1.2em;
+  transition: 0.15s;
+  height: 100%;
+  width: auto;
+  padding: 0px 10px;
+  align-items: center;
+  justify-content: center;
+  background: 0;
+  color: rgb(91, 91, 91);
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.15s;
+}
+.navbar__menu__buttons__about-us-btn:hover {
   background-color: rgba(82, 113, 255, 0.9);
   color: white;
 }

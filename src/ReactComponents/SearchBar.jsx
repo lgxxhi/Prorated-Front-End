@@ -32,9 +32,10 @@ export default function SearchBar(props) {
       />
       <input
         type="submit"
-        className={`btn searchBar__submitBtn ${
+        className={`searchBar__submitBtn ${
           props.location === "navbar" ? "searchBar__nav" : ""
         }`}
+        value="Search"
       />
     </form>
   );
