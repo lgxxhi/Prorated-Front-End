@@ -18,6 +18,7 @@
   border-radius: 15px;
   height: 60px;
   width: 95%;
+  max-width: 1500px;
 }
 .navbar__menu__components {
   display: flex;

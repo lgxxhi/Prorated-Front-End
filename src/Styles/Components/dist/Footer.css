@@ -45,6 +45,7 @@
   background: none;
   margin: 5px;
   font-size: 1.2em;
+  text-decoration: underline;
   color: rgb(61, 61, 61);
 }
 .footer__sitemap button:hover {
