@@ -1,0 +1,101 @@
+@import "../../Styles/main.scss";
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  z-index: 1;
+  &__menu {
+    display: flex;
+    padding: 0px 20px;
+    flex-direction: row;
+    background: -webkit-linear-gradient(
+      rgba($Pure-White, 0.8),
+      rgba($Silver, 0.8)
+    );
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 2px rgba($color: $Dark-Grey, $alpha: 0.3),
+      0px 0px 1px rgba($color: $Dark-Grey, $alpha: 0.7) inset;
+    border-radius: 15px;
+    height: 60px;
+    width: 100%;
+    max-width: 1500px;
+    &__components {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      &__logo {
+        font-family: $logo;
+        font-size: 1.8em;
+        background: -webkit-linear-gradient($ProRated-Blue, $ProRated-Purple);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &__searchBar {
+        width: 100%;
+        padding: 0% 10%;
+      }
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+      &__btn {
+        padding: 0px 20px;
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        font-size: 1.3em;
+        font-weight: 600;
+        text-wrap: nowrap;
+        color: $Mid-Grey;
+        transition-duration: 0.18s;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba($color: $Blue-Dark, $alpha: 0.9);
+          color: $Silver;
+        }
+      }
+      &__logout,
+      &__login {
+        height: 75%;
+        padding: 0px 20px;
+        margin-left: 10px;
+        border: none;
+        border-radius: 1.5rem;
+        background: $Yellow;
+        font-size: 1.3em;
+        font-weight: 600;
+        text-wrap: nowrap;
+        color: $Dark-Grey;
+        transition-duration: 0.18s;
+        &:hover {
+          cursor: pointer;
+          background-color: $Yellow-Dark;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.navbar-hide {
+  opacity: 0;
+  position: fixed;
+  transform: scale(0.98);
+  transition: 0.2s;
+}
+
+.navbar-show {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.2s;
+}

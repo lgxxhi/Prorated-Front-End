@@ -1,7 +1,7 @@
-import "../../Styles/Global.scss";
+import "./Home.scss";
 import React, { useEffect, useState } from "react";
 import { getAllServices } from "../../Api/Api";
-import SearchBar from "../../ReactComponents/SearchBar";
+import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
 import ServiceCard from "./ServiceCard";
 import { useNavigate } from "react-router-dom";
 
@@ -50,7 +50,7 @@ export default function Home() {
   }
 
   return (
-    <div className="home-page">
+    <div className="home-page ">
       <div className="home-page__search">
         <div className="home-page__search__input">
           <h1 className="home-page__search__input__title">

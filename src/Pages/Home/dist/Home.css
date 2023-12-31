@@ -3,7 +3,7 @@
   justify-content: center;
   margin-bottom: 50px;
   padding: 100px 0px 60px 0px;
-  background-image: url("../Assets/Images/contractor-background.jpg");
+  background-image: url("../../Assets/Images/contractor-background.jpg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -76,4 +76,10 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     padding-bottom: 50px;
   }
+}
+.TEST {
+  margin-top: 50px;
+  height: 100px;
+  width: 900px;
+  background-color: green;
 }

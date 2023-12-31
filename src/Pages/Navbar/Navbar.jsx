@@ -1,10 +1,10 @@
+import "./Navbar.scss";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Styles/Global.scss";
-import SearchBar from "./SearchBar";
-import { auth } from "./Firebase/Firebase";
+import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
+import { auth } from "../../ReactComponents/Firebase/Firebase";
 import { signOut } from "firebase/auth";
-import { useAuth } from "./Firebase/AuthContext";
+import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
 
 function Nav() {
   const navigate = useNavigate();
@@ -63,34 +63,36 @@ function Nav() {
           >
             PRORATED
           </h1>
-          {displaySearchbar()}
+          <div className="navbar__menu__components__searchBar">
+            {displaySearchbar()}
+          </div>
         </div>
 
         {authUser ? (
           <div className="navbar__menu__buttons">
             <button
-              className="navbar__menu__buttons__about-us-btn btn"
+              className="navbar__menu__buttons__btn"
               onClick={(e) => handleClick(e, "/about-us")}
             >
               About us
             </button>
             <button
-              className="navbar__menu__buttons__dashboard-btn btn"
+              className="navbar__menu__buttons__btn"
               onClick={(e) => handleClick(e, "/user-profile/6")}
             >
               My profile
             </button>
             <button
-              className="navbar__menu__buttons__logout-btn btn"
+              className="navbar__menu__buttons__logout"
               onClick={handleLogout}
             >
-              Logout
+              Log Out
             </button>
           </div>
         ) : (
           <div className="navbar__menu__buttons">
             <button
-              className="navbar__menu__buttons__login-btn btn"
+              className="navbar__menu__buttons__login"
               onClick={(e) => handleClick(e, "/login-signup")}
             >
               Log In
