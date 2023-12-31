@@ -1,10 +1,11 @@
 import "./Navbar.scss";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
 import { auth } from "../../ReactComponents/Firebase/Firebase";
 import { signOut } from "firebase/auth";
 import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
+import { CgMenu } from "react-icons/cg";
 
 function Nav() {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ function Nav() {
             {displaySearchbar()}
           </div>
         </div>
-
+        <CgMenu className="navbar__menu__toggle" />
         {authUser ? (
           <div className="navbar__menu__buttons">
             <button

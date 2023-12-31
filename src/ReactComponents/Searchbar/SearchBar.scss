@@ -23,7 +23,7 @@
   }
   &__submitBtn {
     height: 100%;
-    width: 50px;
+    width: 52px;
     margin: 0px;
     border: 0px;
     border-radius: 0 1rem 1rem 0;
@@ -38,9 +38,45 @@
       color: white;
     }
     &__icon {
-      margin: 0px 10px;
+      margin: 0px 12px;
       color: $Silver;
       text-shadow: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    height: 36px;
+    &__input {
+      height: 36px;
+    }
+    &__submitBtn {
+      i {
+        font-size: 0.8em;
+      }
+      &:hover {
+      }
+      &__icon {
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .searchBar {
+    height: 28px;
+    &__input {
+      height: 28px;
+    }
+    &__submitBtn {
+      i {
+        font-size: 0.8em;
+      }
+      &:hover {
+      }
+      &__icon {
+      }
     }
   }
 }

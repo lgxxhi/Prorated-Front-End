@@ -53,38 +53,36 @@ $hero-image: url("../../Assets/Images/Image.jpg");
     }
   }
   &__popular-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     justify-items: center;
     gap: 2%;
-    padding: 0% 2%;
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 1024px) {
   .home-page {
     &__search {
       &__input {
-        padding: 20% 0%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-page {
+    &__search {
+      &__input {
+        width: 90%;
         &__title {
           font-size: 2em;
         }
       }
-      &__suggestions {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 2%;
-        margin-top: 20px;
-        font-size: 1.3em;
-        button {
-          font-size: 60%;
-        }
-      }
     }
     &__popular-services {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      padding-bottom: 50px;
     }
   }
 }

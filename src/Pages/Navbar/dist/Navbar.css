@@ -122,6 +122,11 @@ nav {
   background-color: hsl(52, 96%, 59%);
   opacity: 0.8;
 }
+.navbar__menu__toggle {
+  display: none;
+  height: 100%;
+  font-size: 2em;
+}
 
 .navbar-hide {
   opacity: 0;
@@ -134,4 +139,26 @@ nav {
   opacity: 1;
   transform: scale(1);
   transition: 0.2s;
+}
+
+@media only screen and (max-width: 1279px) {
+  .navbar__menu__components__searchBar {
+    padding: 0% 6%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navbar__menu__components__logo {
+    font-size: 1.4em;
+  }
+  .navbar__menu__components__searchBar {
+    padding: 0% 2%;
+  }
+  .navbar__menu__buttons__btn {
+    padding: 0px 10px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .navbar__menu__components__logo {
+    font-size: 1em;
+  }
 }

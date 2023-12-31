@@ -61,7 +61,7 @@ nav {
 }
 .searchBar__submitBtn {
   height: 100%;
-  width: 50px;
+  width: 52px;
   margin: 0px;
   border: 0px;
   border-radius: 0 1rem 1rem 0;
@@ -76,7 +76,30 @@ nav {
   color: white;
 }
 .searchBar__submitBtn__icon {
-  margin: 0px 10px;
+  margin: 0px 12px;
   color: hsl(0, 0%, 90%);
   text-shadow: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    height: 36px;
+  }
+  .searchBar__input {
+    height: 36px;
+  }
+  .searchBar__submitBtn i {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .searchBar {
+    height: 28px;
+  }
+  .searchBar__input {
+    height: 28px;
+  }
+  .searchBar__submitBtn i {
+    font-size: 0.8em;
+  }
 }
