@@ -75,6 +75,9 @@ nav {
   cursor: pointer;
 }
 .navbar__menu__components__searchBar {
+  display: flex;
+  align-items: center;
+  height: 70%;
   width: 100%;
   padding: 0% 10%;
 }

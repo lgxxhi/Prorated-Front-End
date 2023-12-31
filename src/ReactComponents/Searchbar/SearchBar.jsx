@@ -2,26 +2,18 @@ import "./SearchBar.scss";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchBar(props) {
+export default function SearchBar() {
   const [searchNav, setSearchNav] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    let searchQuerie = e.target.children[1].value;
     setSearchNav("");
-    navigate(`/listings/${searchQuerie}`);
+    navigate(`/listings/${searchNav}`);
     navigate(0);
-    // window.location.reload(false);
   }
   return (
-    <form
-      className={`searchBar ${
-        props.location !== "navbar" ? "searchBar__homeSize" : ""
-      }`}
-      onSubmit={(e) => handleSubmit(e)}
-    >
-      <i className="fa fa-search searchBar__icon"></i>
+    <form className="searchBar" onSubmit={(e) => handleSubmit(e)}>
       <input
         type="search"
         className="searchBar__input"
@@ -30,13 +22,13 @@ export default function SearchBar(props) {
         onChange={(e) => setSearchNav(e.currentTarget.value)}
         required
       />
-      <input
+      <button
         type="submit"
-        className={`searchBar__submitBtn ${
-          props.location === "navbar" ? "searchBar__nav" : ""
-        }`}
-        value="Search"
-      />
+        className="searchBar__submitBtn"
+        onSubmit={(e) => handleSubmit(e)}
+      >
+        <i className="fa fa-search searchBar__submitBtn__icon"></i>
+      </button>
     </form>
   );
 }
