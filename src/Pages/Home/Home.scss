@@ -10,7 +10,7 @@ $hero-image: url("../../Assets/Images/Image.jpg");
     background-image: $hero-image;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: $Pure-White;
     text-shadow: 0px 0px 10px black;
     &__input {
       display: flex;

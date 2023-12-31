@@ -34,12 +34,12 @@
 
     &:hover {
       cursor: pointer;
-      background-color: #5271ff;
+      background-color: $Blue-Light;
       color: white;
     }
     &__icon {
       margin: 0px 10px;
-      color: $Off-White;
+      color: $Silver;
       text-shadow: none;
     }
   }

@@ -1,4 +1,3 @@
-import "./Styles/main.scss";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./ReactComponents/ContractorDetails/ContractorDetails";
