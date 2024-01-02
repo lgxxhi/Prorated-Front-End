@@ -1,0 +1,24 @@
+@import "./colors";
+@import "./fonts";
+@import "./reset";
+
+body {
+  background-color: $Off-White;
+  font-family: $main;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+}
+
+.content-wrap {
+  flex: 1;
+  min-height: 65vh;
+}
+
+.contractor-listings-route,
+.contractor-profile-container {
+  margin-top: 100px;
+}
