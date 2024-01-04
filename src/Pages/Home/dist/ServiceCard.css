@@ -1,3 +1,43 @@
+/* MAIN COLORS */
+/* WHITE PALETTE */
+/* GREY PALETTE */
+/* BLUE PALETTE */
+/* YELLOW PALETTE */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+.btn {
+  border: 2.5px solid rgb(177, 177, 177);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.btn__medium-round {
+  border-radius: 5px;
+}
+.btn__full-round {
+  border-radius: 5px;
+}
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+}
+
+.content-wrap {
+  flex: 1;
+  min-height: 65vh;
+}
+
+.contractor-listings-route,
+.contractor-profile-container {
+  margin-top: 100px;
+}
+
 .serviceCard {
   width: 240px;
   height: 300px;
@@ -48,17 +88,4 @@
   border: 2px solid rgb(75, 75, 75);
   transform: scale(1.02);
   cursor: pointer;
-}
-
-@media only screen and (max-width: 550px) {
-  .serviceCard {
-    width: 180px;
-    height: 250px;
-  }
-  .serviceCard__top {
-    width: 100%;
-  }
-  .serviceCard__top__title {
-    width: 180px;
-  }
 }

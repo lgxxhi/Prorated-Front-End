@@ -1,0 +1,82 @@
+@import "../../Styles/main.scss";
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  max-width: 800px;
+  box-shadow: 0px 0px 2px rgba($Dark-Grey, 0.5);
+  border-radius: 1rem;
+  background: $Off-White;
+
+  &__input {
+    width: 100%;
+    margin: 0px;
+    height: 40px;
+    border: 0;
+    font-size: 1.3em;
+    border-radius: 1rem 0 0 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__submitBtn {
+    height: 100%;
+    width: 52px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 0 1rem 1rem 0;
+    font-size: 1em;
+    color: $Pure-White;
+    transition: 0.1s;
+    background: $Blue;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $Blue-Light;
+      color: white;
+    }
+    &__icon {
+      margin: 0px 12px;
+      color: $Silver;
+      text-shadow: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    height: 36px;
+    &__input {
+      height: 36px;
+    }
+    &__submitBtn {
+      i {
+        font-size: 0.8em;
+      }
+      &:hover {
+      }
+      &__icon {
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .searchBar {
+    height: 28px;
+    &__input {
+      height: 28px;
+    }
+    &__submitBtn {
+      i {
+        font-size: 0.8em;
+      }
+      &:hover {
+      }
+      &__icon {
+      }
+    }
+  }
+}

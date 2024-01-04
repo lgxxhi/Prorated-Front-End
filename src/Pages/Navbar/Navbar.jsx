@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../Styles/Global.scss";
-import SearchBar from "./SearchBar";
-import { auth } from "./Firebase/Firebase";
+import "./Navbar.scss";
+import React, { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
+import { auth } from "../../ReactComponents/Firebase/Firebase";
 import { signOut } from "firebase/auth";
-import { useAuth } from "./Firebase/AuthContext";
+import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
+import { UsersContext } from "../../context/UsersContext";
+import { CgMenu } from "react-icons/cg";
 
 function Nav() {
   const navigate = useNavigate();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const { authUser } = useAuth();
-
+  const { userData, setUserData } = useContext(UsersContext);
   function handleClick(e, location) {
     e.preventDefault();
     navigate(location);
@@ -43,7 +45,7 @@ function Nav() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      alert(`Logout successful!`);
+      setUserData(null);
       navigate("/");
     } catch (error) {
       console.error("Logout Error:", error);
@@ -63,31 +65,36 @@ function Nav() {
           >
             PRORATED
           </h1>
-          <Link to="/about-us" className="navbar__menu__components__button">
-            About us
-          </Link>
-          {displaySearchbar()}
+          <div className="navbar__menu__components__searchBar">
+            {displaySearchbar()}
+          </div>
         </div>
-
+        <CgMenu className="navbar__menu__toggle" />
         {authUser ? (
           <div className="navbar__menu__buttons">
             <button
-              className="navbar__menu__buttons__dashboard-btn btn"
-              onClick={(e) => handleClick(e, "/user-profile/6")}
+              className="navbar__menu__buttons__btn"
+              onClick={(e) => handleClick(e, "/about-us")}
+            >
+              About us
+            </button>
+            <button
+              className="navbar__menu__buttons__btn"
+              onClick={(e) => handleClick(e, `/user-profile/${userData.id}`)}
             >
               My profile
             </button>
             <button
-              className="navbar__menu__buttons__logout-btn btn"
+              className="navbar__menu__buttons__logout"
               onClick={handleLogout}
             >
-              Logout
+              Log Out
             </button>
           </div>
         ) : (
           <div className="navbar__menu__buttons">
             <button
-              className="navbar__menu__buttons__login-btn btn"
+              className="navbar__menu__buttons__login"
               onClick={(e) => handleClick(e, "/login-signup")}
             >
               Log In

@@ -4,6 +4,7 @@ import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";
+import { UsersContext } from "../../context/UsersContext";
 import DetailsAddContractorReview from "../DetailsAddContractorReview/DetailsAddContractorReview";
 import { TbPencil } from "react-icons/tb";
 import "./ContractorDetails.scss";
