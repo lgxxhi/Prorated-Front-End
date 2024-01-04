@@ -19,7 +19,7 @@ function StarRating({ rating, color }) {
     stars.push(<i className="bx bx-star" style={{ color: "gold" }}></i>);
   }
 
-  console.log(rating);
+  // console.log(rating);
 
   return <div>{stars}</div>;
 }

@@ -30,6 +30,7 @@ function UserProfile() {
     const fetchUserById = async () => {
       try {
         let result = await getSingleUser(id);
+        console.log(result.data);
 
         setUserProfile(result.data.data.user);
         setUserReviews(result.data.data.reviews);

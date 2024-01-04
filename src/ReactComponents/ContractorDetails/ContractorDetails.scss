@@ -205,6 +205,7 @@ body {
             background-color: hsl(229, 100%, 66%);
             border: none;
             color: white;
+            cursor: pointer;
           }
           &__sign-up {
             border-radius: 1.5rem;
@@ -214,6 +215,7 @@ body {
             color: hsl(229, 100%, 66%);
             font-weight: 500;
             background-color: white;
+            cursor: pointer;
           }
         }
       }

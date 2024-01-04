@@ -15,7 +15,7 @@ function Reviews({ reviews, contractor }) {
   return (
     <div className="reviewList">
       {reviews.map((review) => {
-        console.log(review);
+        // console.log(review);
         return (
           <div className="review-card" key={review.id}>
             <div className="review-card-header">
@@ -31,7 +31,10 @@ function Reviews({ reviews, contractor }) {
                   <StarRating rating={review.rating} />
                   <div className="info-line">|</div>
                   <div>
-                    <i class="fa-regular fa-calendar"></i>
+                    <i
+                      class="fa-regular fa-calendar"
+                      style={{ marginRight: "4px" }}
+                    ></i>
                     {moment(review.date).fromNow()}
                   </div>
                   <div className="info-line">|</div>
