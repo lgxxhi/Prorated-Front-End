@@ -33,9 +33,6 @@ function ContractorDetails() {
       }
     };
     fetchContractor();
-    if (userData) {
-      setLogged(true);
-    }
   }, [id]);
 
   const openContact = (contactType, value) => {
@@ -49,7 +46,8 @@ function ContractorDetails() {
   const isSignedIn = () => {
     if (userData) {
       setLogged(true);
-    } else if (!userData) {
+      console.log(logged);
+    } else {
       setLogged(false);
       setDiv(true);
     }
