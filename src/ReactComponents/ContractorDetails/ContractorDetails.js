@@ -12,7 +12,6 @@ import { BiPhone } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
 import { FaRegBuilding } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import { UsersContext } from "../../context/UsersContext";
 
 function ContractorDetails() {
   const { id } = useParams();
