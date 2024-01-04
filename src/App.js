@@ -16,6 +16,7 @@ import Reviews from "./ReactComponents/Reviews/Reviews";
 import ContractorReviewDetails from "./ReactComponents/ContractorReviewDetails/ContractorReviewDetails";
 import AddContractorReview from "./ReactComponents/AddContractorReview/AddContractorReview";
 import Chats from "./ReactComponents/Chats/Chats";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                     element={<ContractorReviewDetails />}
                   />
                   <Route path="/chats" element={<Chats />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
             </div>
