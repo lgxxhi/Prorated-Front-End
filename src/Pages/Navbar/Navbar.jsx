@@ -5,7 +5,7 @@ import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
 import { auth } from "../../ReactComponents/Firebase/Firebase";
 import { signOut } from "firebase/auth";
 import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
-import { UsersContext } from "../context/UsersContext";
+import { UsersContext } from "../../context/UsersContext";
 import { CgMenu } from "react-icons/cg";
 
 function Nav() {
@@ -13,8 +13,7 @@ function Nav() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const { authUser } = useAuth();
-  const { setUserData } = useContext(UsersContext);
-
+  const { userData, setUserData } = useContext(UsersContext);
   function handleClick(e, location) {
     e.preventDefault();
     navigate(location);
@@ -81,7 +80,7 @@ function Nav() {
             </button>
             <button
               className="navbar__menu__buttons__btn"
-              onClick={(e) => handleClick(e, "/user-profile/6")}
+              onClick={(e) => handleClick(e, `/user-profile/${userData.id}`)}
             >
               My profile
             </button>

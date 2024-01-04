@@ -24,8 +24,8 @@ function UserProfile() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState([]);
   const [userReviews, setUserReviews] = useState([]);
-  // const { userData } = useContext(UsersContext);
-
+  const { userData } = useContext(UsersContext);
+  console.log(userData);
   useEffect(() => {
     const fetchUserById = async () => {
       try {
