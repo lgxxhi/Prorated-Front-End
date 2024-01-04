@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";
+import { UsersContext } from "../../context/UsersContext";
 import DetailsAddContractorReview from "../DetailsAddContractorReview/DetailsAddContractorReview";
 import { TbPencil } from "react-icons/tb";
 import "./ContractorDetails.scss";
@@ -15,6 +16,7 @@ import { MdOutlineEmail } from "react-icons/md";
 function ContractorDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { userData } = useContext(UsersContext);
 
   const [contractorProfile, setContractorProfile] = useState({});
   useEffect(() => {
