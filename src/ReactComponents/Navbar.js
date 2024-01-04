@@ -50,7 +50,7 @@ function Nav() {
     }
   };
 
-  console.log(prevScrollPos);
+  // console.log(prevScrollPos);
   return (
     <nav className="navbar">
       <div
