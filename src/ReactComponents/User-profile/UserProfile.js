@@ -92,11 +92,10 @@ function UserProfile() {
           </div>
           <div className="profile_details__user_info__bio">
             <p>
-              Bungalow queen by dat, DIY warrior by weekend - that;s me, Amelia!
-              My Craftsman charmer is my canvas, and I love getting my hands
-              dirty (paint-splattered too!). But when the pipes gurgle a
-              plumbing symphony or the roof whispers wind secrets, I know it;s
-              time to call in the big guns.
+              I'm Tommy, a nature lover and builder. Whether hiking through
+              forests or crafting treehouses, I find joy in the outdoors and
+              creating functional beauty. My work reflects a passion for
+              sustainability, merging nature and craftsmanship seamlessly.
             </p>
           </div>
           <div className="profile_details__user_info__edit_profile">
