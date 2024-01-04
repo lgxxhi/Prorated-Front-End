@@ -1,10 +1,11 @@
 import "./Navbar.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
 import { auth } from "../../ReactComponents/Firebase/Firebase";
 import { signOut } from "firebase/auth";
 import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
+import { UsersContext } from "../context/UsersContext";
 import { CgMenu } from "react-icons/cg";
 
 function Nav() {
@@ -12,6 +13,7 @@ function Nav() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const { authUser } = useAuth();
+  const { setUserData } = useContext(UsersContext);
 
   function handleClick(e, location) {
     e.preventDefault();
@@ -44,7 +46,7 @@ function Nav() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      alert(`Logout successful!`);
+      setUserData(null);
       navigate("/");
     } catch (error) {
       console.error("Logout Error:", error);
