@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <div className="loader">Loading...</div>;
   }
 
   return (

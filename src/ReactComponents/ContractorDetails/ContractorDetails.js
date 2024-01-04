@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { fetchContractorDetails } from "../../Api/usersAPI";
 import ContractorReviewDetails from "../ContractorReviewDetails/ContractorReviewDetails";
 import StarRating from "../StarRating/StarRating";
 import ContractorProfileImages from "./ContractorProfileImages";
+import { UsersContext } from "../../context/UsersContext";
 import DetailsAddContractorReview from "../DetailsAddContractorReview/DetailsAddContractorReview";
 import { TbPencil } from "react-icons/tb";
 import "./ContractorDetails.scss";
@@ -15,8 +16,12 @@ import { MdOutlineEmail } from "react-icons/md";
 function ContractorDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { userData } = useContext(UsersContext);
 
   const [contractorProfile, setContractorProfile] = useState({});
+  const [logged, setLogged] = useState(false);
+  const [div, setDiv] = useState(false);
+
   useEffect(() => {
     const fetchContractor = async () => {
       try {
@@ -35,6 +40,16 @@ function ContractorDetails() {
       navigate(`/email/${value}`);
     } else if (contactType === "phone") {
       navigate(`/phone/${value}`);
+    }
+  };
+
+  const isSignedIn = () => {
+    if (userData) {
+      setLogged(true);
+      console.log(logged);
+    } else {
+      setLogged(false);
+      setDiv(true);
     }
   };
 
@@ -114,34 +129,37 @@ function ContractorDetails() {
                 </h3>
               </div>
               <div className="contractor-details__details__reviews__header__button">
-                <button
-                  onClick={() =>
-                    navigate(`/contractors/${contractorProfile.id}/addReview`)
-                  }
-                >
+                <button onClick={isSignedIn}>
                   <TbPencil style={{ marginRight: "2px" }} />
                   Write A Review
                 </button>
               </div>
             </div>
-            <div className="contractor-details__details__reviews__user-or-not">
-              <div className="contractor-details__details__reviews__user-or-not__paragraph">
-                <p>
-                  In order to reach our goal of a more transparent contractor
-                  experience, you must have an account to leave a review. No
-                  worries, it's really simple!
-                </p>
+
+            {div ? (
+              <div className="contractor-details__details__reviews__user-or-not">
+                <div className="contractor-details__details__reviews__user-or-not__paragraph">
+                  <p>
+                    In order to reach our goal of a more transparent contractor
+                    experience, you must have an account to leave a review. No
+                    worries, it's really simple!
+                  </p>
+                </div>
+                <div className="contractor-details__details__reviews__user-or-not__buttons">
+                  <button
+                    onClick={() => navigate("/login-signup")}
+                    className="contractor-details__details__reviews__user-or-not__buttons__log-in"
+                  >
+                    Login
+                  </button>
+                  <button className="contractor-details__details__reviews__user-or-not__buttons__sign-up">
+                    Sign Up
+                  </button>
+                </div>
               </div>
-              <div className="contractor-details__details__reviews__user-or-not__buttons">
-                <button className="contractor-details__details__reviews__user-or-not__buttons__log-in">
-                  Login
-                </button>
-                <button className="contractor-details__details__reviews__user-or-not__buttons__sign-up">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-            <DetailsAddContractorReview />
+            ) : null}
+
+            {logged ? <DetailsAddContractorReview /> : null}
 
             <ContractorReviewDetails />
           </div>

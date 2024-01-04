@@ -66,7 +66,6 @@ function LoginSignup() {
         setAuthUser(userCredentials.user);
         const signedUpUser = await createUser(user);
         setUserData(signedUpUser);
-        alert("New account created!");
         navigate(`/user-profile/${signedUpUser.id}`);
       } catch (error) {
         console.error("Error signing up:", error.message);
