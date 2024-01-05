@@ -4,7 +4,8 @@
   height: 300px;
   margin-bottom: 10px;
   background-size: cover;
-  border: 1px solid rgb(141, 141, 141);
+  // border: 1px solid rgb(141, 141, 141);
+  position: relative;
   border-radius: 10px;
   box-shadow: 1px 1px 2px black;
   text-shadow: 0px 0px 1px rgb(118, 118, 118);
@@ -20,7 +21,8 @@
       justify-content: center;
       position: absolute;
       min-height: 6%;
-      width: 240px;
+      // width: 240px;
+      width: 100%;
       margin: 0px;
       padding: 10px 0px;
       background: linear-gradient(
@@ -43,7 +45,7 @@
       transition-duration: 0.2s;
       font-weight: normal;
       font-size: 1.2em;
-
+      text-shadow: 0px 0px 5px $Dark-Grey;
       &:hover {
         opacity: 1;
         transform: translateY(12px);
@@ -52,8 +54,8 @@
 
     &:hover {
       backdrop-filter: blur(10px) brightness(75%);
-      border: 2px solid rgb(75, 75, 75);
-      transform: scale(1.02);
+      // border: 2px solid rgb(75, 75, 75);
+      // transform: scale(1.02);
       cursor: pointer;
     }
   }
