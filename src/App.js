@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./ReactComponents/ContractorDetails/ContractorDetails";
-import ContractorListings from "./ReactComponents/ContractorListings/ContractorListings";
+import ContractorListings from "./Pages/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LoginSignup/LogInSignup";
 import UserProfile from "./ReactComponents/User-profile/UserProfile";

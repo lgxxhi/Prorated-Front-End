@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ContractorListings.css";
-import ContractorCard from "../ContractorCard/ContractorCard";
+import ContractorCard from "./Components/ContractorCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { getServicesResults } from "../../Api/Api";
 import { useParams } from "react-router-dom";
