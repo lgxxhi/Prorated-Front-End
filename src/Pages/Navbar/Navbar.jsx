@@ -2,9 +2,9 @@ import "./Navbar.scss";
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
-import { auth } from "../../ReactComponents/Firebase/Firebase";
+import { auth } from "../../Firebase/Firebase";
 import { signOut } from "firebase/auth";
-import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
+import { useAuth } from "../../Firebase/AuthContext";
 import { UsersContext } from "../../context/UsersContext";
 import { CgMenu } from "react-icons/cg";
 

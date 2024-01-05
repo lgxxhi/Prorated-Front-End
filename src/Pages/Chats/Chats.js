@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { ChatEngine } from "react-chat-engine";
-import { useAuth } from "../Firebase/AuthContext";
+import { useAuth } from "../../Firebase/AuthContext";
 import "./Chats.css";
 
 export default function Chats() {
