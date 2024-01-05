@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EditPicModal from "./EditPicModal";
 import { MdOutlineEditNote } from "react-icons/md";
-import Button from "../Button/Button";
+import Button from "./Button";
 import "./ManageUserAccount.css";
 
 import { getSingleUser, updateUserById } from "../../Api/usersAPI";

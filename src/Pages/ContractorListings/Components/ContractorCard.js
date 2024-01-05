@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.css";
-import StarRating from "../StarRating/StarRating";
+import StarRating from "../../../ReactComponents/StarRating/StarRating";
 import { motion } from "framer-motion";
-import { getContractorReviews } from "../../Api/Api";
+import { getContractorReviews } from "../../../Api/Api";
 
 function ContractorCard({ contractor }) {
   const [loading, setLoading] = useState(true);

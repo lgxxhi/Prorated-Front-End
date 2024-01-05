@@ -2,8 +2,8 @@ import "./LoginSignup.scss";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchUserInfo, createUser } from "../../Api/Api";
-import { auth } from "../../ReactComponents/Firebase/Firebase";
-import { useAuth } from "../../ReactComponents/Firebase/AuthContext";
+import { auth } from "../../Firebase/Firebase";
+import { useAuth } from "../../Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
