@@ -5,7 +5,7 @@ import { ContractorsContext } from "../../context/ContractorsContext";
 import { UsersContext } from "../../context/UsersContext";
 import axios from "../../Api/axios";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
-import PhotoDragDrop from "../draft/PhotoDragDrop/PhotoDragDrop";
+import PhotoDragDrop from "../PhotoDragDrop/PhotoDragDrop";
 import StarRating from "../StarRating/StarRating";
 
 function AddContractorReview() {

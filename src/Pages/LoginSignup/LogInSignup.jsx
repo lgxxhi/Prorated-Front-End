@@ -2,13 +2,13 @@ import "./LoginSignup.scss";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchUserInfo, createUser } from "../../Api/Api";
-import { auth } from "../../Firebase/Firebase";
-import { useAuth } from "../../Firebase/AuthContext";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { UsersContext } from "../../context/UsersContext";
+import { useAuth } from "../../Firebase/AuthContext";
+import { auth } from "../../Firebase/Firebase";
 
 function LoginSignup() {
   const [user, setUser] = useState({
