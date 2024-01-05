@@ -90,6 +90,15 @@ async function fetchUserInfo(email) {
   }
 }
 
+async function getContractorReviews(cotnractorId) {
+  try {
+    const data = await Axios.get(`/reviews/${cotnractorId}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+}
+
 export {
   getAllServices,
   getAllContractors,
@@ -97,4 +106,5 @@ export {
   getServicesResults,
   fetchUserInfo,
   createUser,
+  getContractorReviews,
 };
