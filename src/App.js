@@ -1,21 +1,22 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContractorDetails from "./ReactComponents/ContractorDetails/ContractorDetails";
-import ContractorListings from "./ReactComponents/ContractorListings/ContractorListings";
+import ContractorListings from "./Pages/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LoginSignup/LogInSignup";
-import UserProfile from "./ReactComponents/User-profile/UserProfile";
-import ManageUserAccount from "./ReactComponents/ManageUserAccount/ManageUserAccount";
+import UserProfile from "./Pages/User-profile/UserProfile";
+import ManageUserAccount from "./Pages/ManageUserAccount/ManageUserAccount";
 import Nav from "./Pages/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import { AuthProvider } from "./ReactComponents/Firebase/AuthContext";
+import { AuthProvider } from "./Firebase/AuthContext";
 import Footer from "./Pages/Footer/Footer";
 import { ContractorsContextProvider } from "./context/ContractorsContext";
 import { UsersProvider } from "./context/UsersContext";
 import Reviews from "./ReactComponents/Reviews/Reviews";
 import ContractorReviewDetails from "./ReactComponents/ContractorReviewDetails/ContractorReviewDetails";
 import AddContractorReview from "./ReactComponents/AddContractorReview/AddContractorReview";
-import Chats from "./ReactComponents/Chats/Chats";
+import Chats from "./Pages/Chats/Chats";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                     element={<ContractorReviewDetails />}
                   />
                   <Route path="/chats" element={<Chats />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
             </div>

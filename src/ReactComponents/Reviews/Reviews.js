@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import StarRating from "../StarRating/StarRating";
-import { useAuth } from "../Firebase/AuthContext";
+import { useAuth } from "../../Firebase/AuthContext";
 import moment from "moment";
 import "./Reviews.css";
 // import "./Reviews.scss";

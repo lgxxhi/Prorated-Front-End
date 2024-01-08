@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.css";
-import StarRating from "../StarRating/StarRating";
+import StarRating from "../../../ReactComponents/StarRating/StarRating";
 import { motion } from "framer-motion";
+import { getContractorReviews } from "../../../Api/Api";
 
 function ContractorCard({ contractor }) {
-  return (
+  const [loading, setLoading] = useState(true);
+  const [reviews, setReviews] = useState();
+
+  const getReviews = async () => {
+    try {
+      const data = await getContractorReviews(contractor.id);
+      setReviews(data.data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+
+  return loading ? (
+    <div className="loader"></div>
+  ) : (
     <motion.div
       layout
       animate={{ opacity: 1 }}
@@ -14,6 +34,7 @@ function ContractorCard({ contractor }) {
       // transition={{ duration: 1 }}
       className="contractor-card"
     >
+      {console.log(reviews)}
       <Link
         to={`/profile/${contractor.id}`}
         key={contractor.id}
@@ -35,9 +56,9 @@ function ContractorCard({ contractor }) {
 
             <div className="ratings">
               <div style={{ display: "flex", alignItems: "center" }}>
-                <StarRating rating={contractor.average_rating} />
+                <StarRating rating={reviews.length} />
                 <span style={{ fontSize: "small" }} className="count-span">
-                  {contractor.count ? `(${contractor.count})` : 0}
+                  {reviews.length ? `(${reviews.length})` : 0}
                 </span>
               </div>
             </div>
