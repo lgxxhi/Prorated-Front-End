@@ -80,7 +80,10 @@ function AddContractorReview() {
                 <StarRating
                   rating={selectedContractor.contractor.average_rating}
                 />
-                <span style={{ fontSize: "small" }} className="count-span">
+                <span
+                  style={{ fontSize: "small", color: "black" }}
+                  className="count-span"
+                >
                   {selectedContractor.contractor.count
                     ? `(${selectedContractor.contractor.count})`
                     : 0}
