@@ -5,6 +5,7 @@ import { fetchUserInfo, createUser } from "../../Api/Api";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { UsersContext } from "../../context/UsersContext";
 import { useAuth } from "../../Firebase/AuthContext";
@@ -45,13 +46,21 @@ function LoginSignup() {
           user.email,
           user.password
         );
-        setAuthUser(userCredentials.user);
         const loggedUser = await fetchUserInfo(user.email);
+        if (!userCredentials.user.accessToken || !loggedUser.id) {
+          throw new e({
+            message:
+              "The server encountered an internal error or misconfiguration and was unable to complete your request",
+          });
+        }
+        setAuthUser(userCredentials.user);
         setUserData(loggedUser);
         console.log("User data after setting:", loggedUser);
         navigate(`/user-profile/${loggedUser.id}`);
       } catch (error) {
         console.log(error);
+        signOut(auth);
+        setUserData(null);
         setError("Sign-in failed. Please check your email and password.");
       } finally {
         setIsLoading(false);
