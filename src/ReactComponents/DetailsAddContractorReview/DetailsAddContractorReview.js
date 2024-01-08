@@ -66,7 +66,10 @@ function DetailsAddContractorReview() {
     <div className="add_review_section">
       <div className="add_review_section__header">
         <div className="add_review_section__header__image">
-          <img alt="#" src="" />
+          <img
+            alt="#"
+            src="https://i.pinimg.com/originals/ec/9b/4b/ec9b4bcd102e2db3050bc2f3b1eecc20.jpg"
+          />
         </div>
         <div className="add_review_section__header__info">
           <div className="add_review_section__header__info__name">
