@@ -58,7 +58,7 @@ function ContractorCard({ contractor }) {
               <div style={{ display: "flex", alignItems: "center" }}>
                 <StarRating rating={reviews.length} />
                 <span style={{ fontSize: "small" }} className="count-span">
-                  {reviews.length ? `(${reviews.length})` : 0}
+                  {reviews.length ? ` (${reviews.length})` : " (0)"}
                 </span>
               </div>
             </div>
