@@ -56,7 +56,7 @@ function LoginSignup() {
         setAuthUser(userCredentials.user);
         setUserData(loggedUser);
         console.log("User data after setting:", loggedUser);
-        navigate(`/user-profile/${loggedUser.id}`);
+        navigate(-1);
       } catch (error) {
         console.log(error);
         signOut(auth);
