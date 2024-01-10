@@ -8,7 +8,7 @@ import { getContractorReviews } from "../../../Api/Api";
 function ContractorCard({ contractor }) {
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState();
-
+  const randomNumber = Math.floor(Math.random() * 50) + 2;
   const getReviews = async () => {
     try {
       const data = await getContractorReviews(contractor.id);
@@ -43,11 +43,7 @@ function ContractorCard({ contractor }) {
       >
         <div className="profile-split">
           <div className="image">
-            <img
-              className="profile-img"
-              alt="#"
-              src="https://picsum.photos/200/300"
-            />
+            <img className="profile-img" alt="#" src={contractor.logo} />
           </div>
           <div className="card-content">
             <div className="text-data">
@@ -65,7 +61,7 @@ function ContractorCard({ contractor }) {
             <div className="hires">
               <span>
                 <i className="bx bx-trophy"></i>
-                <small> 54 hires on ProRated</small>
+                <small> {randomNumber} hires on ProRated</small>
               </span>
               <span>
                 <i className="bx bx-been-here"></i>
