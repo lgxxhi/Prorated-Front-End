@@ -9,7 +9,6 @@ export default function Home() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [servicesObj, setServicesObj] = useState({});
-  const randomNumber = Math.floor(Math.random() * 50) + 1;
 
   const displayServices = () => {
     return servicesObj.map(({ name, description, custom, image, id }) => {
@@ -34,6 +33,7 @@ export default function Home() {
   const fetchServices = async () => {
     try {
       const services = await getAllServices();
+      console.log(services);
       setServicesObj(services);
       setLoading(false);
     } catch (error) {
