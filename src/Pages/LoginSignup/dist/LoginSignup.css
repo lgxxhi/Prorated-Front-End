@@ -15,7 +15,13 @@
   padding: 20px;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  background-image: linear-gradient(to bottom right, #7bc4ff, #5fb4f9, #5f7ef9, #5971f6);
+  background-image: linear-gradient(
+    to bottom right,
+    #7bc4ff,
+    #5fb4f9,
+    #5f7ef9,
+    #5971f6
+  );
 }
 .login-signup__box__title {
   color: #ffffff;
@@ -51,7 +57,8 @@
   padding: 10px;
   border: none;
   border-radius: 20px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3), 0px 0px 3px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
+    0px 0px 3px rgba(0, 0, 0, 0.3) inset;
   color: #ffffff;
   font-size: 1em;
   cursor: pointer;
