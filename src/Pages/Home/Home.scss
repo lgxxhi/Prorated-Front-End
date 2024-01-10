@@ -53,12 +53,12 @@ $hero-image: url("../../Assets/Images/Image.jpg");
     }
   }
   &__popular-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    padding: 0px 30px;
 
-    justify-items: center;
-    gap: 2%;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-rows: minmax(80px, auto);
+    gap: 15px;
   }
 }
 
