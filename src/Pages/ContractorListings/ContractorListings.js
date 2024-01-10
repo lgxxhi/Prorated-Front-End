@@ -36,7 +36,10 @@ function ContractorListings(props) {
           <div className="left-main">
             <h2>
               <span className="results-for">Results For</span>
-              <span className="service-found"> {q}</span>
+              <span className="service-found" style={{ color: "#4A6BFE" }}>
+                {" "}
+                {q}
+              </span>
             </h2>
             <p>{dataObj.length} services available </p>
           </div>
