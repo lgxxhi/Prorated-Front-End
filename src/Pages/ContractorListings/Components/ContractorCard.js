@@ -8,7 +8,7 @@ import { getContractorReviews } from "../../../Api/Api";
 function ContractorCard({ contractor }) {
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState();
-  const randomNumber = Math.floor(Math.random() * 50) + 2;
+  const randomNumber = Math.floor(Math.random() * (70 - 65 + 1) + 65);
   const getReviews = async () => {
     try {
       const data = await getContractorReviews(contractor.id);
@@ -17,6 +17,12 @@ function ContractorCard({ contractor }) {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const getRatingAverage = (reviews) => {
+    let sum = 0;
+    reviews.forEach((x) => (sum += x.rating));
+    return sum / reviews.length;
   };
 
   useEffect(() => {
@@ -52,8 +58,11 @@ function ContractorCard({ contractor }) {
 
             <div className="ratings">
               <div style={{ display: "flex", alignItems: "center" }}>
-                <StarRating rating={reviews.length} />
-                <span style={{ fontSize: "small" }} className="count-span">
+                <StarRating rating={getRatingAverage(reviews)} />
+                <span
+                  style={{ fontSize: "small", color: "black" }}
+                  className="count-span"
+                >
                   {reviews.length ? ` (${reviews.length})` : " (0)"}
                 </span>
               </div>

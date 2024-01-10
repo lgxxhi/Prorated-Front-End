@@ -98,7 +98,7 @@ $white_ffffff: #ffffff;
 }
 
 .loader {
-  background: $deepskyblue_0ac2ff;
+  background: #5271ff;
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
@@ -109,7 +109,7 @@ $white_ffffff: #ffffff;
     -webkit-animation-delay: -0.32s;
     animation: load1 1s infinite ease-in-out;
     animation-delay: -0.32s;
-    background: $deepskyblue_0ac2ff;
+    background: #5271ff;
     content: "";
     height: 4em;
     left: -1.5em;
@@ -121,7 +121,7 @@ $white_ffffff: #ffffff;
   &:after {
     -webkit-animation: load1 1s infinite ease-in-out;
     animation: load1 1s infinite ease-in-out;
-    background: $deepskyblue_0ac2ff;
+    background: #5271ff;
     content: "";
     height: 4em;
     left: 1.5em;
@@ -129,7 +129,7 @@ $white_ffffff: #ffffff;
     top: 0;
     width: 1em;
   }
-  color: $deepskyblue_0ac2ff;
+  color: #5271ff;
   text-indent: -9999em;
   margin: 88px auto;
   position: relative;
