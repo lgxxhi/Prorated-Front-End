@@ -8,6 +8,7 @@ import { MdStarBorder } from "react-icons/md";
 import { TbTools } from "react-icons/tb";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import { getSingleUser } from "../../Api/usersAPI";
+import PhotoDragDrop from "../../ReactComponents/PhotoDragDrop/PhotoDragDrop";
 
 import "./DetailsAddContractorReview.scss";
 
@@ -120,7 +121,8 @@ function DetailsAddContractorReview() {
         <div className="add_review_section__review_input_section__photo_file">
           <h4>UPLOAD PHOTOS</h4>
 
-          <input type="file" />
+          {/* <input type="file" /> */}
+          {<PhotoDragDrop />}
         </div>
         <div className="add_review_section__review_input_section__review">
           <h4>REVIEW</h4>
