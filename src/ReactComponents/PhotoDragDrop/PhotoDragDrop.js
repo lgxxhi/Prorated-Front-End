@@ -76,12 +76,12 @@ function PhotoDragDrop({ handleSumbitReview }) {
         {isDragging ? (
           <span className="select">Drop Images Here</span>
         ) : (
-          <>
+          <div className="div">
             Drag & Drop image here or{" "}
             <span className="select" role="button" onClick={selectFiles}>
               Browse
             </span>
-          </>
+          </div>
         )}
 
         <input
@@ -103,13 +103,13 @@ function PhotoDragDrop({ handleSumbitReview }) {
           </div>
         ))}
       </div>
-      <div
+      {/* <div
         style={{ display: "flex", justifyContent: "center", marginTop: "25px" }}
       >
         <button type="submit" onClick={handleSumbitReview}>
           Submit
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

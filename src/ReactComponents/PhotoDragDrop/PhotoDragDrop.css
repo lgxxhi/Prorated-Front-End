@@ -3,9 +3,15 @@
   overflow: hidden;
 }
 
+.div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .card p {
   font-weight: bold;
-  color: #38b6ff;
+  color: hsl(229, 100%, 66%);
 }
 
 .card button {
@@ -16,15 +22,15 @@
   cursor: pointer;
   font-weight: 400;
   padding: 8px 13px;
-  background: #38b6ff;
+  background: hsl(229, 100%, 66%);
 }
 
 .card .drag-area {
-  height: 150px;
-  border-radius: 5px;
+  height: 50px;
+  border-radius: 8px;
   border: 2px dashed lightgray;
   color: gray;
-  background: #f4f3f9;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +44,7 @@
 }
 
 .card .select {
-  color: #38b6ff;
+  color: hsl(229, 100%, 66%);
   margin-left: 5px;
   cursor: pointer;
   transition: 0.4s;
@@ -60,9 +66,9 @@
 }
 
 .card .container .image {
-  width: 75px;
+  width: 40px;
   margin-right: 5px;
-  height: 75px;
+  height: 40px;
   position: relative;
   margin-bottom: 8px;
 }
