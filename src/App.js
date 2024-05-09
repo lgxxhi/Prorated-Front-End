@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ContractorDetails from "./ReactComponents/ContractorDetails/ContractorDetails";
+import ContractorDetails from "./Components/ContractorDetails/ContractorDetails";
 import ContractorListings from "./Pages/ContractorListings/ContractorListings";
 import contractorData from "./contractorData.json";
 import LogInSignup from "./Pages/LoginSignup/LogInSignup";
@@ -12,9 +12,9 @@ import { AuthProvider } from "./Firebase/AuthContext";
 import Footer from "./Pages/Footer/Footer";
 import { ContractorsContextProvider } from "./context/ContractorsContext";
 import { UsersProvider } from "./context/UsersContext";
-import Reviews from "./ReactComponents/Reviews/Reviews";
-import ContractorReviewDetails from "./ReactComponents/ContractorReviewDetails/ContractorReviewDetails";
-import AddContractorReview from "./ReactComponents/AddContractorReview/AddContractorReview";
+import Reviews from "./Components/Reviews/Reviews";
+import ContractorReviewDetails from "./Components/ContractorReviewDetails/ContractorReviewDetails";
+import AddContractorReview from "./Components/AddContractorReview/AddContractorReview";
 import Chats from "./Pages/Chats/Chats";
 import NotFound from "./Pages/NotFound/NotFound";
 

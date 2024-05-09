@@ -1,7 +1,7 @@
 import "./Navbar.scss";
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
+import SearchBar from "../../Components/Searchbar/SearchBar";
 // import { auth } from "../../Firebase/Firebase";
 // import { signOut } from "firebase/auth";
 // import { useAuth } from "../../Firebase/AuthContext";

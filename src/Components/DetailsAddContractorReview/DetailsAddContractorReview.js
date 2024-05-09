@@ -8,7 +8,7 @@ import { MdStarBorder } from "react-icons/md";
 import { TbTools } from "react-icons/tb";
 import StarHoverRating from "../StarHoverRating/StarHoverRating";
 import { getSingleUser } from "../../Api/usersAPI";
-import PhotoDragDrop from "../../ReactComponents/PhotoDragDrop/PhotoDragDrop";
+import PhotoDragDrop from "../../Components/PhotoDragDrop/PhotoDragDrop";
 
 import "./DetailsAddContractorReview.scss";
 

@@ -1,7 +1,7 @@
 import "./Home.scss";
 import React, { useEffect, useState } from "react";
 import { getAllServices } from "../../Api/Api";
-import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
+import SearchBar from "../../Components/Searchbar/SearchBar";
 import ServiceCard from "./ServiceCard";
 import { useNavigate } from "react-router-dom";
 
