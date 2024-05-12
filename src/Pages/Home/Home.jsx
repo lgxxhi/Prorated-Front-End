@@ -1,17 +1,17 @@
 import "./Home.scss";
 import React, { useEffect, useState } from "react";
 import { getAllServices } from "../../Api/Api";
-import SearchBar from "../../ReactComponents/Searchbar/SearchBar";
+import SearchBar from "../../Components/Searchbar/SearchBar";
 import ServiceCard from "./ServiceCard";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const [servicesObj, setServicesObj] = useState({});
+  const [services, setServices] = useState({});
 
   const displayServices = () => {
-    return servicesObj.map(({ name, description, custom, image, id }) => {
+    return services.map(({ name, description, custom, image, id }) => {
       if (!custom) {
         return (
           <ServiceCard
@@ -33,7 +33,7 @@ export default function Home() {
   const fetchServices = async () => {
     try {
       const services = await getAllServices();
-      setServicesObj(services);
+      setServices(services.message ? [] : services);
       setLoading(false);
     } catch (error) {
       console.log(error);

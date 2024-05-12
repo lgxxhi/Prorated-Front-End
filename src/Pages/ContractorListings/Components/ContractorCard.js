@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ContractorCard.scss";
-import StarRating from "../../../ReactComponents/StarRating/StarRating";
+import StarRating from "../../../Components/StarRating/StarRating";
 import { motion } from "framer-motion";
 import { getContractorReviews } from "../../../Api/Api";
 

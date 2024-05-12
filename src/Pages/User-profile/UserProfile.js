@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getSingleUser } from "../../Api/usersAPI";
 import "./UserProfile.css";
 import moment from "moment";
-import StarRating from "../../ReactComponents/StarRating/StarRating";
+import StarRating from "../../Components/StarRating/StarRating";
 import "./UserProfile.scss";
 import { MdLocationPin } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
