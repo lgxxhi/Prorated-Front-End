@@ -1,85 +1,32 @@
 import "./Home.scss";
-import React, { useEffect, useState } from "react";
-import { getAllServices } from "../../Api/Api";
-import SearchBar from "../../Components/Searchbar/SearchBar";
-import ServiceCard from "./ServiceCard";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useServices } from "../../hooks/useServices";
+import { ServiceCard } from "./ServiceCard";
+import { Services } from "./Services";
+import { SearchBar } from "../../Components/Searchbar/SearchBar";
 
 export default function Home() {
+  const { services, loading } = useServices();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-  const [services, setServices] = useState({});
-
-  const displayServices = () => {
-    return services.map(({ name, description, custom, image, id }) => {
-      if (!custom) {
-        return (
-          <ServiceCard
-            key={id}
-            data={{
-              name: name,
-              description: description,
-              custom: custom,
-              image: image,
-            }}
-          />
-        );
-      } else {
-        return "";
-      }
-    });
-  };
-
-  const fetchServices = async () => {
-    try {
-      const services = await getAllServices();
-      setServices(services.message ? [] : services);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
-
-  if (loading) {
-    return <div className="loader">Loading...</div>;
-  }
 
   return (
-    <div className="home-page ">
-      <div className="home-page__search">
-        <div className="home-page__search__input">
-          <h1 className="home-page__search__input__title">
-            Building trust <br /> One project at a time
-          </h1>
-          <SearchBar location="home-page" />
-          <div className="home-page__search__suggestions">
-            <p>Popular services:</p>
-            <button
-              className="btn btn__full-round"
-              onClick={() => navigate("/listings/plumbing")}
-            >
-              Plumbing
-            </button>
-            <button
-              className="btn btn__medium-round"
-              onClick={() => navigate("/listings/Electrician")}
-            >
-              Electrician
-            </button>
-            <button
-              className="btn btn__medium-round"
-              onClick={() => navigate("/listings/Handyman")}
-            >
-              Handyman
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="home-page__popular-services">{displayServices()}</div>
-    </div>
+    <main className="home-page">
+      <h1>
+        Building trust <br /> One project at a time
+      </h1>
+      <SearchBar location="home-page" />
+      <article className="home-page__search__suggestions">
+        <p>Popular services:</p>
+        <a href="/listings/Plumber">Plumbing</a>
+        <a href="/listings/Electrician">Electrician</a>
+        <a href="/listings/Handyman">Handyman</a>
+      </article>
+      <Services data={services} loading={loading}>
+        {(data) => (
+          <ServiceCard key={data.id} data={data} navigate={navigate} />
+        )}
+      </Services>
+    </main>
   );
 }

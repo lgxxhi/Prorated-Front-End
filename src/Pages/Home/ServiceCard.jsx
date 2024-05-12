@@ -1,28 +1,23 @@
 import "./ServiceCard.scss";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-export default function ServiceCard({ data }) {
-  const { name, description, image } = data;
+function ServiceCard(props) {
+  const { name, description, image } = props.data;
   const background = { backgroundImage: `url(${image})` };
-  const navigate = useNavigate();
 
-  function navigateToService(e) {
+  const handleNavigate = (e) => {
     e.preventDefault();
-    console.log(name);
-    navigate(`/listings/${name}`);
-  }
+    props.navigate(`/listings/${name}`);
+  };
 
   return (
-    <div
-      className="serviceCard"
-      style={background}
-      onClick={(e) => navigateToService(e)}
-    >
-      <div className="serviceCard__top">
-        <h2 className="serviceCard__top__title">{name}</h2>
-        <p className="serviceCard__top__info">{description}</p>
+    <section style={background} onClick={handleNavigate}>
+      <div>
+        <h2>{name}</h2>
+        <p>{description}</p>
       </div>
-    </div>
+    </section>
   );
 }
+
+export { ServiceCard };

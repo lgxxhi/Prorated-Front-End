@@ -2,7 +2,7 @@ import "./SearchBar.scss";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchBar() {
+function SearchBar() {
   const [searchNav, setSearchNav] = useState("");
   const navigate = useNavigate();
 
@@ -32,3 +32,5 @@ export default function SearchBar() {
     </form>
   );
 }
+
+export { SearchBar };

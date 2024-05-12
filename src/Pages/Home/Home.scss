@@ -1,54 +1,45 @@
 @import "../../Styles/main.scss";
 $hero-image: url("../../Assets/Images/Image.jpg");
 
-.home-page {
-  &__search {
-    display: flex;
-    justify-content: center;
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 60px 0px;
+  justify-content: center;
+  align-items: center;
+  color: $Pure-White;
+  text-shadow: 0px 0px 10px black;
+  background-image: $hero-image;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-size: 2.5em;
     margin-bottom: 50px;
-    padding: 100px 0px 60px 0px;
-    background-image: $hero-image;
-    background-size: cover;
-    background-position: center;
-    color: $Pure-White;
-    text-shadow: 0px 0px 10px black;
-    &__input {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-      width: 60%;
+  }
+
+  article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 0px 5%;
+    font-size: 1.3em;
+    a {
+      margin: 0% 1%;
+      border: 0;
       border-radius: 0.5rem;
-      &__title {
-        font-size: 2.5em;
-        margin-bottom: 50px;
-      }
-    }
-    &__suggestions {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      max-width: 800px;
-      margin-left: 2%;
-      margin-top: 20px;
-      padding: 0px 5%;
-      font-size: 1.3em;
-      button {
-        margin: 0% 1%;
-        border: 0;
-        border-radius: 0.5rem;
-        box-shadow: 0px 0px 2px rgba($Dark-Grey, 0.8);
-        background-color: rgba($Blue-Lightest, $alpha: 0.3);
-        backdrop-filter: blur(5px) brightness(100%);
-        padding: 5px;
-        color: white;
-        font-size: 70%;
-        font-weight: 600;
-        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-        &:hover {
-          backdrop-filter: blur(15px) brightness(100%);
-        }
+      box-shadow: 0px 0px 2px rgba($Dark-Grey, 0.8);
+      background-color: rgba($Blue-Lightest, $alpha: 0.3);
+      backdrop-filter: blur(5px) brightness(100%);
+      padding: 5px;
+      color: white;
+      font-size: 70%;
+      font-weight: 600;
+      &:hover {
+        backdrop-filter: blur(15px) brightness(100%);
       }
     }
   }
